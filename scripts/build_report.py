@@ -372,6 +372,28 @@ def build_series(rows: list[dict], cpi_obs, inputs: dict | None = None) -> dict:
     csv_base_cpi = statistics.median(ratios) if ratios else base_cpi
     rebase = base_cpi / csv_base_cpi
 
+    # 2b. The Shiller CSV is monthly and lags by weeks. If the routine supplied a current
+    #     index level, use it: same month replaces that month's close, a later month is
+    #     appended (which keeps the 12-month momentum lookback exactly 12 rows back).
+    spx = (inputs or {}).get("spx_current") or {}
+    spx_level, spx_date = spx.get("level"), spx.get("date")
+    if spx_level and spx_date:
+        try:
+            month_key = str(spx_date)[:8] + "01"
+            last_row_date = max(r["date"] for r in rows if r["sp500"])
+            if month_key <= last_row_date:
+                for r in rows:
+                    if r["date"] == month_key:
+                        r["sp500"] = float(spx_level)
+            else:
+                rows.append({"date": month_key, "sp500": float(spx_level), "cpi": None,
+                             "real_price_csv": None, "real_earnings_csv": None,
+                             "long_rate": None})
+                cpi.setdefault(month_key, cpi[max(cpi)])
+        except (TypeError, ValueError):
+            gap("spx_current in weekly_inputs.json is malformed; ignored.")
+            spx_level, spx_date = None, None
+
     dates, real_price, real_earn = [], [], []
     for r in rows:
         if not r["sp500"]:
@@ -427,8 +449,10 @@ def build_series(rows: list[dict], cpi_obs, inputs: dict | None = None) -> dict:
         "shiller_cpi_last": shiller_cpi_last_date,
         "earnings_vintage": e10_vintage,
         "infl_10y": infl_10y,
-        "price_date": dates[-1] if dates else None,
-        "price_level": rows[-1]["sp500"] if rows else None,
+        "price_date": spx_date if spx_level else (dates[-1] if dates else None),
+        "price_level": float(spx_level) if spx_level else (rows[-1]["sp500"] if rows else None),
+        "price_source": ("live index level supplied by the routine" if spx_level
+                         else "Shiller CSV monthly close"),
         "long_rate_last": next(
             (r["long_rate"] for r in reversed(rows) if r["long_rate"]), None
         ),
@@ -745,14 +769,25 @@ def composite_of(indicators: dict) -> tuple[float | None, float]:
 # ---------------------------------------------------------------------------
 
 
-def update_sentiment(inputs, today) -> tuple[dict, list[str]]:
+def update_sentiment(inputs, today, prev=None) -> tuple[dict, list[str], list[str]]:
+    """Apply this week's updates and report what moved.
+
+    The diff basis is the previous report's own snapshot when there is one, so
+    re-running a week is idempotent: the rolling data/sentiment_current.json has already
+    absorbed the changes, and diffing against it would silently show nothing moving.
+    """
     cur_path = DATA / "sentiment_current.json"
     base_path = DATA / "sentiment_baseline.json"
-    state = load_json(cur_path, None) or load_json(base_path, None)
+    state = (prev or {}).get("sentiment_snapshot")
+    if state:
+        state = json.loads(json.dumps(state))  # never mutate the archived report
+    else:
+        state = load_json(cur_path, None) or load_json(base_path, None)
     if not state:
         gap("No sentiment state found (data/sentiment_baseline.json missing).")
-        return {"roster": [], "fed": {}}, []
+        return {"roster": [], "fed": {}}, [], []
     changes: list[str] = []
+    statement_only: list[str] = []
     by_name = {r["name"].lower(): r for r in state.get("roster", [])}
     for upd in inputs.get("sentiment_updates", []) or []:
         row = by_name.get(str(upd.get("name", "")).lower())
@@ -777,7 +812,9 @@ def update_sentiment(inputs, today) -> tuple[dict, list[str]]:
             row["statement_summary"] = st.get("summary", "")
             row["statement_url"] = st.get("url", "")
             if not moved:
-                moved.append("new statement, score unchanged")
+                row["changed_this_week"] = True
+                statement_only.append(row["name"])
+                continue
         if moved:
             row["changed_this_week"] = True
             changes.append(f"{row['name']}: " + "; ".join(moved))
@@ -792,7 +829,7 @@ def update_sentiment(inputs, today) -> tuple[dict, list[str]]:
         if old and fed_new.get("stance") and fed_new["stance"] != old:
             changes.append(f"Fed: {old} -> {fed_new['stance']}")
     state["as_of"] = today.isoformat()
-    return state, changes
+    return state, changes, statement_only
 
 
 def split_roster(roster: list[dict]) -> dict:
@@ -822,7 +859,7 @@ def trend_arrows(indicators, four_wk):
         i["trend"] = "^" if d > 0.1 else ("v" if d < -0.1 else "=")
 
 
-def what_changed(indicators, prev, sentiment_changes, composite):
+def what_changed(indicators, prev, sentiment_changes, statement_only, composite):
     bullets = []
     old = (prev or {}).get("indicators", {})
     for key, name, _ in INDICATORS:
@@ -844,12 +881,16 @@ def what_changed(indicators, prev, sentiment_changes, composite):
                 0, f"Composite {prev['composite']:.2f} -> {composite:.2f} ({d:+.2f})"
             )
     bullets.extend(sentiment_changes)
+    if statement_only:
+        bullets.append(
+            "New statements, scores unchanged: " + ", ".join(sorted(statement_only))
+        )
     if not bullets:
         bullets.append(
             "No indicator moved more than 0.2 and no roster member changed score or issued a "
             "new statement." if prev else "First report - no prior week to diff against."
         )
-    return bullets[:8]
+    return bullets[:12]
 
 
 def dca_paragraph(composite, band_label, indicators):
@@ -1035,14 +1076,19 @@ def main() -> int:
     composite, weight_covered = composite_of(indicators)
     band_label, band_color, band_name = band_for(composite) if composite is not None else ("no composite", "#666", "grey")
 
-    sentiment_state, sentiment_changes = update_sentiment(inputs, today)
+    sentiment_state, sentiment_changes, statement_only = update_sentiment(inputs, today, prev)
     buckets = split_roster(sentiment_state.get("roster", []))
 
     composite_delta = None
     if prev and prev.get("composite") is not None and composite is not None:
         composite_delta = composite - prev["composite"]
 
-    vintage = [f"S&P price {series.get('price_date', 'n/a')}", shiller_src]
+    vintage = [
+        f"S&P {series.get('price_level'):,.0f} at {series.get('price_date', 'n/a')} "
+        f"({series.get('price_source', 'n/a')})"
+        if series.get("price_level") else "S&P price unavailable",
+        shiller_src,
+    ]
     if series.get("shiller_cpi_last"):
         vintage.append(f"Shiller CPI column ends {series['shiller_cpi_last']}")
     if series.get("cpi_extended_to"):
@@ -1066,7 +1112,8 @@ def main() -> int:
         "band_name": band_name,
         "prev_date": (prev or {}).get("date"),
         "indicators": ordered,
-        "what_changed": what_changed(indicators, prev, sentiment_changes, composite),
+        "what_changed": what_changed(indicators, prev, sentiment_changes,
+                                     statement_only, composite),
         "sentiment": buckets,
         "fed": sentiment_state.get("fed", {}),
         "reading_list": inputs.get("reading_list", []) or [],
@@ -1113,6 +1160,8 @@ def main() -> int:
             for k, v in indicators.items()
         },
         "sentiment_changes": sentiment_changes,
+        "new_statements": statement_only,
+        "sentiment_snapshot": sentiment_state,
         "reading_list": ctx["reading_list"],
         "gaps": GAPS,
         "meta": {

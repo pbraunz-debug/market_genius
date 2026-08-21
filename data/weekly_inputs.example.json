@@ -1,6 +1,12 @@
 {
   "_comment": "Template for the file the weekly routine writes to data/weekly_inputs.json before running build_report.py. Every field is optional - build_report.py degrades gracefully, scoring what it has and flagging the rest. Delete the _comment keys in real output.",
   "research_date": "YYYY-MM-DD",
+  "spx_current": {
+    "_comment": "Current S&P 500 index level. The Shiller CSV is monthly and lags by weeks, so without this the whole report is scored off last month's close. Same calendar month replaces that month's close; a later month is appended.",
+    "level": 0.0,
+    "date": "YYYY-MM-DD",
+    "source": ""
+  },
   "cape_web": {
     "_comment": "Current Shiller CAPE cross-check. Preferred for the headline; the value computed from the Shiller CSV is shown alongside it.",
     "value": 0.0,

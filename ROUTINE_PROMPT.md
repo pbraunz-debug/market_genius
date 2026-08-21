@@ -28,6 +28,9 @@ number - if you cannot source a value, leave the field out and let the pipeline 
 
 2. RESEARCH — quantitative values
    Web-search each of these and note the source URL and the as-of date:
+   - Current S&P 500 index level and its date -> spx_current. Do this one FIRST and never
+     skip it: the Shiller dataset is monthly and lags by weeks, so without it the entire
+     report is scored off last month's close.
    - Current Shiller CAPE (multpl.com preferred) -> cape_web
    - Buffett Indicator, total US market cap / GDP, in percent
      (currentmarketvaluation.com, gurufocus) -> buffett_indicator

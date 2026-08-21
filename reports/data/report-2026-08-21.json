@@ -1,78 +1,409 @@
 {
   "date": "2026-08-21",
-  "composite": 4.664092499870889,
-  "band": "extreme",
-  "weight_covered": 0.8999999999999999,
+  "composite": 4.367199657547927,
+  "band": "frothy / hold dry powder",
+  "weight_covered": 0.9999999999999999,
   "indicators": {
     "cape": {
-      "value": 51.19122921483811,
-      "score": 4.998855835240274,
-      "display": "51.2",
-      "as_of": "2026-07-01",
+      "value": 41.2,
+      "score": 4.933676386506575,
+      "display": "41.2",
+      "as_of": "2026-08-20",
       "stale_weeks": null,
-      "source": "Shiller CSV"
+      "source": "web consensus 2026-08-20: thetrading.tools 41.2, gurufocus 41.4 (Aug 1), multpl 41.8, chartrow 40.4 - multpl.com is blocked from this environment so the mid-range print is used"
     },
     "buffett": {
-      "value": 200,
+      "value": 237.6,
       "score": 5.0,
-      "display": "200% of GDP",
-      "as_of": "2026-08-21",
+      "display": "238% of GDP",
+      "as_of": "2026-08-20",
       "stale_weeks": 0,
-      "source": "FRAMEWORK.md baseline (current era 200%+) - SEED, not a fresh reading"
+      "source": "buffettindicator.org / thetrading.tools, 2026-08-20. currentmarketvaluation.com prints ~291% on a Q2-2026 annualised-GDP denominator; both are far past the 200% top-of-range anchor"
     },
     "ecy": {
-      "value": 0.003001673787495159,
-      "score": 4.349916310625242,
-      "display": "+0.30%",
-      "as_of": "2023-09-01",
+      "value": 0.011794553614999915,
+      "score": 3.8205446385000084,
+      "display": "+1.18%",
+      "as_of": "2026-08-20",
       "stale_weeks": null,
       "source": "derived: FRED DGS10 + Shiller CPI"
     },
     "trend": {
-      "value": 1.6978925135561627,
-      "score": 4.776887871853547,
-      "display": "1.70x",
-      "as_of": "2026-07-01",
+      "value": 1.6112117203340788,
+      "score": 4.685534591194969,
+      "display": "1.61x",
+      "as_of": "2026-08-20",
       "stale_weeks": null,
       "source": "Shiller CSV"
     },
     "momentum": {
-      "value": 0.1881743825935045,
-      "score": 4.1773584905660375,
-      "display": "+18.8%",
-      "as_of": "2026-07-01",
+      "value": 0.16752183009051613,
+      "score": 4.03125,
+      "display": "+16.8%",
+      "as_of": "2026-08-20",
       "stale_weeks": null,
       "source": "Shiller CSV"
     },
     "hy_spread": {
-      "value": 271.0,
-      "score": 4.5,
-      "display": "271bps",
-      "as_of": "2026-08-21",
+      "value": 270.0,
+      "score": 4.507042253521127,
+      "display": "270bps",
+      "as_of": "2026-08-20",
       "stale_weeks": 0,
       "source": "FRED BAMLH0A0HYM2"
     },
-    "fiscal": {
-      "value": 6.0,
-      "score": 4.5,
-      "display": "6.0% of GDP deficit",
-      "as_of": "2026-08-21",
+    "curve": {
+      "value": 0.46,
+      "score": 3.0,
+      "display": "+0.46 pts",
+      "as_of": "2026-08-20",
       "stale_weeks": 0,
-      "source": "FRAMEWORK.md baseline (~6% deficits at full employment) - SEED"
+      "source": "FRED T10Y2Y"
+    },
+    "fiscal": {
+      "value": 5.8,
+      "score": 4.35,
+      "display": "5.8% of GDP deficit",
+      "as_of": "2026-08-20",
+      "stale_weeks": 0,
+      "source": "CBO Budget and Economic Outlook 2026-2036: FY2026 deficit $1.9tn = 5.8% of GDP. Debt/GDP 122.6% (Q1 2026, FRED GFDEGDQ188S via govspending); gross debt passed $40tn on 2026-08-18 per CRFB"
     }
   },
-  "sentiment_changes": [],
-  "reading_list": [],
+  "sentiment_changes": [
+    "Sonders: 36m +1 -> +0",
+    "Druckenmiller: 12m +1 -> +2; 24m +1 -> +2; conviction 3.0 -> 4.0",
+    "Slok: 24m +0 -> -1",
+    "El-Erian: 24m +0 -> -1; conviction 2.0 -> 3.0",
+    "Buffett-Berkshire: 12m -1 -> +0; 24m +0 -> +1",
+    "Dimon: 12m -2 -> -3; conviction 3.0 -> 3.5",
+    "Dalio: conviction 4.0 -> 4.5",
+    "Rosenberg: conviction 4.0 -> 4.5",
+    "Fed: hold 3.50-3.75%, hike-bias dot plot -> hold 3.50-3.75% (9-3 vote, 28-29 July), three dissents wanting a HIKE, September hike priced near 61%"
+  ],
+  "new_statements": [
+    "Yardeni",
+    "Wood",
+    "Lee",
+    "Siegel",
+    "Roubini",
+    "Gross",
+    "Marks",
+    "Krugman",
+    "Grantham",
+    "Burry"
+  ],
+  "sentiment_snapshot": {
+    "as_of": "2026-08-21",
+    "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
+    "excluded_by_request": [
+      "Ackman",
+      "Icahn",
+      "activist investors generally"
+    ],
+    "fed": {
+      "name": "Fed / Warsh",
+      "stance": "hold 3.50-3.75% (9-3 vote, 28-29 July), three dissents wanting a HIKE, September hike priced near 61%",
+      "read": "policy headwind, and the bias is toward tightening, not easing - Warsh has been chair since 2026-05-13 and delivers his debut Jackson Hole speech in late August",
+      "as_of": "2026-07-29"
+    },
+    "roster": [
+      {
+        "name": "Yardeni",
+        "s12": 4,
+        "s24": 4,
+        "s36": 4,
+        "conviction": 5.0,
+        "school": "strategist",
+        "note": "",
+        "last_statement": "2026-08-12",
+        "changed_this_week": true,
+        "statement_summary": "Raised S&P 500 target to 8,400 on 'fabulous earnings momentum' - now among the Street's highest",
+        "statement_url": "https://www.bloomberg.com/news/articles/2026-08-12/yardeni-raises-s-p-500-view-to-8-400-on-fabulous-earnings"
+      },
+      {
+        "name": "Wood",
+        "s12": 4,
+        "s24": 4,
+        "s36": 5,
+        "conviction": 5.0,
+        "school": "strategist",
+        "note": "'Golden Age' thesis intact: deflationary tech + fiscal push",
+        "last_statement": "2026-08-14",
+        "changed_this_week": true,
+        "statement_summary": "Q2-26 13F: book up to $15.4bn across 191 names; Tesla/AMD/SpaceX/Tempus/Robinhood ~25% of assets",
+        "statement_url": "https://seekingalpha.com/article/4938481-cathie-wood-ark-invest-13f-portfolio-q2-2026-update"
+      },
+      {
+        "name": "Lee",
+        "s12": 4,
+        "s24": 3,
+        "s36": 3,
+        "conviction": 5.0,
+        "school": "strategist",
+        "note": "8,000 near-term target BUT explicitly warns of bear-market-like moves Aug-Oct",
+        "last_statement": "2026-08-06",
+        "changed_this_week": true,
+        "statement_summary": "S&P to 7,900-8,000 this month ('the bigger the base, the bigger the breakout'), year-end 8,000+ with upside to 8,400-8,800 - while flagging four H2 triggers",
+        "statement_url": "https://www.cnbc.com/2026/08/06/tom-lees-bold-august-forecast-sp-500-going-to-8000.html"
+      },
+      {
+        "name": "Siegel",
+        "s12": 2,
+        "s24": 2,
+        "s36": 2,
+        "conviction": 3.5,
+        "school": "strategist",
+        "note": "constructive but names AI spend, valuations and bond yields as the worries",
+        "last_statement": "2026-08-10",
+        "changed_this_week": true,
+        "statement_summary": "Weak July payrolls 'overstate' labour-market weakness; still does not expect a bear market",
+        "statement_url": "https://www.thinkadvisor.com/2026/07/27/jeremy-siegel-stays-optimistic-as-market-risks-pile-up/"
+      },
+      {
+        "name": "Sonders",
+        "s12": 1,
+        "s24": 1,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "strategist",
+        "note": "36m cut to 0: record margin debt, record equity allocations and index concentration are her stated longer-term risks",
+        "last_statement": "2026-08-18",
+        "changed_this_week": true,
+        "statement_summary": "Rotation backdrop persists and higher yields are biting; investors are 'reluctantly' long via ETF flows and margin debt",
+        "statement_url": "https://www.cnbc.com/video/2026/08/18/charles-schwabs-liz-ann-sonders-discusses-how-higher-yields-are-impacting-markets.html"
+      },
+      {
+        "name": "Druckenmiller",
+        "s12": 2,
+        "s24": 2,
+        "s36": 0,
+        "conviction": 4.0,
+        "school": "macro-trader",
+        "note": "REVEALED PREFERENCE: talks little, deployed hard - upgraded on positioning, not rhetoric",
+        "last_statement": "2026-08-14",
+        "changed_this_week": true,
+        "gap": true,
+        "statement_summary": "Q2-26 13F: book +54% q/q to $5.21bn, 48 new positions; exited Broadcom/Intel/Micron entirely, raised Amazon >1,000% - a semis-to-megacap rotation, not a de-risking",
+        "statement_url": "https://13f.info/manager/0001536411-duquesne-family-office-llc"
+      },
+      {
+        "name": "Roubini",
+        "s12": 1,
+        "s24": 1,
+        "s36": 1,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "baseline still 'Goldilocks', but names a more fragile backdrop: Middle East war, AI job-shedding, private-credit stress",
+        "last_statement": "2026-08-05",
+        "changed_this_week": true,
+        "statement_summary": "Holds the Goldilocks 2026 baseline - tariffs walked back, growth slower, inflation only modestly higher",
+        "statement_url": "https://www.stern.nyu.edu/experience-stern/faculty-research/outlook-us-economy-2026"
+      },
+      {
+        "name": "Slok",
+        "s12": 1,
+        "s24": -1,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "24m cut to -1: AI capex is running at ~0.85pp of GDP/yr vs 0.5pp in the housing boom, and he warns it 'can unwind at a similar pace'. Bull economy / bear market, with the risk framing moving from stagflation to overheating",
+        "last_statement": "2026-08-17",
+        "changed_this_week": true,
+        "statement_summary": "AI capex growing nearly twice as fast as the housing boom; rising consumer delinquencies and a widening K-shaped economy on the other side of the ledger",
+        "statement_url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark"
+      },
+      {
+        "name": "El-Erian",
+        "s12": 0,
+        "s24": -1,
+        "s36": 1,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "24m cut to -1 and conviction up: long-rate/fiscal risk is now his central case, not a side worry",
+        "last_statement": "2026-08-19",
+        "changed_this_week": true,
+        "statement_summary": "Calls Treasury's doubled bond buybacks a short-term fix - 'financial engineering' that leaves the debt and deficit causes of surging long rates untouched",
+        "statement_url": "https://www.benzinga.com/markets/bonds/26/08/61320646/mohamed-el-erian-treasury-bond-buybacks-financial-engineering"
+      },
+      {
+        "name": "Gross",
+        "s12": 0,
+        "s24": 0,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "macro",
+        "note": "'No crash, just a forward weave requiring a cane'; bearish long Treasuries on deficits, prefers energy infrastructure and MLPs to exuberant tech",
+        "last_statement": "2026-08-01",
+        "changed_this_week": true,
+        "statement_summary": "Valuation casts a shadow over 2026; the record rally is at risk of stalling unless AI earnings show up",
+        "statement_url": "https://williamhgross.com/investment-outlook-archive/"
+      },
+      {
+        "name": "Buffett-Berkshire",
+        "s12": 0,
+        "s24": 1,
+        "s36": 1,
+        "conviction": 4.0,
+        "school": "value",
+        "note": "REVEALED PREFERENCE FLIPPED: first net buying in 15 quarters. Cash still $365bn, so the caution is real - but the direction of travel reversed",
+        "gap": true,
+        "last_statement": "2026-08-14",
+        "changed_this_week": true,
+        "statement_summary": "Q2-26: ~$19.8bn net equity purchases after 14 straight quarters of net selling; cash $397.4bn -> $365.5bn; $4.5bn of buybacks; Alphabet now the third-largest holding at $36.6bn",
+        "statement_url": "https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/"
+      },
+      {
+        "name": "Marks",
+        "s12": -1,
+        "s24": -1,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "credit",
+        "note": "current worry is private credit, not public equity: fast capital deployment into direct lending, with PE portfolio-company performance as the hinge",
+        "last_statement": "2026-08-01",
+        "changed_this_week": true,
+        "statement_summary": "Memo 'What's Going On in Private Credit?' - direct lending's growth, and the issues rapid deployment created",
+        "statement_url": "https://www.oaktreecapital.com/insights/memo/whats-going-on-in-private-credit"
+      },
+      {
+        "name": "Dimon",
+        "s12": -3,
+        "s24": -2,
+        "s36": -1,
+        "conviction": 3.5,
+        "school": "credit",
+        "note": "12m cut to -3, but the rhetoric>action gap stands: JPM keeps lending and underwriting while he says he would not buy",
+        "gap": true,
+        "last_statement": "2026-08-06",
+        "changed_this_week": true,
+        "statement_summary": "'Margin debt is the highest it has ever been', much of it hidden in prime brokerage, ETFs and Treasury-basis trades; says he would not buy the S&P 500 or long-dated Treasuries at today's prices and the market is one bad trade from panic selling",
+        "statement_url": "https://www.cnbc.com/2026/08/06/jpmorgan-jamie-dimon-leverage-market-disruption.html"
+      },
+      {
+        "name": "Summers",
+        "s12": -2,
+        "s24": -2,
+        "s36": -1,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "",
+        "last_statement": "2026-08-21 (baseline)",
+        "changed_this_week": false
+      },
+      {
+        "name": "Krugman",
+        "s12": -2,
+        "s24": -2,
+        "s36": -1,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "bearish the real economy rather than the index - the gap between the two is his point",
+        "last_statement": "2026-08-13",
+        "changed_this_week": true,
+        "statement_summary": "August Substack run - 'An Explosion of Misery' (Aug 5) and 'This is your economy on crack (spread)' (Aug 13): the US economy is in worse shape than the tape looks",
+        "statement_url": "https://paulkrugman.substack.com/p/an-explosion-of-misery"
+      },
+      {
+        "name": "Dalio",
+        "s12": -2,
+        "s24": -3,
+        "s36": -3,
+        "conviction": 4.5,
+        "school": "debt-cycle",
+        "note": "conviction up: says his own indicators already put AI stocks in bubble territory, and the next crisis is sovereign rather than banking",
+        "last_statement": "2026-08-10",
+        "changed_this_week": true,
+        "statement_summary": "Late-stage debt cycle; Fed balance-sheet expansion is 'stimulus into a bubble'; most likely path is a 1970s-style stagflationary spiral with the Fed monetising",
+        "statement_url": "https://finance.yahoo.com/news/ray-dalio-warns-next-big-011449318.html"
+      },
+      {
+        "name": "Rosenberg",
+        "s12": -2,
+        "s24": -3,
+        "s36": -2,
+        "conviction": 4.5,
+        "school": "bear",
+        "note": "conviction up: says credit markets are already writing the warning - directly relevant to the HY tripwire",
+        "last_statement": "2026-08-19",
+        "changed_this_week": true,
+        "statement_summary": "With Richard Bernstein: the AI trade is a bubble, real disposable income is fractionally negative y/y, and ex-AI the four-quarter real GDP trend is under 1.5% - a K-shaped economy where profits take all the income growth",
+        "statement_url": "https://advisoranalyst.com/2026/08/19/when-everybody-is-on-the-same-side-of-the-trade-david-rosenberg-richard-bernstein.html/"
+      },
+      {
+        "name": "Grantham",
+        "s12": -3,
+        "s24": -4,
+        "s36": -3,
+        "conviction": 4.0,
+        "school": "value",
+        "note": "latest sourced statement is June 2026 - inside the 6-month window but not fresh this fortnight",
+        "last_statement": "2026-06-26",
+        "changed_this_week": true,
+        "statement_summary": "Calls this 'the most expensive market in American history'; a reversion to trend would be closer to a wipeout than a correction, and the odds an AI bubble does not bust are 'slim to none'",
+        "statement_url": "https://247wallst.com/investing/2026/06/26/jeremy-grantham-warns-u-s-stocks-could-plunge-70-in-the-most-expensive-market-in-history/"
+      },
+      {
+        "name": "Burry",
+        "s12": -4,
+        "s24": -4,
+        "s36": -2,
+        "conviction": 5.0,
+        "school": "value",
+        "note": "Scion stopped filing 13Fs in Nov 2025 - positions now come from his Cassandra Unchained Substack, so the disclosure lag is his choice and the newest trades (Aug 4) are paywalled",
+        "last_statement": "2026-08-04",
+        "changed_this_week": true,
+        "statement_summary": "Disclosed bearish book: puts on NVDA and PLTR at up to ~80% of the portfolio (~$1.1bn notional), plus TSLA, CAT, AMAT, SMH and MU opened 30 June and added 24 July",
+        "statement_url": "https://investingtimedaily.com/michael-burry-portfolio-2026/"
+      }
+    ]
+  },
+  "reading_list": [
+    {
+      "title": "Consumer Price Index Summary \u2014 July 2026",
+      "url": "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "source": "BLS",
+      "date": "2026-08-12",
+      "primary": true,
+      "why": "3.4% headline / 2.5% core is the inflation leg of the Excess CAPE Yield calculation and the reason the Fed's dot plot still leans hike."
+    },
+    {
+      "title": "Chair Warsh's FOMC press conference transcript, 29 July 2026",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20260729.pdf",
+      "source": "Federal Reserve",
+      "date": "2026-07-29",
+      "primary": true,
+      "why": "The 9-3 hold with three dissents wanting a hike is the policy headwind in my Fed block - read the dissent language before his Jackson Hole debut."
+    },
+    {
+      "title": "Q&A: Gross Debt Versus Debt Held by the Public",
+      "url": "https://www.crfb.org/papers/qa-gross-debt-versus-debt-held-public",
+      "source": "CRFB",
+      "date": "2026-08-20",
+      "primary": true,
+      "why": "Gross debt passed $40tn on 18 August. This is the denominator question behind my fiscal tile - 122.6% gross vs ~100% held-by-public changes what the 4.5 score means."
+    },
+    {
+      "title": "Berkshire Hathaway Turns Buyer As Buffett Backs Alphabet",
+      "url": "https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/",
+      "source": "Forbes, on the Q2-26 13F",
+      "date": "2026-08-15",
+      "why": "The single biggest revealed-preference change on my roster: ~$19.8bn of net buying after 14 straight quarters of selling, with cash still at $365bn."
+    },
+    {
+      "title": "When Everybody Is on the Same Side of the Trade \u2014 Rosenberg & Bernstein",
+      "url": "https://advisoranalyst.com/2026/08/19/when-everybody-is-on-the-same-side-of-the-trade-david-rosenberg-richard-bernstein.html/",
+      "source": "AdvisorAnalyst",
+      "date": "2026-08-19",
+      "why": "Their claim that credit markets are already flashing the warning is a direct test of my HY-spread tripwire, which is still pinned at 270bps."
+    }
+  ],
   "gaps": [
     "FRED_API_KEY not set: FRED series served from cache or routine fallbacks.",
-    "CPI carried flat from 2023-09-01 to 2026-07-01 (no FRED CPIAUCSL, no cpi_fallback.annual_rate_pct): real prices understate inflation since then, which biases CAPE and the trend/momentum percentiles HIGH.",
-    "CAPE uses real earnings frozen at 2023-06-01 (37 months) with no web cross-check, so the printed value is an UPPER BOUND - price has moved, the earnings denominator has not. Supply cape_web in data/weekly_inputs.json to fix this.",
-    "10y nominal yield fell back to the Shiller long-rate column (stale).",
-    "Yield curve unavailable."
+    "CPI extrapolated from 2023-09-01 to 2026-07-01 at the routine-supplied 3.4%/yr run-rate; real values are approximate."
   ],
   "meta": {
-    "inverted_recently": false,
-    "price_date": "2026-07-01",
+    "inverted_recently": true,
+    "price_date": "2026-08-20",
     "earnings_vintage": "2023-06-01"
   }
 }

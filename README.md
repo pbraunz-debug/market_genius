@@ -64,8 +64,13 @@ value, carried forward and aged** — and only then dropped, with the framework 
 renormalised over whatever scored and every gap listed at the bottom of the email. A
 report with a flagged hole always beats no report.
 
-Two data quirks are handled explicitly, because the Shiller CSV's price column outlives
-its other columns by years:
+Three data quirks are handled explicitly, because the Shiller CSV is monthly and its
+price column outlives its other columns by years:
+
+- **Price** is monthly and lags by weeks. The routine supplies the current index level in
+  `spx_current`, which replaces that month's close (or is appended as a new month, keeping
+  the 12-month momentum lookback exactly twelve rows back). Without it the entire report
+  is scored off last month's close.
 
 - **CPI** stops in 2023 in that file. It is extended with FRED `CPIAUCSL`, or with the CPI
   run-rate the routine supplies, or carried flat with a loud warning that real values now
@@ -88,6 +93,13 @@ Edit `FRAMEWORK.md`. Roster membership, research instructions and narrative rule
 by the routine straight from that file and need no code change. If you change a **weight**
 or a **scoring anchor**, mirror it in the `INDICATORS` / `ANCHORS` blocks at the top of
 `scripts/build_report.py`, then run `python3 tests/smoke_test.py`.
+
+## Reruns are safe
+
+Each report archives a full snapshot of the sentiment roster alongside its scores. Diffs
+are computed against the **previous report's snapshot**, not against the rolling
+`data/sentiment_current.json`, so re-running a week does not silently flatten "what
+changed" — the second run produces the same diff as the first.
 
 ## Talking to the archive
 
