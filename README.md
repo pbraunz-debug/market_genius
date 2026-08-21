@@ -80,12 +80,41 @@ price column outlives its other columns by years:
   web-searches the current CAPE: when the cross-check is present it becomes the headline
   and the scored value; when it is absent, the report labels its own CAPE an upper bound.
 
-## Scheduling the weekly run
+## The weekly run
 
-`ROUTINE_PROMPT.md` holds the exact prompt. In Claude Code: `/schedule`, weekly, Monday
-06:00 America/Los_Angeles, paste that prompt, and add `FRED_API_KEY`, `RESEND_API_KEY` and
-`REPORT_EMAIL_TO` to the routine's environment. Cloud routines run against a fresh clone
-on Anthropic infrastructure — your laptop can be off.
+A cloud Routine is already scheduled:
+
+| | |
+|---|---|
+| Name | Weekly froth dashboard — market_genius |
+| Trigger id | `trig_01YDpjcbLYeN15i81Cm2Fy7w` |
+| Schedule | `0 13 * * 1` UTC = **Monday 06:00 America/Los_Angeles** while PDT is in effect |
+| Mode | fresh session per firing, in the Default environment |
+| Notifications | push on, email off (the report itself arrives by email) |
+
+Manage it at [claude.ai/code/routines](https://claude.ai/code/routines) — that is also
+where run history and errors live if a Monday goes quiet.
+
+**Two things it still needs from you:**
+
+1. **Secrets.** Add `FRED_API_KEY`, `RESEND_API_KEY` and `REPORT_EMAIL_TO` to the
+   routine's environment configuration. Until `RESEND_API_KEY` and `REPORT_EMAIL_TO`
+   exist, the routine still researches, builds and commits the report — it just cannot
+   email it, and says so in its run summary.
+2. **A branch it can find.** The routine checks out
+   `claude/market-dashboard-deploy-o2g3mc` if the default branch does not have the
+   pipeline. Merge that branch and it will use the default branch instead.
+
+Cron is evaluated in UTC, so when the US falls back to PST in November the run drifts to
+05:00 local. Change the expression to `0 14 * * 1` then, or leave it — nothing depends on
+the hour.
+
+`ROUTINE_PROMPT.md` holds the instructions the routine follows; it reads that file fresh
+on every firing, so editing it changes the routine's behaviour without touching the
+trigger.
+
+The routine reads `FRAMEWORK.md` fresh each week too. Both files are the control surface;
+the trigger itself only points at them.
 
 ## Changing the framework
 
