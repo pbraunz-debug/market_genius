@@ -1,0 +1,100 @@
+# market_genius — weekly froth dashboard
+
+A self-updating market-froth dashboard and sentiment report. Every Monday a cloud routine
+refreshes eight quantitative indicators, re-scores a roster of 19 investors and
+economists, picks 3–5 things worth reading, emails the result, and commits the report to
+`reports/` so future Claude Code sessions can discuss the trend with full history.
+
+```
+FRAMEWORK.md              the methodology — weights, scoring anchors, roster, deployment
+                          rules. Single source of truth. Edit this to evolve the system.
+ROUTINE_PROMPT.md         the prompt to paste into /schedule for the weekly cloud routine.
+scripts/build_report.py   fetches data, scores, renders the report and the email.
+scripts/send_email.sh     sends out/email.html via Resend.
+templates/report.html     the email body (inline CSS, no JS, email-client safe).
+data/sentiment_baseline.json   frozen 2026-08-21 baseline — week 1's diff basis.
+data/sentiment_current.json    rolling sentiment state, updated each run and committed.
+data/weekly_inputs.json        what the routine researched this week (overwritten weekly).
+data/weekly_inputs.example.json  every supported field, documented.
+reports/report-YYYY-MM-DD.md   the archive you converse with.
+reports/data/*.json            machine-readable archive, used for week-over-week diffs.
+tests/smoke_test.py       offline check that the pipeline still scores and renders.
+out/                      email.html + meta.json (gitignored, rebuilt every run).
+```
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+cp .env.example .env      # then fill in the three values
+```
+
+| Secret | Where to get it |
+|---|---|
+| `FRED_API_KEY` | https://fred.stlouisfed.org/docs/api/api_key.html — free, instant |
+| `RESEND_API_KEY` | https://resend.com → API Keys — free tier is 100 emails/day |
+| `REPORT_EMAIL_TO` | your address; comma-separated list also works |
+
+`.env` is gitignored. Never commit real keys. The cloud routine keeps its own copy of
+these three in its environment configuration.
+
+## Running it manually
+
+```bash
+make build      # build reports/report-$(date +%F).md and out/email.html
+make preview    # render out/preview.html only, leaving the archive alone
+make email      # send the already-built out/email.html
+make report     # build + email
+make offline    # build from cached data only, no network
+make build DATE=2026-08-21   # any command takes DATE=
+python3 tests/smoke_test.py  # offline pipeline check
+```
+
+`make build` only computes what it can reach. The web-sourced values (current CAPE
+cross-check, Buffett indicator, deficit, sentiment statements, reading list) come from
+`data/weekly_inputs.json`, which the **routine** writes after searching. Run manually
+without refreshing that file and the report carries last week's web values forward and
+marks them *stale (n weeks)*.
+
+## How it degrades
+
+Nothing in the pipeline throws away a report because a source is down. Each value is
+resolved in order — **live API → local cache → routine-supplied fallback → last week's
+value, carried forward and aged** — and only then dropped, with the framework weights
+renormalised over whatever scored and every gap listed at the bottom of the email. A
+report with a flagged hole always beats no report.
+
+Two data quirks are handled explicitly, because the Shiller CSV's price column outlives
+its other columns by years:
+
+- **CPI** stops in 2023 in that file. It is extended with FRED `CPIAUCSL`, or with the CPI
+  run-rate the routine supplies, or carried flat with a loud warning that real values now
+  understate inflation.
+- **Earnings** stop even earlier. The trailing 10-year real earnings average is carried
+  forward, so a computed CAPE drifts **high** over time. That is why the routine
+  web-searches the current CAPE: when the cross-check is present it becomes the headline
+  and the scored value; when it is absent, the report labels its own CAPE an upper bound.
+
+## Scheduling the weekly run
+
+`ROUTINE_PROMPT.md` holds the exact prompt. In Claude Code: `/schedule`, weekly, Monday
+06:00 America/Los_Angeles, paste that prompt, and add `FRED_API_KEY`, `RESEND_API_KEY` and
+`REPORT_EMAIL_TO` to the routine's environment. Cloud routines run against a fresh clone
+on Anthropic infrastructure — your laptop can be off.
+
+## Changing the framework
+
+Edit `FRAMEWORK.md`. Roster membership, research instructions and narrative rules are read
+by the routine straight from that file and need no code change. If you change a **weight**
+or a **scoring anchor**, mirror it in the `INDICATORS` / `ANCHORS` blocks at the top of
+`scripts/build_report.py`, then run `python3 tests/smoke_test.py`.
+
+## Talking to the archive
+
+Open Claude Code in this repo and ask, e.g.:
+
+- "diff this week vs four weeks ago — what moved and why?"
+- "when did the composite last cross 4.5, and what did HY spreads do around it?"
+- "which roster members have changed their 12-month score at least twice this year?"
+
+Everything it needs is in `reports/` and `reports/data/`.

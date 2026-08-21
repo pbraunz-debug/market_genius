@@ -1,0 +1,22 @@
+{
+  "_comment": "SYNTHETIC TEST DATA - every number and link here is made up to exercise the code paths (web CAPE cross-check, FRED fallbacks, sentiment diffing, reading list). Never copy these into data/weekly_inputs.json.",
+  "research_date": "2026-08-21",
+  "cape_web":          {"value": 38.5, "source": "SYNTHETIC", "url": "https://example.com/cape", "as_of": "2026-08-20"},
+  "buffett_indicator": {"value": 212,  "source": "SYNTHETIC", "url": "https://example.com/buffett", "as_of": "2026-08-19"},
+  "fiscal":            {"deficit_pct_gdp": 6.2, "debt_to_gdp": 122, "source": "SYNTHETIC", "as_of": "2026-08-15"},
+  "cpi_fallback":      {"annual_rate_pct": 2.9, "source": "SYNTHETIC", "as_of": "2026-08-12"},
+  "fred_fallback":     {"DGS10": 4.30, "T10Y2Y": 0.55, "BAMLH0A0HYM2": 285, "as_of": "2026-08-20"},
+  "fed":               {"stance": "hold 3.50-3.75%, hike-bias dot plot", "read": "policy headwind", "as_of": "2026-08-14"},
+  "sentiment_updates": [
+    {"name": "Dalio", "s12": -3, "conviction": 5.0,
+     "statement": {"date": "2026-08-18", "summary": "SYNTHETIC test statement", "url": "https://example.com/dalio"}},
+    {"name": "Burry", "note": "SYNTHETIC: position update",
+     "statement": {"date": "2026-08-17", "summary": "SYNTHETIC 13F test entry", "url": "https://example.com/13f"}},
+    {"name": "NotOnTheRoster", "s12": 0}
+  ],
+  "reading_list": [
+    {"title": "SYNTHETIC primary source memo", "url": "https://example.com/memo", "source": "Example Capital", "date": "2026-08-18", "primary": true, "why": "tests the reading-list block"},
+    {"title": "SYNTHETIC Fed transcript", "url": "https://example.com/fomc", "source": "Federal Reserve", "date": "2026-08-15", "primary": true, "why": "tests the policy-headwind link"},
+    {"title": "SYNTHETIC credit note", "url": "https://example.com/credit", "source": "Example Research", "date": "2026-08-14", "why": "tests the HY tripwire link"}
+  ]
+}

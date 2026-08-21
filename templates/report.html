@@ -1,0 +1,162 @@
+{#
+  Froth dashboard email body.
+  Single column, tables for layout, inline CSS only, no JS, no external assets -
+  Gmail / Outlook / Apple Mail safe. Rendered by scripts/build_report.py to out/email.html.
+#}
+{% macro score_cell(score) -%}
+{%- if score is none -%}#8a8f98
+{%- elif score < 2.5 -%}#1a7f37
+{%- elif score < 3.5 -%}#b58900
+{%- elif score < 4.5 -%}#c05621
+{%- else -%}#b42318
+{%- endif -%}
+{%- endmacro %}
+{% macro arrow(t) -%}
+{%- if t == '^' -%}&#9650;{% elif t == 'v' -%}&#9660;{% elif t == '=' -%}&#8594;{% else -%}&#183;{% endif -%}
+{%- endmacro %}
+<div style="margin:0;padding:0;background:#f4f5f7;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f4f5f7;padding:16px 0;">
+<tr><td align="center">
+<table role="presentation" width="640" cellpadding="0" cellspacing="0" border="0" style="width:640px;max-width:100%;background:#ffffff;border:1px solid #e3e5e8;border-radius:6px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#1c1e21;">
+
+  <!-- 1. header -->
+  <tr>
+    <td style="background:{{ band_color }};padding:22px 24px;border-radius:6px 6px 0 0;">
+      <div style="color:#ffffff;font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.9;">Froth Dashboard &middot; {{ date }}</div>
+      <div style="color:#ffffff;font-size:40px;font-weight:700;line-height:1.1;margin-top:6px;">{{ composite_display }}</div>
+      <div style="color:#ffffff;font-size:17px;font-weight:600;margin-top:2px;">{{ band_label }}</div>
+      <div style="color:#ffffff;font-size:13px;margin-top:8px;opacity:.92;">
+        {% if composite_delta is not none %}
+          {{ '%+.2f'|format(composite_delta) }} vs {{ prev_date }}
+        {% else %}
+          No prior report to compare against
+        {% endif %}
+        {% if gaps %} &middot; {{ gaps|length }} data gap{{ '' if gaps|length == 1 else 's' }} flagged &middot; weights renormalised over {{ '%.0f'|format(weight_covered * 100) }}% of the framework{% endif %}
+      </div>
+    </td>
+  </tr>
+
+  <!-- 2. indicator table -->
+  <tr>
+    <td style="padding:22px 24px 6px 24px;">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6b7280;font-weight:700;">Indicators</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:collapse;font-size:14px;">
+        <tr style="background:#f7f8fa;">
+          <th align="left"  style="padding:8px 8px;border-bottom:1px solid #e3e5e8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#6b7280;">Indicator</th>
+          <th align="right" style="padding:8px 8px;border-bottom:1px solid #e3e5e8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#6b7280;">Value</th>
+          <th align="center" style="padding:8px 8px;border-bottom:1px solid #e3e5e8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#6b7280;">Score</th>
+          <th align="center" style="padding:8px 6px;border-bottom:1px solid #e3e5e8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#6b7280;">4wk</th>
+        </tr>
+        {% for i in indicators %}
+        <tr>
+          <td style="padding:9px 8px 2px 8px;border-top:1px solid #eef0f2;">
+            <span style="font-weight:600;">{{ i.name }}</span>
+            <span style="color:#8a8f98;font-size:12px;"> {{ '%.0f'|format(i.weight * 100) }}%</span>
+            {% if i.stale_weeks %}<span style="background:#fff4e5;color:#9a5b00;font-size:11px;padding:1px 5px;border-radius:3px;margin-left:4px;">stale ({{ i.stale_weeks }}w)</span>{% endif %}
+          </td>
+          <td align="right" style="padding:9px 8px 2px 8px;border-top:1px solid #eef0f2;white-space:nowrap;font-variant-numeric:tabular-nums;">{{ i.display }}</td>
+          <td align="center" style="padding:9px 8px 2px 8px;border-top:1px solid #eef0f2;">
+            <span style="display:inline-block;min-width:38px;background:{{ score_cell(i.score) }};color:#ffffff;font-weight:700;font-size:13px;padding:3px 7px;border-radius:3px;">{{ '%.2f'|format(i.score) if i.score is not none else 'n/a' }}</span>
+          </td>
+          <td align="center" style="padding:9px 6px 2px 6px;border-top:1px solid #eef0f2;color:{{ '#b42318' if i.trend == '^' else ('#1a7f37' if i.trend == 'v' else '#8a8f98') }};font-size:13px;">{{ arrow(i.trend) }}</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="padding:0 8px 9px 8px;color:#6b7280;font-size:12.5px;line-height:1.45;">{{ i.note }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </td>
+  </tr>
+
+  <!-- 3. what changed -->
+  <tr>
+    <td style="padding:16px 24px 0 24px;">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6b7280;font-weight:700;">What changed</div>
+      <ul style="margin:10px 0 0 0;padding-left:20px;font-size:14px;line-height:1.55;">
+        {% for b in what_changed %}<li style="margin-bottom:5px;">{{ b }}</li>{% endfor %}
+      </ul>
+    </td>
+  </tr>
+
+  <!-- 4. sentiment snapshot -->
+  <tr>
+    <td style="padding:20px 24px 0 24px;">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6b7280;font-weight:700;">Sentiment snapshot &middot; 19 voices (12m / 24m / 36m)</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:collapse;">
+        <tr valign="top">
+          {% for bucket, label, color in [('bears', 'Bears', '#b42318'), ('middle', 'Middle', '#b58900'), ('bulls', 'Bulls', '#1a7f37')] %}
+          <td width="33%" style="padding:0 6px;font-size:12.5px;line-height:1.4;">
+            <div style="color:{{ color }};font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding-bottom:6px;border-bottom:2px solid {{ color }};">{{ label }} ({{ sentiment[bucket]|length }})</div>
+            {% for r in sentiment[bucket] %}
+            <div style="padding:7px 0;border-bottom:1px solid #eef0f2;">
+              <span style="font-weight:600;">{{ r.name }}</span>{% if r.changed_this_week %} <span style="color:#c05621;font-weight:700;">&#9679;</span>{% endif %}<br>
+              <span style="color:#374151;font-variant-numeric:tabular-nums;">{{ '%+d'|format(r.s12) }} / {{ '%+d'|format(r.s24) }} / {{ '%+d'|format(r.s36) }}</span>
+              <span style="color:#8a8f98;">c{{ r.conviction }} &middot; {{ r.school }}</span>
+              {% if r.note %}<br><span style="color:#8a8f98;font-style:italic;">{{ r.note }}</span>{% endif %}
+              {% if r.statement_summary %}<br><span style="color:#6b7280;">{{ r.statement_summary }}</span>{% endif %}
+            </div>
+            {% endfor %}
+          </td>
+          {% endfor %}
+        </tr>
+      </table>
+      {% if fed and fed.stance %}
+      <div style="margin-top:12px;padding:10px 12px;background:#f7f8fa;border-left:3px solid #6b7280;font-size:13px;line-height:1.5;">
+        <strong>Fed / policy:</strong> {{ fed.stance }} &mdash; {{ fed.read }}
+      </div>
+      {% endif %}
+      <div style="margin-top:8px;color:#8a8f98;font-size:11.5px;">&#9679; = score moved or a new statement landed this week. Roster excludes activist investors by request.</div>
+    </td>
+  </tr>
+
+  <!-- 5. reading list -->
+  <tr>
+    <td style="padding:20px 24px 0 24px;">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6b7280;font-weight:700;">Reading list</div>
+      {% if reading_list %}
+      {% for a in reading_list %}
+      <div style="padding:10px 0;border-bottom:1px solid #eef0f2;font-size:14px;line-height:1.5;">
+        <a href="{{ a.url }}" style="color:#1a4fd6;text-decoration:none;font-weight:600;">{{ a.title }}</a>
+        <span style="color:#8a8f98;font-size:12px;">{% if a.source %}&nbsp;{{ a.source }}{% endif %}{% if a.date %} &middot; {{ a.date }}{% endif %}{% if a.primary %} &middot; primary source{% endif %}</span>
+        <div style="color:#374151;font-size:13px;margin-top:3px;"><em>Why it matters:</em> {{ a.why }}</div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div style="padding:10px 0;color:#8a8f98;font-size:13.5px;">No articles supplied this week &mdash; the research step returned nothing usable.</div>
+      {% endif %}
+    </td>
+  </tr>
+
+  <!-- 6. for my DCA plan -->
+  <tr>
+    <td style="padding:20px 24px 0 24px;">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6b7280;font-weight:700;">For my DCA plan</div>
+      <div style="margin-top:10px;padding:14px 16px;background:#f7f8fa;border-left:3px solid {{ band_color }};font-size:14px;line-height:1.6;">{{ dca }}</div>
+      <div style="margin-top:10px;font-size:13px;color:#374151;">
+        <strong style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#6b7280;">The rules, restated</strong>
+        <ul style="margin:6px 0 0 0;padding-left:20px;line-height:1.55;">
+          {% for r in rules %}<li style="margin-bottom:4px;">{{ r }}</li>{% endfor %}
+        </ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 7. footer -->
+  <tr>
+    <td style="padding:20px 24px 24px 24px;">
+      <div style="border-top:1px solid #e3e5e8;padding-top:14px;font-size:12px;color:#6b7280;line-height:1.55;">
+        <p style="margin:0 0 8px 0;"><em>{{ backtest }}</em></p>
+        <p style="margin:0 0 8px 0;"><strong>Data vintage:</strong> {{ vintage|join('; ') }}</p>
+        {% if gaps %}
+        <p style="margin:0 0 4px 0;"><strong>Gaps flagged this run:</strong></p>
+        <ul style="margin:0 0 8px 0;padding-left:18px;">{% for g in gaps %}<li>{{ g }}</li>{% endfor %}</ul>
+        {% endif %}
+        <p style="margin:0;"><strong>Reply-to-discuss:</strong> open Claude Code in the <code style="background:#f0f1f3;padding:1px 4px;border-radius:3px;">market_genius</code> repo &mdash; every report is archived in <code style="background:#f0f1f3;padding:1px 4px;border-radius:3px;">reports/</code>, so ask it things like &ldquo;diff this week vs four weeks ago &mdash; what moved and why?&rdquo;</p>
+      </div>
+    </td>
+  </tr>
+
+</table>
+</td></tr>
+</table>
+</div>

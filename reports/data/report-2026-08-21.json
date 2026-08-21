@@ -1,0 +1,78 @@
+{
+  "date": "2026-08-21",
+  "composite": 4.664092499870889,
+  "band": "extreme",
+  "weight_covered": 0.8999999999999999,
+  "indicators": {
+    "cape": {
+      "value": 51.19122921483811,
+      "score": 4.998855835240274,
+      "display": "51.2",
+      "as_of": "2026-07-01",
+      "stale_weeks": null,
+      "source": "Shiller CSV"
+    },
+    "buffett": {
+      "value": 200,
+      "score": 5.0,
+      "display": "200% of GDP",
+      "as_of": "2026-08-21",
+      "stale_weeks": 0,
+      "source": "FRAMEWORK.md baseline (current era 200%+) - SEED, not a fresh reading"
+    },
+    "ecy": {
+      "value": 0.003001673787495159,
+      "score": 4.349916310625242,
+      "display": "+0.30%",
+      "as_of": "2023-09-01",
+      "stale_weeks": null,
+      "source": "derived: FRED DGS10 + Shiller CPI"
+    },
+    "trend": {
+      "value": 1.6978925135561627,
+      "score": 4.776887871853547,
+      "display": "1.70x",
+      "as_of": "2026-07-01",
+      "stale_weeks": null,
+      "source": "Shiller CSV"
+    },
+    "momentum": {
+      "value": 0.1881743825935045,
+      "score": 4.1773584905660375,
+      "display": "+18.8%",
+      "as_of": "2026-07-01",
+      "stale_weeks": null,
+      "source": "Shiller CSV"
+    },
+    "hy_spread": {
+      "value": 271.0,
+      "score": 4.5,
+      "display": "271bps",
+      "as_of": "2026-08-21",
+      "stale_weeks": 0,
+      "source": "FRED BAMLH0A0HYM2"
+    },
+    "fiscal": {
+      "value": 6.0,
+      "score": 4.5,
+      "display": "6.0% of GDP deficit",
+      "as_of": "2026-08-21",
+      "stale_weeks": 0,
+      "source": "FRAMEWORK.md baseline (~6% deficits at full employment) - SEED"
+    }
+  },
+  "sentiment_changes": [],
+  "reading_list": [],
+  "gaps": [
+    "FRED_API_KEY not set: FRED series served from cache or routine fallbacks.",
+    "CPI carried flat from 2023-09-01 to 2026-07-01 (no FRED CPIAUCSL, no cpi_fallback.annual_rate_pct): real prices understate inflation since then, which biases CAPE and the trend/momentum percentiles HIGH.",
+    "CAPE uses real earnings frozen at 2023-06-01 (37 months) with no web cross-check, so the printed value is an UPPER BOUND - price has moved, the earnings denominator has not. Supply cape_web in data/weekly_inputs.json to fix this.",
+    "10y nominal yield fell back to the Shiller long-rate column (stale).",
+    "Yield curve unavailable."
+  ],
+  "meta": {
+    "inverted_recently": false,
+    "price_date": "2026-07-01",
+    "earnings_vintage": "2023-06-01"
+  }
+}

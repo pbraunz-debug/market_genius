@@ -1,0 +1,31 @@
+{
+  "_comment": "SEED FILE - week 0. Values here are the framework baseline carried from the conversation of 2026-08-21, not fresh research. The first routine run overwrites this file entirely with web-searched values. Anything not traceable to that baseline is deliberately left null so the pipeline flags it as a gap rather than inventing a number.",
+  "research_date": "2026-08-21",
+  "provenance": "seed from FRAMEWORK.md baseline; replaced on the first scheduled run",
+  "buffett_indicator": {
+    "value": 200,
+    "source": "FRAMEWORK.md baseline (current era 200%+) - SEED, not a fresh reading",
+    "as_of": "2026-08-21"
+  },
+  "fiscal": {
+    "deficit_pct_gdp": 6.0,
+    "debt_to_gdp": null,
+    "source": "FRAMEWORK.md baseline (~6% deficits at full employment) - SEED",
+    "as_of": "2026-08-21"
+  },
+  "fred_fallback": {
+    "BAMLH0A0HYM2": 271,
+    "DGS10": null,
+    "T10Y2Y": null,
+    "as_of": "2026-08-21"
+  },
+  "fed": {
+    "stance": "hold 3.50-3.75%, hike-bias dot plot",
+    "read": "policy headwind",
+    "as_of": "2026-08-21"
+  },
+  "sentiment_updates": [],
+  "reading_list": [],
+  "curve_post_inversion": true,
+  "_curve_post_inversion_note": "SEED: FRAMEWORK.md describes the current regime as a positive post-inversion re-steepening. Only consulted if FRED T10Y2Y is unreachable."
+}

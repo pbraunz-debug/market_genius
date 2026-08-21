@@ -1,0 +1,72 @@
+{
+  "_comment": "Template for the file the weekly routine writes to data/weekly_inputs.json before running build_report.py. Every field is optional - build_report.py degrades gracefully, scoring what it has and flagging the rest. Delete the _comment keys in real output.",
+  "research_date": "YYYY-MM-DD",
+  "cape_web": {
+    "_comment": "Current Shiller CAPE cross-check. Preferred for the headline; the value computed from the Shiller CSV is shown alongside it.",
+    "value": 0.0,
+    "source": "multpl.com",
+    "url": "https://www.multpl.com/shiller-pe",
+    "as_of": "YYYY-MM-DD"
+  },
+  "buffett_indicator": {
+    "_comment": "Total US market cap / GDP, in percent (e.g. 212 means 212%).",
+    "value": 0.0,
+    "source": "currentmarketvaluation.com",
+    "url": "",
+    "as_of": "YYYY-MM-DD"
+  },
+  "fiscal": {
+    "_comment": "deficit_pct_gdp is a positive number for a deficit. Both fields fall back to FRED (FYFSGDA188S, GFDEGDQ188S) when omitted.",
+    "deficit_pct_gdp": 0.0,
+    "debt_to_gdp": 0.0,
+    "source": "",
+    "as_of": "YYYY-MM-DD"
+  },
+  "fred_fallback": {
+    "_comment": "Only used when the FRED API and the local cache both fail. UNITS: DGS10 in percent (4.25), T10Y2Y in percentage points (0.55), BAMLH0A0HYM2 in BASIS POINTS (271) - note the bps unit differs from FRED's own percent scale, because the framework anchors are in bps.",
+    "DGS10": null,
+    "T10Y2Y": null,
+    "BAMLH0A0HYM2": null,
+    "as_of": "YYYY-MM-DD"
+  },
+  "cpi_fallback": {
+    "_comment": "Current CPI year-over-year run-rate, percent. Only used when FRED CPIAUCSL is unavailable, to extend the Shiller CPI column past its last valid month so recent real prices are not dropped.",
+    "annual_rate_pct": null,
+    "source": "",
+    "as_of": "YYYY-MM-DD"
+  },
+  "curve_post_inversion": null,
+  "_curve_post_inversion_comment": "true if the 10y-2y curve has been inverted at any point in the trailing 36 months. Only consulted when the FRED T10Y2Y series is unavailable; worth ~0.7 of score, so set it explicitly when you supply fred_fallback.T10Y2Y.",
+  "fed": {
+    "stance": "hold 3.50-3.75%, hike-bias dot plot",
+    "read": "policy headwind",
+    "as_of": "YYYY-MM-DD"
+  },
+  "sentiment_updates": [
+    {
+      "_comment": "One entry per roster member with something NEW in the last 2 weeks. Omit quiet names entirely - omission leaves last week's scores untouched. Names must match data/sentiment_baseline.json exactly.",
+      "name": "Dalio",
+      "s12": -2,
+      "s24": -3,
+      "s36": -3,
+      "conviction": 4.0,
+      "note": "optional; overwrites the standing note",
+      "gap": false,
+      "statement": {
+        "date": "YYYY-MM-DD",
+        "summary": "one line, what he actually said or filed",
+        "url": "https://..."
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "",
+      "url": "",
+      "source": "",
+      "date": "YYYY-MM-DD",
+      "primary": true,
+      "why": "one line tying it to a specific indicator or roster name"
+    }
+  ]
+}

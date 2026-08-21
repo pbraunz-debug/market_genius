@@ -1,0 +1,32 @@
+{
+  "as_of": "2026-08-21",
+  "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
+  "excluded_by_request": ["Ackman", "Icahn", "activist investors generally"],
+  "fed": {
+    "name": "Fed / Warsh",
+    "stance": "hold 3.50-3.75%, hike-bias dot plot",
+    "read": "policy headwind",
+    "as_of": "2026-08-21"
+  },
+  "roster": [
+    {"name": "Yardeni",           "s12":  4, "s24":  4, "s36":  4, "conviction": 5.0, "school": "strategist",   "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Wood",              "s12":  4, "s24":  4, "s36":  5, "conviction": 5.0, "school": "strategist",   "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Lee",               "s12":  4, "s24":  3, "s36":  3, "conviction": 5.0, "school": "strategist",   "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Siegel",            "s12":  2, "s24":  2, "s36":  2, "conviction": 3.5, "school": "strategist",   "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Sonders",           "s12":  1, "s24":  1, "s36":  1, "conviction": 3.0, "school": "strategist",   "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Druckenmiller",     "s12":  1, "s24":  1, "s36":  0, "conviction": 3.0, "school": "macro-trader", "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Roubini",           "s12":  1, "s24":  1, "s36":  1, "conviction": 3.0, "school": "policy",       "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Slok",              "s12":  1, "s24":  0, "s36":  0, "conviction": 3.0, "school": "policy",       "note": "bull economy / bear market", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "El-Erian",          "s12":  0, "s24":  0, "s36":  1, "conviction": 2.0, "school": "policy",       "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Gross",             "s12":  0, "s24":  0, "s36":  0, "conviction": 3.0, "school": "macro",        "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Buffett-Berkshire", "s12": -1, "s24":  0, "s36":  1, "conviction": 4.0, "school": "value",        "note": "revealed preference: $365bn cash BUT net buyer Q2-26", "gap": true, "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Marks",             "s12": -1, "s24": -1, "s36":  0, "conviction": 3.0, "school": "credit",       "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Dimon",             "s12": -2, "s24": -2, "s36": -1, "conviction": 3.0, "school": "credit",       "note": "rhetoric > action", "gap": true, "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Summers",           "s12": -2, "s24": -2, "s36": -1, "conviction": 3.0, "school": "policy",       "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Krugman",           "s12": -2, "s24": -2, "s36": -1, "conviction": 3.0, "school": "policy",       "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Dalio",             "s12": -2, "s24": -3, "s36": -3, "conviction": 4.0, "school": "debt-cycle",   "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Rosenberg",         "s12": -2, "s24": -3, "s36": -2, "conviction": 4.0, "school": "bear",         "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Grantham",          "s12": -3, "s24": -4, "s36": -3, "conviction": 4.0, "school": "value",        "note": "", "last_statement": "2026-08-21 (baseline)"},
+    {"name": "Burry",             "s12": -4, "s24": -4, "s36": -2, "conviction": 5.0, "school": "value",        "note": "puts on NVDA / PLTR / SOXX", "last_statement": "2026-08-21 (baseline)"}
+  ]
+}
