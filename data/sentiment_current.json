@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-21",
+  "as_of": "2026-10-05",
   "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
   "excluded_by_request": [
     "Ackman",
@@ -8,23 +8,23 @@
   ],
   "fed": {
     "name": "Fed / Warsh",
-    "stance": "hold 3.50-3.75% (9-3 vote, 28-29 July), three dissents wanting a HIKE, September hike priced near 61%",
-    "read": "policy headwind, and the bias is toward tightening, not easing - Warsh has been chair since 2026-05-13 and delivers his debut Jackson Hole speech in late August",
-    "as_of": "2026-07-29"
+    "stance": "HIKED 25bps to 3.75-4.00% on 2026-09-16, unanimously - the first increase since 2023 - with the dot plot pointing to one more hike this year (median 4.1% end-2026, no change in 2027, cuts in 2028-29)",
+    "read": "the headwind became an actual tightening. Warsh: inflation has been 'too high for too long' and the FOMC's confidence standard 'has not been satisfied'. Core PCE has run above 3% every month of 2026",
+    "as_of": "2026-09-16"
   },
   "roster": [
     {
       "name": "Yardeni",
-      "s12": 4,
-      "s24": 4,
+      "s12": 2,
+      "s24": 3,
       "s36": 4,
-      "conviction": 5.0,
+      "conviction": 4.0,
       "school": "strategist",
-      "note": "",
-      "last_statement": "2026-08-12",
+      "note": "DOWNGRADE: the Street-high bull cut his own target. 7,900 is barely above spot, and he lifted his bearish-scenario odds from 20% to 30%",
+      "last_statement": "2026-09-16",
       "changed_this_week": true,
-      "statement_summary": "Raised S&P 500 target to 8,400 on 'fabulous earnings momentum' - now among the Street's highest",
-      "statement_url": "https://www.bloomberg.com/news/articles/2026-08-12/yardeni-raises-s-p-500-view-to-8-400-on-fabulous-earnings"
+      "statement_summary": "Cut year-end S&P target 8,400 -> 7,900 and said 'proceed with caution' as the 10y passed 5%; forward P/E assumption 19.8 -> 18.6",
+      "statement_url": "https://www.cnbc.com/2026/09/16/yardeni-trims-sp-500-target-says-proceed-with-caution-as-rates-rise.html"
     },
     {
       "name": "Wood",
@@ -46,11 +46,11 @@
       "s36": 3,
       "conviction": 5.0,
       "school": "strategist",
-      "note": "8,000 near-term target BUT explicitly warns of bear-market-like moves Aug-Oct",
-      "last_statement": "2026-08-06",
+      "note": "now the loudest bull on the roster, and openly split from Yardeni: reads the hike as REMOVING the pressure for more, and therefore as yields-down, equities-up",
+      "last_statement": "2026-09-18",
       "changed_this_week": true,
-      "statement_summary": "S&P to 7,900-8,000 this month ('the bigger the base, the bigger the breakout'), year-end 8,000+ with upside to 8,400-8,800 - while flagging four H2 triggers",
-      "statement_url": "https://www.cnbc.com/2026/08/06/tom-lees-bold-august-forecast-sp-500-going-to-8000.html"
+      "statement_summary": "Holds S&P above 8,200 by year-end despite the hike, calls it good news for stocks and predicts a historic Q4 rally",
+      "statement_url": "https://parameter.io/tom-lee-remains-bullish-sp-500-could-soar-past-8200-despite-fed-rate-hikes/"
     },
     {
       "name": "Siegel",
@@ -85,12 +85,12 @@
       "s36": 0,
       "conviction": 4.0,
       "school": "macro-trader",
-      "note": "REVEALED PREFERENCE: talks little, deployed hard - upgraded on positioning, not rhetoric",
-      "last_statement": "2026-08-14",
+      "note": "GAP WIDENED, not closed: still positioned long megacap tech from Q2, while publicly arguing rates are too LOW and yield suppression is a subsidy to fiscal procrastination. Bearish bonds, long equities, hawkish Fed - pick two",
+      "last_statement": "2026-09-24",
       "changed_this_week": true,
       "gap": true,
-      "statement_summary": "Q2-26 13F: book +54% q/q to $5.21bn, 48 new positions; exited Broadcom/Intel/Micron entirely, raised Amazon >1,000% - a semis-to-megacap rotation, not a de-risking",
-      "statement_url": "https://13f.info/manager/0001536411-duquesne-family-office-llc"
+      "statement_summary": "Says rates are already too low and cuts are unnecessary - 'committee members on the Fed who keep saying Fed fund rates are restrictive are just ridiculous'; WSJ op-ed against Treasury long-bond buybacks: if the 30y must trade at 5.5% 'that isn't a crisis, it is an invoice', and the only durable fix is the primary deficit",
+      "statement_url": "https://realinvestmentadvice.com/resources/blog/druckenmiller-warning-the-bond-market-already-priced-it/"
     },
     {
       "name": "Roubini",
@@ -120,16 +120,16 @@
     },
     {
       "name": "El-Erian",
-      "s12": 0,
-      "s24": -1,
+      "s12": -1,
+      "s24": -2,
       "s36": 1,
-      "conviction": 3.0,
+      "conviction": 4.0,
       "school": "policy",
-      "note": "24m cut to -1 and conviction up: long-rate/fiscal risk is now his central case, not a side worry",
-      "last_statement": "2026-08-19",
+      "note": "CALLED IT: in August he said the Treasury buyback was financial engineering that left long rates untouched. The 10y then went through 5%. His new line - interest-rate risk becoming equity and credit risk - is precisely what the HY tile is now showing",
+      "last_statement": "2026-09-29",
       "changed_this_week": true,
-      "statement_summary": "Calls Treasury's doubled bond buybacks a short-term fix - 'financial engineering' that leaves the debt and deficit causes of surging long rates untouched",
-      "statement_url": "https://www.benzinga.com/markets/bonds/26/08/61320646/mohamed-el-erian-treasury-bond-buybacks-financial-engineering"
+      "statement_summary": "Expects the 10y to stay around 5% even if oil falls, citing a structural bond supply/demand imbalance; 'volatility will be a feature, and elevated yields will be a feature for the rest of the year', and 'the big danger' is rate risk turning into equity and credit risk",
+      "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr"
     },
     {
       "name": "Gross",
@@ -146,17 +146,17 @@
     },
     {
       "name": "Buffett-Berkshire",
-      "s12": 0,
+      "s12": 1,
       "s24": 1,
       "s36": 1,
       "conviction": 4.0,
       "school": "value",
-      "note": "REVEALED PREFERENCE FLIPPED: first net buying in 15 quarters. Cash still $365bn, so the caution is real - but the direction of travel reversed",
+      "note": "Deployment continued into Q3 under Abel: ~$39.4bn of equities bought across H1, ~$17bn of it Alphabet via the AI-funding secondary, plus a $6.8bn Taylor Morrison homebuilder acquisition closed in July. Full Q3 13F is not due until November. Cash was still $365.5bn at 30 June, so this is deployment, not capitulation - and note he is buying a homebuilder into the exact housing weakness Burry is shorting",
       "gap": true,
-      "last_statement": "2026-08-14",
+      "last_statement": "2026-09-27",
       "changed_this_week": true,
-      "statement_summary": "Q2-26: ~$19.8bn net equity purchases after 14 straight quarters of net selling; cash $397.4bn -> $365.5bn; $4.5bn of buybacks; Alphabet now the third-largest holding at $36.6bn",
-      "statement_url": "https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/"
+      "statement_summary": "Abel's reversal confirmed: 14-quarter net-selling streak broken with ~$20bn net bought, $4.5bn of buybacks against none in 2025",
+      "statement_url": "https://www.fool.com/investing/2026/09/27/greg-abel-just-broke-berkshires-14-quarter-streak/"
     },
     {
       "name": "Marks",
@@ -165,9 +165,9 @@
       "s36": 0,
       "conviction": 3.0,
       "school": "credit",
-      "note": "current worry is private credit, not public equity: fast capital deployment into direct lending, with PE portfolio-company performance as the hinge",
+      "note": "No new memo inside the fortnight, but his private-credit memo is the live thesis: the US private-credit default rate hit a record 6.0% in April (Fitch) and the Proskauer index ran 2.73% in Q1 against 1.84% two quarters earlier - while loan spreads were still tightening. Exactly the 'not being paid for the risk' setup he described",
       "last_statement": "2026-08-01",
-      "changed_this_week": true,
+      "changed_this_week": false,
       "statement_summary": "Memo 'What's Going On in Private Credit?' - direct lending's growth, and the issues rapid deployment created",
       "statement_url": "https://www.oaktreecapital.com/insights/memo/whats-going-on-in-private-credit"
     },
@@ -178,10 +178,10 @@
       "s36": -1,
       "conviction": 3.5,
       "school": "credit",
-      "note": "12m cut to -3, but the rhetoric>action gap stands: JPM keeps lending and underwriting while he says he would not buy",
+      "note": "No new statement inside the fortnight, but the tape is validating the April letter and his Norges Bank remarks: private-credit default rates hit a record 6.0% (Fitch, April) and HY OAS has widened 54bps since the last report. 'Credit will perform worse than people expect' is becoming measurable rather than rhetorical - the rhetoric>action gap is closing from the data side, not from him",
       "gap": true,
       "last_statement": "2026-08-06",
-      "changed_this_week": true,
+      "changed_this_week": false,
       "statement_summary": "'Margin debt is the highest it has ever been', much of it hidden in prime brokerage, ETFs and Treasury-basis trades; says he would not buy the S&P 500 or long-dated Treasuries at today's prices and the market is one bad trade from panic selling",
       "statement_url": "https://www.cnbc.com/2026/08/06/jpmorgan-jamie-dimon-leverage-market-disruption.html"
     },
@@ -212,15 +212,15 @@
     {
       "name": "Dalio",
       "s12": -2,
-      "s24": -3,
+      "s24": -4,
       "s36": -3,
-      "conviction": 4.5,
+      "conviction": 5.0,
       "school": "debt-cycle",
-      "note": "conviction up: says his own indicators already put AI stocks in bubble territory, and the next crisis is sovereign rather than banking",
-      "last_statement": "2026-08-10",
+      "note": "24m cut to -4 and conviction to the maximum: he has put a clock on it",
+      "last_statement": "2026-10-04",
       "changed_this_week": true,
-      "statement_summary": "Late-stage debt cycle; Fed balance-sheet expansion is 'stimulus into a bubble'; most likely path is a 1970s-style stagflationary spiral with the Fed monetising",
-      "statement_url": "https://finance.yahoo.com/news/ray-dalio-warns-next-big-011449318.html"
+      "statement_summary": "Says the US is 'on the brink' and that if the fiscal path does not change a debt shock could hit within two years",
+      "statement_url": "https://kingworldnews.com/ray-dalio-us-debt-collapse-is-coming-michael-burry-the-big-short-is-about-to-repeat/"
     },
     {
       "name": "Rosenberg",
@@ -252,14 +252,14 @@
       "name": "Burry",
       "s12": -4,
       "s24": -4,
-      "s36": -2,
+      "s36": -3,
       "conviction": 5.0,
       "school": "value",
-      "note": "Scion stopped filing 13Fs in Nov 2025 - positions now come from his Cassandra Unchained Substack, so the disclosure lag is his choice and the newest trades (Aug 4) are paywalled",
-      "last_statement": "2026-08-04",
+      "note": "THESIS BROADENED from AI/semis to housing and the credit cycle - which is why 36m goes to -3. His mortgage data is the real-economy version of what the HY tile is showing",
+      "last_statement": "2026-10-04",
       "changed_this_week": true,
-      "statement_summary": "Disclosed bearish book: puts on NVDA and PLTR at up to ~80% of the portfolio (~$1.1bn notional), plus TSLA, CAT, AMAT, SMH and MU opened 30 June and added 24 July",
-      "statement_url": "https://investingtimedaily.com/michael-burry-portfolio-2026/"
+      "statement_summary": "'The Big Short is about to repeat itself': rates up six straight weeks, mortgage applications -6% w/w, purchase applications -14% y/y, refis -56% y/y, and serious 90+ day delinquencies up for the first time in five months, +19% y/y. Separately questions how fast Nvidia's AI chips lose economic value, citing the 1968 computer-financing cycle, and calls AI infrastructure commitments liabilities in 'hypergrowth mode'",
+      "statement_url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-issues-nvidia-ai-125356102.html"
     }
   ]
 }

@@ -76,6 +76,13 @@ Trailing 12-month real price change, expanding percentile → 1–5.
 for **momentum turning DOWN while valuation stays red** — that combination is the classic
 top signal.
 
+The pipeline detects this automatically and raises a **TOP-SIGNAL WATCH** banner at the
+top of the report whenever the momentum score has fallen more than 0.1 since the previous
+report *and* the mean of the CAPE, Buffett and price-vs-trend scores is 4.0 or above. When
+HY spreads widened over the same span, the banner says so too — credit confirming is what
+separates a rotation from a turn. The banner matters more than the composite, which can
+sit still while its components rotate underneath it.
+
 ### 1.6 High-yield credit spreads — 10%
 FRED series `BAMLH0A0HYM2` (ICE BofA US High Yield OAS). Tight = complacent = high score.
 
@@ -188,10 +195,15 @@ one-line *"why it matters to my framework"* tied to a specific indicator or rost
 
 ## 6. Report contract
 
-Every report must contain, in order: composite band + delta · indicator table with 4-week
-trend arrows · "what changed" diff · sentiment snapshot (bears / middle / bulls) · reading
-list · a "for my DCA plan" paragraph that restates the deployment rules · footer with the
-backtest context line and data-vintage notes.
+Every report must contain, in order: composite band + delta · the top-signal banner when
+it fires (§1.5) · indicator table with 4-week trend arrows · "what changed" diff ·
+sentiment snapshot (bears / middle / bulls) · reading list · a "for my DCA plan" paragraph
+that restates the deployment rules · footer with the backtest context line and
+data-vintage notes.
+
+The HY tile always states its **direction and the span it is measured over**, never just
+the level — and when spreads are widening, the DCA paragraph says how far the 500bps
+trigger is in units of the current weekly move.
 
 **Degrade gracefully, never silently:** if a source fails, score what is available,
 renormalise the weights, mark the tile *stale (n weeks)*, and say so in the email. A

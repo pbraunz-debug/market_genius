@@ -123,6 +123,15 @@ by the routine straight from that file and need no code change. If you change a 
 or a **scoring anchor**, mirror it in the `INDICATORS` / `ANCHORS` blocks at the top of
 `scripts/build_report.py`, then run `python3 tests/smoke_test.py`.
 
+## The top-signal banner
+
+FRAMEWORK §1.5 singles out one combination as the classic top: momentum turning down while
+valuation stays red. The pipeline checks for it on every run and, when it fires, puts a
+**TOP-SIGNAL WATCH** banner above everything else in the report — including whether credit
+is confirming. It fires on a falling momentum score plus red valuation, which means it can
+fire while the composite is flat or even falling. That is the point: the composite averages
+a rotation away.
+
 ## Reruns are safe
 
 Each report archives a full snapshot of the sentiment roster alongside its scores. Diffs

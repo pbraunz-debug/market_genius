@@ -648,7 +648,7 @@ def score_indicators(series, fred, inputs, prev, today) -> dict:
     # ---- 6. HY credit spreads ---------------------------------------------
     hy_obs = fred.get("BAMLH0A0HYM2") or []
     hy_date, hy = latest_obs(hy_obs)
-    wow = None
+    wow, wow_basis = None, "a week ago"
     if hy is not None:
         hy = hy * 100.0  # FRED reports OAS in percent; framework works in bps
         _, prior = latest_obs(hy_obs, dt.date.fromisoformat(hy_date) - dt.timedelta(days=7))
@@ -664,11 +664,15 @@ def score_indicators(series, fred, inputs, prev, today) -> dict:
     if hy is not None:
         if wow is None:
             prev_hy = (prev or {}).get("indicators", {}).get("hy_spread", {}).get("value")
-            wow = hy - prev_hy if prev_hy is not None else None
+            if prev_hy is not None:
+                wow = hy - prev_hy
+                # The gap to the last report is not always a week - say which report.
+                wow_basis = f"the {(prev or {}).get('date')} report"
         move = (
-            f"{wow:+.0f}bps vs a week ago ({'WIDENING' if wow > 0 else 'tightening'})"
+            f"{wow:+.0f}bps vs {wow_basis} "
+            f"({'WIDENING' if wow > 0 else ('tightening' if wow < 0 else 'flat')})"
             if wow is not None
-            else "week-over-week change unavailable"
+            else "change vs the prior reading unavailable"
         )
         out["hy_spread"] = ind(
             "hy_spread", N["hy_spread"], W["hy_spread"], hy, f"{hy:.0f}bps",
@@ -859,6 +863,44 @@ def trend_arrows(indicators, four_wk):
         i["trend"] = "^" if d > 0.1 else ("v" if d < -0.1 else "=")
 
 
+def top_signal(indicators, prev):
+    """FRAMEWORK 1.5: momentum turning DOWN while valuation stays red is the classic top.
+
+    Returns a sentence when that combination is live, else None. Valuation "red" is the
+    mean of the CAPE, Buffett and price-vs-trend scores at 4.0 or above.
+    """
+    mom = indicators.get("momentum") or {}
+    prev_mom = ((prev or {}).get("indicators", {}).get("momentum") or {}).get("score")
+    if mom.get("score") is None or prev_mom is None:
+        return None
+    val = [
+        (indicators.get(k) or {}).get("score")
+        for k in ("cape", "buffett", "trend")
+    ]
+    val = [v for v in val if v is not None]
+    if not val:
+        return None
+    drop = mom["score"] - prev_mom
+    val_mean = sum(val) / len(val)
+    if drop > -0.1 or val_mean < 4.0:
+        return None
+    hy = indicators.get("hy_spread") or {}
+    prev_hy = ((prev or {}).get("indicators", {}).get("hy_spread") or {}).get("value")
+    credit = ""
+    if hy.get("value") is not None and prev_hy is not None and hy["value"] > prev_hy:
+        credit = (
+            f" Credit is confirming: HY OAS {prev_hy:.0f} -> {hy['value']:.0f}bps over the "
+            "same span."
+        )
+    return (
+        f"TOP-SIGNAL WATCH: 12-month momentum is turning DOWN (score {prev_mom:.2f} -> "
+        f"{mom['score']:.2f}, now {mom['display']}) while valuation stays red (CAPE, Buffett "
+        f"and price-vs-trend average {val_mean:.2f}). FRAMEWORK 1.5 calls that combination "
+        f"the classic top signal.{credit} This is the pattern to watch, not the composite, "
+        "which can sit still while its parts rotate."
+    )
+
+
 def what_changed(indicators, prev, sentiment_changes, statement_only, composite):
     bullets = []
     old = (prev or {}).get("indicators", {})
@@ -893,7 +935,7 @@ def what_changed(indicators, prev, sentiment_changes, statement_only, composite)
     return bullets[:12]
 
 
-def dca_paragraph(composite, band_label, indicators):
+def dca_paragraph(composite, band_label, indicators, signal=None, prev=None):
     if composite is None:
         return (
             "The composite could not be computed this week, so no rule fires: base DCA "
@@ -913,7 +955,18 @@ def dca_paragraph(composite, band_label, indicators):
             f"Above 3.5, so the DCA-doubling rule stays dormant; it arms at 3.5 "
             f"({composite - 3.5:+.2f} away). Hold dry powder."
         )
+    prev_hy = ((prev or {}).get("indicators", {}).get("hy_spread") or {}).get("value")
     if hy_val is not None:
+        if prev_hy is not None and hy_val > prev_hy:
+            widened = hy_val - prev_hy
+            to_trigger = 500 - hy_val
+            if widened > 0 and to_trigger > 0:
+                lines.append(
+                    f"Direction matters more than the level here: spreads widened {widened:.0f}bps "
+                    f"since {(prev or {}).get('date')}, and the 500bps staged-deployment trigger "
+                    f"is {to_trigger:.0f}bps away - roughly {to_trigger / widened:.1f} more moves "
+                    "of that size. Have the tranche sizes decided before it gets there, not after."
+                )
         if hy_val > 500:
             lines.append(
                 f"HY spreads at {hy_val:.0f}bps are past 500 - if equities are drawing down, "
@@ -929,6 +982,12 @@ def dca_paragraph(composite, band_label, indicators):
         lines.append(
             "HY spreads were unavailable this week, so the credit tripwire is dark - do not "
             "read the quiet as calm."
+        )
+    if signal:
+        lines.append(
+            "And read the top-signal line above before acting on the composite alone: a flat "
+            "composite with falling momentum and widening credit is not the same market as a "
+            "flat composite with both rising."
         )
     return " ".join(lines)
 
@@ -947,6 +1006,9 @@ def render_markdown(ctx) -> str:
     delta = f" ({ctx['composite_delta']:+.2f} vs {ctx['prev_date']})" if ctx["composite_delta"] is not None else ""
     A(f"**Composite {comp} - {ctx['band_label']}**{delta}")
     A("")
+    if ctx.get("top_signal"):
+        A(f"> **{ctx['top_signal']}**")
+        A("")
     if ctx["gaps"]:
         A(f"> Data gaps this run: {len(ctx['gaps'])} (see footer). Weights renormalised over "
           f"{ctx['weight_covered'] * 100:.0f}% of the framework.")
@@ -1076,6 +1138,7 @@ def main() -> int:
     composite, weight_covered = composite_of(indicators)
     band_label, band_color, band_name = band_for(composite) if composite is not None else ("no composite", "#666", "grey")
 
+    signal = top_signal(indicators, prev)
     sentiment_state, sentiment_changes, statement_only = update_sentiment(inputs, today, prev)
     buckets = split_roster(sentiment_state.get("roster", []))
 
@@ -1114,10 +1177,11 @@ def main() -> int:
         "indicators": ordered,
         "what_changed": what_changed(indicators, prev, sentiment_changes,
                                      statement_only, composite),
+        "top_signal": signal,
         "sentiment": buckets,
         "fed": sentiment_state.get("fed", {}),
         "reading_list": inputs.get("reading_list", []) or [],
-        "dca": dca_paragraph(composite, band_label, indicators),
+        "dca": dca_paragraph(composite, band_label, indicators, signal, prev),
         "vintage": vintage,
         "gaps": GAPS,
         "weight_covered": weight_covered,
@@ -1161,6 +1225,7 @@ def main() -> int:
         },
         "sentiment_changes": sentiment_changes,
         "new_statements": statement_only,
+        "top_signal": signal,
         "sentiment_snapshot": sentiment_state,
         "reading_list": ctx["reading_list"],
         "gaps": GAPS,
