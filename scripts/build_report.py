@@ -37,6 +37,7 @@ import traceback
 from pathlib import Path
 
 import requests
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1178,6 +1179,14 @@ def main() -> int:
 
     ordered = [indicators[k] for k, _, _ in INDICATORS if k in indicators]
 
+    try:  # the prognosticator quadrant; a chart failure must never cost the report
+        from quadrant import quadrant_svg
+        quadrant = quadrant_svg(sentiment_state.get("roster", []),
+                                ((prev or {}).get("sentiment_snapshot") or {}).get("roster"))
+    except Exception as exc:  # noqa: BLE001
+        gap(f"Quadrant chart failed ({exc.__class__.__name__}: {exc}).")
+        quadrant = None
+
     ctx = {
         "date": today.isoformat(),
         "composite": composite,
@@ -1198,6 +1207,8 @@ def main() -> int:
         "vintage": vintage,
         "gaps": GAPS,
         "weight_covered": weight_covered,
+        "quadrant_svg": quadrant,
+        "quadrant_prev_date": (prev or {}).get("date"),
     }
 
     md = render_markdown(ctx)

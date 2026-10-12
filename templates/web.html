@@ -99,6 +99,7 @@
   .signal b{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.08em;color:var(--frothy);display:block;margin-bottom:.3rem}
 
   section{margin-bottom:2.6rem}
+  .quadrant-panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:12px;padding:1rem 1rem .6rem;box-shadow:var(--shadow)}
   .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
   .section-head h2{font-size:1.35rem;font-weight:600}
   .section-sub{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--ink-faint)}
@@ -265,6 +266,16 @@
     <ul class="changelog-list">
       {% for b in what_changed %}<li>{{ b }}</li>{% endfor %}
     </ul>
+  </section>
+  {% endif %}
+
+  {% if quadrant_svg %}
+  <section class="quadrant">
+    <div class="section-head">
+      <h2>Who expects what</h2>
+      <span class="section-sub">12-month vs 36-month outlook · size = conviction{% if quadrant_prev_date %} · tails from {{ quadrant_prev_date }}{% endif %}</span>
+    </div>
+    <div class="quadrant-panel">{{ quadrant_svg|safe }}</div>
   </section>
   {% endif %}
 
