@@ -22,13 +22,26 @@ Never invent a number. If you cannot source a value, leave the field out and let
 pipeline flag it.
 
 == SETUP ==
-- Attach BOTH repos with push access before anything else: call the add_repo tool
-  (claude-code-remote; load it with ToolSearch if it is deferred) for
-  pbraunz-debug/market_genius and pbraunz-debug/anotherroof, each with access "push", and
-  clone each to the path the tool returns. A run without push access can research and
-  build perfectly and still ship nothing - that is what broke this routine from 24 Aug to
-  12 Oct 2026. If add_repo is unavailable or refused, stop and say so in your summary.
-- Pull the latest repo state. Note the branch name; you will push back to it.
+- Get push access to BOTH repos before anything else. They are usually pre-cloned at
+  /home/claude/market_genius and /home/claude/anotherroof with push credentials; if not,
+  call the add_repo tool (claude-code-remote; load it with ToolSearch if deferred) for
+  pbraunz-debug/market_genius and pbraunz-debug/anotherroof, access "push", and clone to the
+  path it returns. Either way, PROVE push works: `git push --dry-run origin HEAD` must reach
+  the remote without an auth error in both clones. Only if neither route gives push access,
+  stop and say so - a run without push access ships nothing, which is what broke this
+  routine from 24 Aug to 12 Oct 2026.
+- Catch up missed weeks. If the newest reports/data/report-*.json is more than 9 days old,
+  backfill each missed Monday BEFORE this week's report, oldest first: research that
+  Friday's values (point-in-time - never data from after the date), write
+  data/backfill/weekly_inputs-{date}.json, and run
+  `python3 scripts/build_report.py --date {date} --inputs data/backfill/weekly_inputs-{date}.json`.
+  The build cuts all series at --date. Commit, push and publish each backfilled week like a
+  normal one (publish_site.py --date {date}). Never overwrite a site page whose
+  src/data/froth/{date}.json says "source": "manual".
+- Pull the latest repo state (`git pull --no-rebase`) in both clones. Other sessions edit
+  these repos too, so a push can be rejected as non-fast-forward: then `git pull --no-rebase`,
+  rerun build_report.py / publish_site.py so generated files match the merged code, commit,
+  and push again. Never force-push. Note the branch name; you will push back to it.
 - Read FRAMEWORK.md in full. It is the single source of truth: weights, scoring anchors,
   the roster, the reading-list rules and my deployment rules all live there, and I edit it
   between runs. If it disagrees with anything below, FRAMEWORK.md wins.
