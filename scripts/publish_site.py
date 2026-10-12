@@ -62,6 +62,12 @@ def main() -> int:
             for k, v in d.get("indicators", {}).items()
             if k in KEYS and v.get("score") is not None
         },
+        # the roster positions, for the animated prognosticator quadrant
+        "roster": [
+            {"name": r["name"], "s12": r.get("s12"), "s24": r.get("s24"), "s36": r.get("s36"),
+             "conviction": r.get("conviction"), "changed": bool(r.get("changed_this_week"))}
+            for r in (d.get("sentiment_snapshot") or {}).get("roster", [])
+        ],
     }
     if condensed["composite"] is None:
         print("publish_site: report has no composite; publishing the page but not the data point", file=sys.stderr)
@@ -70,20 +76,13 @@ def main() -> int:
         out.mkdir(parents=True, exist_ok=True)
         (out / f"{date}.json").write_text(json.dumps(condensed, indent=1))
 
-    # the prognosticator quadrant, themed for the site, for the froth entry page
+    # the animated prognosticator quadrant on the froth entry page: rebuilt from every run
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
-        from quadrant import quadrant_svg
-        older = sorted(p for p in (ROOT / "reports" / "data").glob("report-*.json")
-                       if p.stem.replace("report-", "") < date)
-        prev_roster = (json.loads(older[-1].read_text()).get("sentiment_snapshot") or {}).get("roster") if older else None
-        roster = (d.get("sentiment_snapshot") or {}).get("roster") or []
-        if roster:
-            out = site / "src" / "data" / "froth"
-            out.mkdir(parents=True, exist_ok=True)
-            (out / f"{date}.quadrant.svg").write_text(quadrant_svg(roster, prev_roster, palette="site"))
+        from quadrant import write_player
+        write_player(site)
     except Exception as exc:  # noqa: BLE001 - a missing chart must not block publishing
-        print(f"publish_site: quadrant skipped ({exc.__class__.__name__}: {exc})", file=sys.stderr)
+        print(f"publish_site: quadrant player skipped ({exc.__class__.__name__}: {exc})", file=sys.stderr)
 
     try:
         from playwright.sync_api import sync_playwright
