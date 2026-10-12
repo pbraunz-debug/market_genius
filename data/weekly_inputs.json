@@ -1,105 +1,49 @@
 {
-  "_comment": "Research pass for 2026-10-05, the first report since 2026-08-21 (the scheduled routine fired weekly but never landed a commit - see README). FRED and every market-data host are still blocked by this environment's egress proxy, so FRED-series values are web-sourced into fred_fallback. SENTIMENT SWEEP WAS PARTIAL: 9 of 19 names were refreshed; the rest carry forward untouched, which is the framework's intended behaviour for a quiet or unsearched name.",
-  "research_date": "2026-10-05",
-
+  "research_date": "2026-10-12",
   "spx_current": {
-    "level": 7722.72,
-    "date": "2026-10-02",
-    "source": "S&P 500 close 2026-10-02, +0.73% (+56.27) on a cooler September jobs report. Essentially flat vs the 7,715.47 close in the 2026-08-21 report."
+    "level": 7811.51,
+    "date": "2026-10-09",
+    "source": "S&P 500 close 2026-10-09, +46.15 (+0.59%), weekly gain as oil and Treasury yields stabilised; +1.1% vs the 7,722.72 close in the 2026-10-05 report (TheStreet market wrap)"
   },
-
   "cape_web": {
-    "value": 41.4,
-    "source": "gurufocus 41.07 (2026-10-01) and 41.38 (2026-10-02); second-highest in ~150 years behind the 44.2 dot-com peak, and above 40 continuously since May 2026",
-    "url": "https://www.gurufocus.com/economic_indicators/56/sp-500-shiller-cape-ratio",
-    "as_of": "2026-10-02"
+    "value": 41.87,
+    "source": "multpl.com 41.87 at the 2026-10-09 close (preferred source). gurufocus monthly print 41.18 (2026-10-01); last report used gurufocus 41.4, so part of the +0.5 is a source switch to the preferred multpl",
+    "url": "https://www.multpl.com/shiller-pe",
+    "as_of": "2026-10-09"
   },
-
   "buffett_indicator": {
-    "value": 235.2,
-    "source": "gurufocus 235.2% (2026-09-29), the same methodology family as the 237.6% in the last report so the week-over-week is apples-to-apples. buffettindicator.org prints 299.6% ($97.5tn market cap / $32.6tn annualised GDP); both are far past the 200% top-of-range anchor, so the score is 5.0 either way",
+    "value": 238.3,
+    "source": "gurufocus 238.3% (page dated 2026-10-09), same methodology family as the 235.2% last report. buffettindicator.org-style total-market measures print ~300%; score is 5.0 either way",
     "url": "https://www.gurufocus.com/stock-market-valuations.php",
-    "as_of": "2026-09-29"
+    "as_of": "2026-10-09"
   },
-
   "fiscal": {
-    "deficit_pct_gdp": 5.8,
+    "deficit_pct_gdp": 6.2,
     "debt_to_gdp": 122.6,
-    "source": "CBO FY2026 deficit 5.8% of GDP, unchanged since the last report. Debt/GDP 122.6% is still the Q1-2026 GFDEGDQ188S print - no newer quarterly release sourced, so treat it as a stale denominator",
-    "url": "https://www.cbo.gov/publication/61882",
-    "as_of": "2026-08-20"
+    "source": "CBO Monthly Budget Review: FY2026 deficit ~$2.0tn, ~6.2% of GDP (AAF summary 2026-10-08), up from the 5.8% projection used last report. Debt held by the public ~100% of GDP; the 122.6% gross debt/GDP is still the Q1-2026 GFDEGDQ188S print (stale denominator)",
+    "url": "https://www.cbo.gov/publication/61985",
+    "as_of": "2026-10-08"
   },
-
   "cpi_fallback": {
     "annual_rate_pct": 3.6,
-    "source": "September 2026 headline CPI +3.6% y/y (Cleveland Fed nowcast, updated 2026-10-02), down from 3.7% in August but UP from the 3.4% used in the last report - inflation re-accelerated over the gap. Core 2.39%",
+    "source": "Cleveland Fed nowcast (updated 2026-10-09): September CPI 3.60% y/y, October 3.63%; core 2.39%. Official September CPI due 2026-10-14",
     "url": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting",
-    "as_of": "2026-09-30"
+    "as_of": "2026-10-09"
   },
-
   "fred_fallback": {
-    "DGS10": 5.28,
-    "T10Y2Y": 0.45,
-    "BAMLH0A0HYM2": 324,
-    "source": "10y 5.28% and 2y 4.83% on 2026-10-02 (the 10y crossed 5% on 2026-09-14, first time since Oct 2023, and El-Erian flagged 5.22%). HY OAS 3.24% = 324bps on 2026-10-01, up a near-monotonic sequence from 293bps on 09-25: 302, 308, 312, 324. BB 204bps, single-B 329bps, CCC 1,215bps - the widening is across the whole stack",
-    "as_of": "2026-10-02"
+    "DGS10": 5.22,
+    "T10Y2Y": 0.44,
+    "BAMLH0A0HYM2": 315,
+    "source": "FRED mirrors via equibles.com: DGS10 5.22% (2026-10-08; 5.31 on 10-05), T10Y2Y +0.44 (2026-10-09), HY OAS 3.15% = 315bps (2026-10-08). HY path since last report: 324 (10-01) -> 310, 312, 303, 309, 315 - a 9bp TIGHTENING vs the 324 in the last report, but off a 303 low on 10-06 it has re-widened 12bps in two sessions",
+    "as_of": "2026-10-09"
   },
-
   "curve_post_inversion": true,
-  "_curve_note": "The 2s10s un-inverted on 2024-09-05, still inside the trailing 36 months (it leaves that window in September 2027), so FRAMEWORK 1.7's post-inversion asterisk still applies at +45bps. Note the curve is holding its shape while BOTH ends move up hard - this is a level shift, not a steepening.",
-
+  "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
   "fed": {
     "stance": "HIKED 25bps to 3.75-4.00% on 2026-09-16, unanimously - the first increase since 2023 - with the dot plot pointing to one more hike this year (median 4.1% end-2026, no change in 2027, cuts in 2028-29)",
-    "read": "the headwind became an actual tightening. Warsh: inflation has been 'too high for too long' and the FOMC's confidence standard 'has not been satisfied'. Core PCE has run above 3% every month of 2026",
+    "read": "the headwind became an actual tightening; carried from the 2026-10-05 report pending the pass-two check",
     "as_of": "2026-09-16"
   },
-
-  "sentiment_updates": [
-    {"name": "Yardeni", "s12": 2, "s24": 3, "s36": 4, "conviction": 4.0,
-     "note": "DOWNGRADE: the Street-high bull cut his own target. 7,900 is barely above spot, and he lifted his bearish-scenario odds from 20% to 30%",
-     "statement": {"date": "2026-09-16", "summary": "Cut year-end S&P target 8,400 -> 7,900 and said 'proceed with caution' as the 10y passed 5%; forward P/E assumption 19.8 -> 18.6", "url": "https://www.cnbc.com/2026/09/16/yardeni-trims-sp-500-target-says-proceed-with-caution-as-rates-rise.html"}},
-
-    {"name": "Lee", "s12": 4, "s24": 3, "s36": 3, "conviction": 5.0,
-     "note": "now the loudest bull on the roster, and openly split from Yardeni: reads the hike as REMOVING the pressure for more, and therefore as yields-down, equities-up",
-     "statement": {"date": "2026-09-18", "summary": "Holds S&P above 8,200 by year-end despite the hike, calls it good news for stocks and predicts a historic Q4 rally", "url": "https://parameter.io/tom-lee-remains-bullish-sp-500-could-soar-past-8200-despite-fed-rate-hikes/"}},
-
-    {"name": "El-Erian", "s12": -1, "s24": -2, "conviction": 4.0,
-     "note": "CALLED IT: in August he said the Treasury buyback was financial engineering that left long rates untouched. The 10y then went through 5%. His new line - interest-rate risk becoming equity and credit risk - is precisely what the HY tile is now showing",
-     "statement": {"date": "2026-09-29", "summary": "Expects the 10y to stay around 5% even if oil falls, citing a structural bond supply/demand imbalance; 'volatility will be a feature, and elevated yields will be a feature for the rest of the year', and 'the big danger' is rate risk turning into equity and credit risk", "url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr"}},
-
-    {"name": "Druckenmiller", "s12": 2, "s24": 2, "s36": 0, "conviction": 4.0, "gap": true,
-     "note": "GAP WIDENED, not closed: still positioned long megacap tech from Q2, while publicly arguing rates are too LOW and yield suppression is a subsidy to fiscal procrastination. Bearish bonds, long equities, hawkish Fed - pick two",
-     "statement": {"date": "2026-09-24", "summary": "Says rates are already too low and cuts are unnecessary - 'committee members on the Fed who keep saying Fed fund rates are restrictive are just ridiculous'; WSJ op-ed against Treasury long-bond buybacks: if the 30y must trade at 5.5% 'that isn't a crisis, it is an invoice', and the only durable fix is the primary deficit", "url": "https://realinvestmentadvice.com/resources/blog/druckenmiller-warning-the-bond-market-already-priced-it/"}},
-
-    {"name": "Buffett-Berkshire", "s12": 1, "s24": 1, "s36": 1, "conviction": 4.0, "gap": true,
-     "note": "Deployment continued into Q3 under Abel: ~$39.4bn of equities bought across H1, ~$17bn of it Alphabet via the AI-funding secondary, plus a $6.8bn Taylor Morrison homebuilder acquisition closed in July. Full Q3 13F is not due until November. Cash was still $365.5bn at 30 June, so this is deployment, not capitulation - and note he is buying a homebuilder into the exact housing weakness Burry is shorting",
-     "statement": {"date": "2026-09-27", "summary": "Abel's reversal confirmed: 14-quarter net-selling streak broken with ~$20bn net bought, $4.5bn of buybacks against none in 2025", "url": "https://www.fool.com/investing/2026/09/27/greg-abel-just-broke-berkshires-14-quarter-streak/"}},
-
-    {"name": "Dalio", "s24": -4, "conviction": 5.0,
-     "note": "24m cut to -4 and conviction to the maximum: he has put a clock on it",
-     "statement": {"date": "2026-10-04", "summary": "Says the US is 'on the brink' and that if the fiscal path does not change a debt shock could hit within two years", "url": "https://kingworldnews.com/ray-dalio-us-debt-collapse-is-coming-michael-burry-the-big-short-is-about-to-repeat/"}},
-
-    {"name": "Burry", "s36": -3, "conviction": 5.0,
-     "note": "THESIS BROADENED from AI/semis to housing and the credit cycle - which is why 36m goes to -3. His mortgage data is the real-economy version of what the HY tile is showing",
-     "statement": {"date": "2026-10-04", "summary": "'The Big Short is about to repeat itself': rates up six straight weeks, mortgage applications -6% w/w, purchase applications -14% y/y, refis -56% y/y, and serious 90+ day delinquencies up for the first time in five months, +19% y/y. Separately questions how fast Nvidia's AI chips lose economic value, citing the 1968 computer-financing cycle, and calls AI infrastructure commitments liabilities in 'hypergrowth mode'", "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-issues-nvidia-ai-125356102.html"}},
-
-    {"name": "Dimon",
-     "note": "No new statement inside the fortnight, but the tape is validating the April letter and his Norges Bank remarks: private-credit default rates hit a record 6.0% (Fitch, April) and HY OAS has widened 54bps since the last report. 'Credit will perform worse than people expect' is becoming measurable rather than rhetorical - the rhetoric>action gap is closing from the data side, not from him"},
-
-    {"name": "Marks",
-     "note": "No new memo inside the fortnight, but his private-credit memo is the live thesis: the US private-credit default rate hit a record 6.0% in April (Fitch) and the Proskauer index ran 2.73% in Q1 against 1.84% two quarters earlier - while loan spreads were still tightening. Exactly the 'not being paid for the risk' setup he described"}
-  ],
-
-  "reading_list": [
-    {"title": "FOMC statement and Chair Warsh's press conference, 16 September 2026", "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm", "source": "Federal Reserve", "date": "2026-09-16", "primary": true,
-     "why": "The single most important event since the last report: a unanimous 25bp HIKE to 3.75-4.00%, the first since 2023, with one more signalled. My Fed block is no longer a headwind, it is active tightening."},
-    {"title": "ICE BofA US High Yield Index Option-Adjusted Spread (BAMLH0A0HYM2)", "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2", "source": "FRED", "date": "2026-10-01", "primary": true,
-     "why": "My tripwire, and it is moving: 270bps in August to 324bps on 1 October, widening nearly every session since 25 September. Watch this series, not the index, for the next three weeks."},
-    {"title": "Druckenmiller's open letter to Treasury Secretary Bessent on long-bond buybacks", "url": "https://realinvestmentadvice.com/resources/blog/druckenmiller-warning-the-bond-market-already-priced-it/", "source": "WSJ op-ed, via RIA", "date": "2026-09-24", "primary": true,
-     "why": "'If the 30-year must trade at 5.5%, that isn't a crisis. It is an invoice.' The cleanest statement of why my fiscal tile and my rates tile are the same tile."},
-    {"title": "US private credit default rate hits a record 6.0%", "url": "https://www.moodys.com/web/en/us/insights/credit-risk/private-credit/us-corporate-default-risk-in-2026.html", "source": "Moody's / Fitch data", "date": "2026-09-30",
-     "why": "Defaults rising while loan spreads were still tightening is the Marks memo stated as data - and the leading edge of the public HY widening my tripwire just caught."},
-    {"title": "Burry: 'The Big Short is about to repeat itself'", "url": "https://kingworldnews.com/ray-dalio-us-debt-collapse-is-coming-michael-burry-the-big-short-is-about-to-repeat/", "source": "Cassandra Unchained, relayed", "date": "2026-10-04",
-     "why": "The mortgage data behind his housing turn - refis -56% y/y, serious delinquencies +19% - is the household-side mirror of a 5.28% 10-year, and it is testable week to week."}
-  ]
+  "sentiment_updates": [],
+  "reading_list": []
 }

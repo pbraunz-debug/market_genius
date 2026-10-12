@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-05",
+  "as_of": "2026-10-12",
   "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
   "excluded_by_request": [
     "Ackman",
@@ -9,7 +9,7 @@
   "fed": {
     "name": "Fed / Warsh",
     "stance": "HIKED 25bps to 3.75-4.00% on 2026-09-16, unanimously - the first increase since 2023 - with the dot plot pointing to one more hike this year (median 4.1% end-2026, no change in 2027, cuts in 2028-29)",
-    "read": "the headwind became an actual tightening. Warsh: inflation has been 'too high for too long' and the FOMC's confidence standard 'has not been satisfied'. Core PCE has run above 3% every month of 2026",
+    "read": "the headwind became an actual tightening; carried from the 2026-10-05 report pending the pass-two check",
     "as_of": "2026-09-16"
   },
   "roster": [

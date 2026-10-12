@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Froth Dashboard · 2026-10-12 · anotherroof</title>
+<meta name="description" content="Weekly froth dashboard for 2026-10-12: composite 4.37, frothy / hold dry powder.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#EEF1EC; --paper-raised:#FFFFFF; --paper-sunken:#E4E9E2;
+    --ink:#16211C; --ink-soft:#49564C; --ink-faint:#6B786D;
+    --rule:#D2D9CE; --rule-strong:#B7C1B2;
+    --accent:#1F5C46; --accent-strong:#154234; --accent-soft:#DCE8DF;
+    --good:#2F8F5B; --dca:#A9812A; --frothy:#BD6430; --extreme:#AE3B34; --neutral:#8B9587;
+    --bear:#AE3B34; --bull:#2F8F5B;
+    --shadow:0 1px 2px rgba(22,33,28,.06),0 8px 24px -12px rgba(22,33,28,.18);
+    --bar-bg:#f7f7f5; --bar-line:#e3e3df; --bar-ink:#55555c; --bar-faint:#6e6e76; --bar-strong:#1a1a1c; --bar-accent:#b4410c;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#10140F; --paper-raised:#171D15; --paper-sunken:#0B0E0A;
+      --ink:#E9EDE6; --ink-soft:#A9B4A4; --ink-faint:#8A968A;
+      --rule:#293026; --rule-strong:#38412F;
+      --accent:#5CB98C; --accent-strong:#7DCBA3; --accent-soft:#1C2A20;
+      --good:#4FAE7B; --dca:#D4A845; --frothy:#DE8A55; --extreme:#DE7168; --neutral:#7C8880;
+      --bear:#DE7168; --bull:#4FAE7B;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 28px -14px rgba(0,0,0,.6);
+      --bar-bg:#141416; --bar-line:#2e2e33; --bar-ink:#b0b0b8; --bar-faint:#8e8e97; --bar-strong:#ececee; --bar-accent:#f08a4b;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:var(--accent-strong);text-decoration-color:var(--rule-strong);text-underline-offset:2px}
+  a:hover{text-decoration-color:currentColor}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+  .num,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+  /* site bar */
+  .sitebar{font:13px/1.4 "IBM Plex Mono",ui-monospace,monospace;background:var(--bar-bg);color:var(--bar-faint);border-bottom:1px solid var(--bar-line);padding:12px 16px}
+  .sitebar .in{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
+  .sitebar ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 8px}
+  .sitebar li+li::before{content:"/";margin-right:8px;opacity:.5}
+  .sitebar a{color:var(--bar-ink);text-decoration:none}.sitebar a:hover{color:var(--bar-accent)}
+  .sitebar [aria-current]{color:var(--bar-strong)}
+
+  .page{max-width:1040px;margin:0 auto;padding:2.75rem 1.5rem 4rem}
+  @media (max-width:640px){.page{padding:2rem 1.1rem 3rem}}
+
+  .masthead{display:flex;flex-direction:column;gap:.7rem;padding-bottom:1.75rem;border-bottom:1px solid var(--rule);margin-bottom:2.25rem}
+  .masthead-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-strong);font-weight:600}
+  .report-date{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-faint)}
+  .title{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:600;line-height:1.15;max-width:24ch}
+  .dek{font-size:1.02rem;color:var(--ink-soft);max-width:60ch;line-height:1.55}
+
+  .gauge-panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);padding:1.8rem 1.9rem 1.6rem;margin-bottom:2.5rem;display:grid;gap:1.1rem}
+  @media (max-width:640px){.gauge-panel{padding:1.3rem 1.1rem}}
+  .gauge-reading{display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+  .gauge-number{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(3rem,7vw,4rem);line-height:.9}
+  .gauge-labels{display:flex;flex-direction:column;gap:.35rem;padding-bottom:.35rem}
+  .gauge-band-pill{display:inline-flex;width:fit-content;font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;padding:.25rem .6rem;border-radius:999px;border:1px solid currentColor;background:var(--paper)}
+  .gauge-delta{font-size:.85rem;color:var(--ink-faint)}
+  .gauge-delta b{color:var(--ink-soft);font-weight:600}
+  svg.gauge-svg{width:100%;height:auto;display:block;overflow:visible}
+  .gauge-footnote{font-size:.82rem;color:var(--ink-faint);line-height:1.55;border-top:1px solid var(--rule);padding-top:1rem}
+
+  .signal{margin:-1.2rem 0 2.5rem;padding:1rem 1.2rem;border-radius:10px;background:color-mix(in srgb,var(--frothy) 12%,var(--paper-raised));border:1px solid color-mix(in srgb,var(--frothy) 40%,transparent);font-size:.92rem;line-height:1.55;color:var(--ink)}
+  .signal b{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.08em;color:var(--frothy);display:block;margin-bottom:.3rem}
+
+  section{margin-bottom:2.6rem}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .section-head h2{font-size:1.35rem;font-weight:600}
+  .section-sub{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--ink-faint)}
+
+  .indicator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:.9rem}
+  .indicator-card{background:var(--paper-raised);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.05rem 1.05rem;display:flex;flex-direction:column;gap:.55rem}
+  .indicator-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+  .indicator-label{font-weight:600;font-size:.88rem}
+  .indicator-weight{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-faint)}
+  .indicator-value{font-family:"Fraunces",serif;font-size:1.55rem;font-weight:600;line-height:1}
+  .score-row{display:flex;align-items:center;gap:.55rem}
+  .score-bar{position:relative;flex:1;height:6px;border-radius:999px;background:var(--paper-sunken);overflow:hidden}
+  .score-fill{position:absolute;inset:0 auto 0 0;border-radius:999px}
+  .score-num{font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;min-width:2.4em;text-align:right}
+  .trend{font-size:.85rem;width:1.2em;text-align:center}
+  .trend.up{color:var(--frothy)}.trend.down{color:var(--good)}.trend.flat{color:var(--ink-faint)}
+  .indicator-note{font-size:.83rem;color:var(--ink-soft);line-height:1.5}
+  .indicator-meta{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--ink-faint);margin-top:auto;padding-top:.2rem}
+  .stale{color:var(--frothy)}
+
+  .changelog-list{margin:0;padding:0;border-top:1px solid var(--rule)}
+  .changelog-list li{list-style:none;display:flex;gap:.8rem;padding:.65rem 0;border-bottom:1px solid var(--rule);font-size:.9rem;line-height:1.5;color:var(--ink-soft)}
+  .changelog-list li::before{content:"–";color:var(--accent-strong);font-weight:600;flex-shrink:0;font-family:"IBM Plex Mono",monospace}
+
+  .roster-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+  @media (max-width:820px){.roster-columns{grid-template-columns:1fr}}
+  .roster-col-head{display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding-bottom:.5rem;margin-bottom:.6rem;border-bottom:2px solid}
+  .bears .roster-col-head{color:var(--bear);border-color:var(--bear)}
+  .middle .roster-col-head{color:var(--neutral);border-color:var(--neutral)}
+  .bulls .roster-col-head{color:var(--bull);border-color:var(--bull)}
+  .roster-count{font-weight:400;color:var(--ink-faint)}
+  .roster-row{padding:.7rem 0 .8rem .8rem;border-bottom:1px solid var(--rule);border-left:2px solid transparent}
+  .roster-row.changed{border-left-color:var(--accent)}
+  .roster-row:last-child{border-bottom:none}
+  .roster-name-line{display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;margin-bottom:.3rem}
+  .roster-name{font-weight:600;font-size:.95rem}
+  .roster-school{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em}
+  .roster-updated{font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--accent-strong);font-weight:600}
+  .roster-scores{display:flex;gap:.3rem;margin-bottom:.4rem;flex-wrap:wrap}
+  .dchip{font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;padding:.08rem .38rem;border-radius:4px;display:inline-flex;gap:.2rem}
+  .dchip .p{opacity:.6;font-weight:400}
+  .dchip.pos{color:var(--bull);background:color-mix(in srgb,var(--bull) 14%,var(--paper-raised))}
+  .dchip.neg{color:var(--bear);background:color-mix(in srgb,var(--bear) 14%,var(--paper-raised))}
+  .dchip.zero{color:var(--ink-faint);background:var(--paper-sunken)}
+  .roster-note{font-size:.82rem;color:var(--ink-soft);line-height:1.48;margin-bottom:.35rem}
+  .roster-statement{font-size:.8rem;color:var(--ink-faint);line-height:1.45;margin-bottom:.35rem}
+  .roster-meta-line{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:.72rem;color:var(--ink-faint)}
+  .roster-meta-line a{font-family:"IBM Plex Mono",monospace}
+  .conviction{display:inline-flex;gap:.15rem;vertical-align:middle}
+  .conviction i{width:6px;height:6px;border-radius:50%;background:var(--rule-strong);display:inline-block}
+  .conviction i.on{background:var(--accent)}
+  .conviction i.half{background:linear-gradient(90deg,var(--accent) 50%,var(--rule-strong) 50%)}
+
+  .fed-block{margin-top:1.6rem;padding:1.1rem 1.3rem;background:var(--accent-soft);border-radius:10px;border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+  .fed-block h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--accent-strong)}
+  .fed-block p{font-size:.87rem;line-height:1.6;color:var(--ink-soft)}
+  .fed-tag{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--accent-strong);font-weight:600;letter-spacing:.04em}
+
+  .reading-item{display:grid;grid-template-columns:6.6rem minmax(0,1fr);gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--rule)}
+  .reading-item:first-child{border-top:1px solid var(--rule)}
+  .reading-date{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--ink-faint);padding-top:.2rem}
+  .reading-title{font-weight:600;font-size:.94rem;margin-bottom:.15rem;display:block}
+  .reading-source{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em}
+  .reading-primary{color:var(--accent-strong)}
+  .reading-why{font-size:.85rem;color:var(--ink-soft);line-height:1.5;margin-top:.3rem}
+  @media (max-width:560px){.reading-item{grid-template-columns:1fr;gap:.2rem}}
+
+  .dca-panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:12px;padding:1.5rem 1.6rem;box-shadow:var(--shadow)}
+  .dca-lead{font-size:.95rem;margin-bottom:1.1rem;line-height:1.6}
+  .rule-item{display:flex;gap:.8rem;align-items:flex-start;padding:.65rem 0;border-top:1px solid var(--rule);font-size:.87rem;color:var(--ink-soft);line-height:1.5}
+  .rule-pill{flex-shrink:0;font-family:"IBM Plex Mono",monospace;font-size:.66rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:999px;margin-top:.05rem;background:var(--paper-sunken);color:var(--ink-faint);border:1px solid var(--rule-strong)}
+  .rule-pill.armed{background:color-mix(in srgb,var(--dca) 18%,var(--paper-raised));color:var(--dca);border-color:color-mix(in srgb,var(--dca) 45%,transparent)}
+
+  .fine-print{border-top:1px solid var(--rule);padding-top:1.4rem;margin-top:.5rem;display:flex;flex-direction:column;gap:.7rem;font-size:.78rem;color:var(--ink-faint);line-height:1.6}
+  .fine-print .backtest{color:var(--ink-soft);font-style:italic}
+  .fine-print ul{margin:0;padding-left:1.1rem}
+</style>
+</head>
+<body>
+<nav class="sitebar" aria-label="Breadcrumb"><div class="in">
+  <ol>
+    <li><a href="/">anotherroof</a></li>
+    <li><a href="/projects">projects</a></li>
+    <li><a href="/projects/froth">froth dashboard</a></li>
+    <li aria-current="page">2026-10-12</li>
+  </ol>
+  <span>not investment advice</span>
+</div></nav>
+
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="eyebrow">Weekly Froth Dashboard</span>
+      <span class="report-date num">2026-10-12</span>
+    </div>
+    <h1 class="title">Composite 4.37: frothy / hold dry powder</h1>
+    <p class="dek">Eight valuation, credit and fiscal instruments plus a nineteen-voice sentiment roster, read against the deployment rules.</p>
+  </header>
+
+  <section class="gauge-panel" aria-label="Composite score">
+    <div class="gauge-reading">
+      <span class="gauge-number num" style="color:var(--frothy)">4.37</span>
+      <div class="gauge-labels">
+        <span class="gauge-band-pill" style="color:var(--frothy)">frothy / hold dry powder</span>
+        <span class="gauge-delta">vs <b class="num">4.33</b> on 2026-10-05 (+0.04)</span>
+      </div>
+    </div>
+    <svg class="gauge-svg" viewBox="0 -34 1000 110" role="img" aria-label="Composite gauge from 1.0 to 5.0, currently 4.37">
+      <rect x="0" y="0" width="375" height="22" fill="var(--good)" opacity=".85"/>
+      <rect x="375" y="0" width="250" height="22" fill="var(--dca)" opacity=".85"/>
+      <rect x="625" y="0" width="250" height="22" fill="var(--frothy)" opacity=".85"/>
+      <rect x="875" y="0" width="125" height="22" fill="var(--extreme)" opacity=".85"/>
+      <g stroke="var(--rule-strong)" stroke-width="2">
+        <line x1="1" y1="22" x2="1" y2="30"/><line x1="375" y1="22" x2="375" y2="30"/><line x1="625" y1="22" x2="625" y2="30"/><line x1="875" y1="22" x2="875" y2="30"/><line x1="999" y1="22" x2="999" y2="30"/>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="15" fill="var(--ink-faint)">
+        <text x="0" y="46">1.0</text><text x="375" y="46" text-anchor="middle">2.5</text><text x="625" y="46" text-anchor="middle">3.5</text><text x="875" y="46" text-anchor="middle">4.5</text><text x="1000" y="46" text-anchor="end">5.0</text>
+      </g>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--ink-faint)">
+        <text x="0" y="66">deploy aggr.</text><text x="378" y="66">DCA mode</text><text x="628" y="66">frothy</text><text x="878" y="66">extreme</text>
+      </g>
+      <line x1="831.5" y1="-6" x2="831.5" y2="28" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="2 3"/>
+      <polygon points="841.8,-4 853.8,-22 829.8,-22" fill="var(--ink)"/>
+    </svg>
+    <p class="gauge-footnote">At composite 4.5+, historically a 40% probability that a 20%+ real decline begins within 36 months (29% for 30%+) - but 4.5+ zones also produced the longest melt-ups. The signal is regime, not timing.</p>
+  </section>
+
+
+  <section>
+    <div class="section-head">
+      <h2>Eight instruments</h2>
+      <span class="section-sub">weight × score · arrows are the 4-week trend</span>
+    </div>
+    <div class="indicator-grid">
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Shiller CAPE</span><span class="indicator-weight num">20%</span></div>
+        <div class="indicator-value num">41.9</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:98.5%;background:var(--extreme)"></div></div>
+          <span class="score-num num">4.94</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">99th pct since 1881; web 41.9 vs computed 48.1; divergence 6.2 pts - earnings vintage suspect; 10yr real earnings carried from 2023-06-01 (40 months)</p>        <p class="indicator-meta">as of 2026-10-09</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Buffett Indicator</span><span class="indicator-weight num">15%</span></div>
+        <div class="indicator-value num">238% of GDP</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:100.0%;background:var(--extreme)"></div></div>
+          <span class="score-num num">5.00</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">median ~85%, dotcom peak 146-172%; 200%+ is the top of the historical range</p>        <p class="indicator-meta">as of 2026-10-09</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Excess CAPE Yield</span><span class="indicator-weight num">15%</span></div>
+        <div class="indicator-value num">+0.65%</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:79.4%;background:var(--frothy)"></div></div>
+          <span class="score-num num">4.17</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">1/CAPE 2.39% - real 10y 1.74% (nominal 5.22% - trailing 10y CPI 3.48%)</p>        <p class="indicator-meta">as of 2026-10-09</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Price vs 10-year trend</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">1.59x</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:91.3%;background:var(--extreme)"></div></div>
+          <span class="score-num num">4.65</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">real price vs its 120-month average; 91st pct historically</p>        <p class="indicator-meta">as of 2026-10-09</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">12-month momentum</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">+12.3%</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:67.7%;background:var(--frothy)"></div></div>
+          <span class="score-num num">3.71</span>
+          <span class="trend up" title="4-week trend">▲</span>
+        </div>
+<p class="indicator-note">trailing 12m real price change, 68th pct. Froth marker, not a sell signal - the classic top is momentum turning DOWN while valuation stays red</p>        <p class="indicator-meta">as of 2026-10-09</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">High-yield credit spreads</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">315bps</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:77.9%;background:var(--frothy)"></div></div>
+          <span class="score-num num">4.12</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">EARLY-WARNING TRIPWIRE. -9bps vs the 2026-10-05 report (tightening). Tight = complacent; past 500bps alongside an equity drawdown is the staged-deployment trigger</p>        <p class="indicator-meta">as of 2026-10-09</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Yield curve 10y-2y</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">+0.44 pts</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:50.0%;background:var(--dca)"></div></div>
+          <span class="score-num num">3.00</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">positive after a post-inversion re-steepening = 3.0 (*) - recessions historically arrive 12-18 months AFTER un-inversion, not during the inversion</p>        <p class="indicator-meta">as of 2026-10-09</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Fiscal / debt trajectory</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">6.2% of GDP deficit</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:88.8%;background:var(--extreme)"></div></div>
+          <span class="score-num num">4.55</span>
+          <span class="trend up" title="4-week trend">▲</span>
+        </div>
+<p class="indicator-note">federal debt/GDP 123%. ~6% deficits at full employment scores 4.5</p>        <p class="indicator-meta">as of 2026-10-08</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>What changed</h2><span class="section-sub">since 2026-10-05</span></div>
+    <ul class="changelog-list">
+<li>Composite 4.33 -&gt; 4.37 (+0.04)</li><li>Fiscal / debt trajectory: score 4.35 -&gt; 4.55 (+0.20), now 6.2% of GDP deficit</li>    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Sentiment roster</h2>
+      <span class="section-sub">19 voices · 12 / 24 / 36 months · conviction 1–5</span>
+    </div>
+    <div class="roster-columns">
+      <div class="roster-col bears">
+        <div class="roster-col-head"><span>Bears</span><span class="roster-count">7</span></div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Burry</span>
+            <span class="roster-school">value</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-4</span><span class="dchip neg"><span class="p">24m</span>-4</span><span class="dchip neg"><span class="p">36m</span>-3</span></div>
+<p class="roster-note">THESIS BROADENED from AI/semis to housing and the credit cycle - which is why 36m goes to -3. His mortgage data is the real-economy version of what the HY tile is showing</p><p class="roster-statement">&#39;The Big Short is about to repeat itself&#39;: rates up six straight weeks, mortgage applications -6% w/w, purchase applications -14% y/y, refis -56% y/y, and serious 90+ day delinquencies up for the first time in five months, +19% y/y. Separately questions how fast Nvidia&#39;s AI chips lose economic value, citing the 1968 computer-financing cycle, and calls AI infrastructure commitments liabilities in &#39;hypergrowth mode&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 5.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+<a href="https://finance.yahoo.com/markets/stocks/articles/michael-burry-issues-nvidia-ai-125356102.html" rel="noopener">2026-10-04 →</a>          </div>
+        </div>
+        <div class="roster-row">
+          <div class="roster-name-line">
+            <span class="roster-name">Dimon</span>
+            <span class="roster-school">credit</span>
+          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-3</span><span class="dchip neg"><span class="p">24m</span>-2</span><span class="dchip neg"><span class="p">36m</span>-1</span></div>
+<p class="roster-note">No new statement inside the fortnight, but the tape is validating the April letter and his Norges Bank remarks: private-credit default rates hit a record 6.0% (Fitch, April) and HY OAS has widened 54bps since the last report. &#39;Credit will perform worse than people expect&#39; is becoming measurable rather than rhetorical - the rhetoric&gt;action gap is closing from the data side, not from him</p><p class="roster-statement">&#39;Margin debt is the highest it has ever been&#39;, much of it hidden in prime brokerage, ETFs and Treasury-basis trades; says he would not buy the S&amp;P 500 or long-dated Treasuries at today&#39;s prices and the market is one bad trade from panic selling</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i><i class=""></i></span>
+<a href="https://www.cnbc.com/2026/08/06/jpmorgan-jamie-dimon-leverage-market-disruption.html" rel="noopener">2026-08-06 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Grantham</span>
+            <span class="roster-school">value</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-3</span><span class="dchip neg"><span class="p">24m</span>-4</span><span class="dchip neg"><span class="p">36m</span>-3</span></div>
+<p class="roster-note">latest sourced statement is June 2026 - inside the 6-month window but not fresh this fortnight</p><p class="roster-statement">Calls this &#39;the most expensive market in American history&#39;; a reversion to trend would be closer to a wipeout than a correction, and the odds an AI bubble does not bust are &#39;slim to none&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://247wallst.com/investing/2026/06/26/jeremy-grantham-warns-u-s-stocks-could-plunge-70-in-the-most-expensive-market-in-history/" rel="noopener">2026-06-26 →</a>          </div>
+        </div>
+        <div class="roster-row">
+          <div class="roster-name-line">
+            <span class="roster-name">Summers</span>
+            <span class="roster-school">policy</span>
+          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-2</span><span class="dchip neg"><span class="p">36m</span>-1</span></div>
+          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<span class="num">2026-08-21 (baseline)</span>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Krugman</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-2</span><span class="dchip neg"><span class="p">36m</span>-1</span></div>
+<p class="roster-note">bearish the real economy rather than the index - the gap between the two is his point</p><p class="roster-statement">August Substack run - &#39;An Explosion of Misery&#39; (Aug 5) and &#39;This is your economy on crack (spread)&#39; (Aug 13): the US economy is in worse shape than the tape looks</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://paulkrugman.substack.com/p/an-explosion-of-misery" rel="noopener">2026-08-13 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Dalio</span>
+            <span class="roster-school">debt-cycle</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-4</span><span class="dchip neg"><span class="p">36m</span>-3</span></div>
+<p class="roster-note">24m cut to -4 and conviction to the maximum: he has put a clock on it</p><p class="roster-statement">Says the US is &#39;on the brink&#39; and that if the fiscal path does not change a debt shock could hit within two years</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 5.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+<a href="https://kingworldnews.com/ray-dalio-us-debt-collapse-is-coming-michael-burry-the-big-short-is-about-to-repeat/" rel="noopener">2026-10-04 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Rosenberg</span>
+            <span class="roster-school">bear</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-3</span><span class="dchip neg"><span class="p">36m</span>-2</span></div>
+<p class="roster-note">conviction up: says credit markets are already writing the warning - directly relevant to the HY tripwire</p><p class="roster-statement">With Richard Bernstein: the AI trade is a bubble, real disposable income is fractionally negative y/y, and ex-AI the four-quarter real GDP trend is under 1.5% - a K-shaped economy where profits take all the income growth</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i></span>
+<a href="https://advisoranalyst.com/2026/08/19/when-everybody-is-on-the-same-side-of-the-trade-david-rosenberg-richard-bernstein.html/" rel="noopener">2026-08-19 →</a>          </div>
+        </div>
+      </div>
+      <div class="roster-col middle">
+        <div class="roster-col-head"><span>Middle</span><span class="roster-count">7</span></div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Sonders</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+1</span><span class="dchip pos"><span class="p">24m</span>+1</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">36m cut to 0: record margin debt, record equity allocations and index concentration are her stated longer-term risks</p><p class="roster-statement">Rotation backdrop persists and higher yields are biting; investors are &#39;reluctantly&#39; long via ETF flows and margin debt</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.cnbc.com/video/2026/08/18/charles-schwabs-liz-ann-sonders-discusses-how-higher-yields-are-impacting-markets.html" rel="noopener">2026-08-18 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Roubini</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+1</span><span class="dchip pos"><span class="p">24m</span>+1</span><span class="dchip pos"><span class="p">36m</span>+1</span></div>
+<p class="roster-note">baseline still &#39;Goldilocks&#39;, but names a more fragile backdrop: Middle East war, AI job-shedding, private-credit stress</p><p class="roster-statement">Holds the Goldilocks 2026 baseline - tariffs walked back, growth slower, inflation only modestly higher</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.stern.nyu.edu/experience-stern/faculty-research/outlook-us-economy-2026" rel="noopener">2026-08-05 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Slok</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+1</span><span class="dchip neg"><span class="p">24m</span>-1</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">24m cut to -1: AI capex is running at ~0.85pp of GDP/yr vs 0.5pp in the housing boom, and he warns it &#39;can unwind at a similar pace&#39;. Bull economy / bear market, with the risk framing moving from stagflation to overheating</p><p class="roster-statement">AI capex growing nearly twice as fast as the housing boom; rising consumer delinquencies and a widening K-shaped economy on the other side of the ledger</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.apollo.com/wealth/insights-news/insights/daily-spark" rel="noopener">2026-08-17 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Buffett-Berkshire</span>
+            <span class="roster-school">value</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+1</span><span class="dchip pos"><span class="p">24m</span>+1</span><span class="dchip pos"><span class="p">36m</span>+1</span></div>
+<p class="roster-note">Deployment continued into Q3 under Abel: ~$39.4bn of equities bought across H1, ~$17bn of it Alphabet via the AI-funding secondary, plus a $6.8bn Taylor Morrison homebuilder acquisition closed in July. Full Q3 13F is not due until November. Cash was still $365.5bn at 30 June, so this is deployment, not capitulation - and note he is buying a homebuilder into the exact housing weakness Burry is shorting</p><p class="roster-statement">Abel&#39;s reversal confirmed: 14-quarter net-selling streak broken with ~$20bn net bought, $4.5bn of buybacks against none in 2025</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://www.fool.com/investing/2026/09/27/greg-abel-just-broke-berkshires-14-quarter-streak/" rel="noopener">2026-09-27 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Gross</span>
+            <span class="roster-school">macro</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip zero"><span class="p">12m</span>0</span><span class="dchip zero"><span class="p">24m</span>0</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">&#39;No crash, just a forward weave requiring a cane&#39;; bearish long Treasuries on deficits, prefers energy infrastructure and MLPs to exuberant tech</p><p class="roster-statement">Valuation casts a shadow over 2026; the record rally is at risk of stalling unless AI earnings show up</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://williamhgross.com/investment-outlook-archive/" rel="noopener">2026-08-01 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">El-Erian</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-1</span><span class="dchip neg"><span class="p">24m</span>-2</span><span class="dchip pos"><span class="p">36m</span>+1</span></div>
+<p class="roster-note">CALLED IT: in August he said the Treasury buyback was financial engineering that left long rates untouched. The 10y then went through 5%. His new line - interest-rate risk becoming equity and credit risk - is precisely what the HY tile is now showing</p><p class="roster-statement">Expects the 10y to stay around 5% even if oil falls, citing a structural bond supply/demand imbalance; &#39;volatility will be a feature, and elevated yields will be a feature for the rest of the year&#39;, and &#39;the big danger&#39; is rate risk turning into equity and credit risk</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr" rel="noopener">2026-09-29 →</a>          </div>
+        </div>
+        <div class="roster-row">
+          <div class="roster-name-line">
+            <span class="roster-name">Marks</span>
+            <span class="roster-school">credit</span>
+          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-1</span><span class="dchip neg"><span class="p">24m</span>-1</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">No new memo inside the fortnight, but his private-credit memo is the live thesis: the US private-credit default rate hit a record 6.0% in April (Fitch) and the Proskauer index ran 2.73% in Q1 against 1.84% two quarters earlier - while loan spreads were still tightening. Exactly the &#39;not being paid for the risk&#39; setup he described</p><p class="roster-statement">Memo &#39;What&#39;s Going On in Private Credit?&#39; - direct lending&#39;s growth, and the issues rapid deployment created</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.oaktreecapital.com/insights/memo/whats-going-on-in-private-credit" rel="noopener">2026-08-01 →</a>          </div>
+        </div>
+      </div>
+      <div class="roster-col bulls">
+        <div class="roster-col-head"><span>Bulls</span><span class="roster-count">5</span></div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Wood</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+4</span><span class="dchip pos"><span class="p">24m</span>+4</span><span class="dchip pos"><span class="p">36m</span>+5</span></div>
+<p class="roster-note">&#39;Golden Age&#39; thesis intact: deflationary tech + fiscal push</p><p class="roster-statement">Q2-26 13F: book up to $15.4bn across 191 names; Tesla/AMD/SpaceX/Tempus/Robinhood ~25% of assets</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 5.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+<a href="https://seekingalpha.com/article/4938481-cathie-wood-ark-invest-13f-portfolio-q2-2026-update" rel="noopener">2026-08-14 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Lee</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+4</span><span class="dchip pos"><span class="p">24m</span>+3</span><span class="dchip pos"><span class="p">36m</span>+3</span></div>
+<p class="roster-note">now the loudest bull on the roster, and openly split from Yardeni: reads the hike as REMOVING the pressure for more, and therefore as yields-down, equities-up</p><p class="roster-statement">Holds S&amp;P above 8,200 by year-end despite the hike, calls it good news for stocks and predicts a historic Q4 rally</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 5.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+<a href="https://parameter.io/tom-lee-remains-bullish-sp-500-could-soar-past-8200-despite-fed-rate-hikes/" rel="noopener">2026-09-18 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Yardeni</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+2</span><span class="dchip pos"><span class="p">24m</span>+3</span><span class="dchip pos"><span class="p">36m</span>+4</span></div>
+<p class="roster-note">DOWNGRADE: the Street-high bull cut his own target. 7,900 is barely above spot, and he lifted his bearish-scenario odds from 20% to 30%</p><p class="roster-statement">Cut year-end S&amp;P target 8,400 -&gt; 7,900 and said &#39;proceed with caution&#39; as the 10y passed 5%; forward P/E assumption 19.8 -&gt; 18.6</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://www.cnbc.com/2026/09/16/yardeni-trims-sp-500-target-says-proceed-with-caution-as-rates-rise.html" rel="noopener">2026-09-16 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Siegel</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+2</span><span class="dchip pos"><span class="p">24m</span>+2</span><span class="dchip pos"><span class="p">36m</span>+2</span></div>
+<p class="roster-note">constructive but names AI spend, valuations and bond yields as the worries</p><p class="roster-statement">Weak July payrolls &#39;overstate&#39; labour-market weakness; still does not expect a bear market</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i><i class=""></i></span>
+<a href="https://www.thinkadvisor.com/2026/07/27/jeremy-siegel-stays-optimistic-as-market-risks-pile-up/" rel="noopener">2026-08-10 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Druckenmiller</span>
+            <span class="roster-school">macro-trader</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+2</span><span class="dchip pos"><span class="p">24m</span>+2</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">GAP WIDENED, not closed: still positioned long megacap tech from Q2, while publicly arguing rates are too LOW and yield suppression is a subsidy to fiscal procrastination. Bearish bonds, long equities, hawkish Fed - pick two</p><p class="roster-statement">Says rates are already too low and cuts are unnecessary - &#39;committee members on the Fed who keep saying Fed fund rates are restrictive are just ridiculous&#39;; WSJ op-ed against Treasury long-bond buybacks: if the 30y must trade at 5.5% &#39;that isn&#39;t a crisis, it is an invoice&#39;, and the only durable fix is the primary deficit</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://realinvestmentadvice.com/resources/blog/druckenmiller-warning-the-bond-market-already-priced-it/" rel="noopener">2026-09-24 →</a>          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fed-block">
+      <span class="fed-tag">FED · 2026-09-16</span>
+      <h3>Policy</h3>
+      <p>HIKED 25bps to 3.75-4.00% on 2026-09-16, unanimously - the first increase since 2023 - with the dot plot pointing to one more hike this year (median 4.1% end-2026, no change in 2027, cuts in 2028-29). the headwind became an actual tightening; carried from the 2026-10-05 report pending the pass-two check</p>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="section-head"><h2>For the DCA plan</h2></div>
+    <div class="dca-panel">
+      <p class="dca-lead">Composite 4.37 (frothy / hold dry powder). Base DCA continues regardless of score. Above 3.5, so the DCA-doubling rule stays dormant; it arms at 3.5 (+0.87 away). Hold dry powder. HY spreads at 315bps are still inside 500bps, so the staged dry-powder trigger is not armed. Credit is the tripwire: it goes first.</p>
+      <div class="rule-item"><span class="rule-pill">always</span><span>Base DCA continues regardless of score.</span></div>
+      <div class="rule-item"><span class="rule-pill">dormant</span><span>Composite drops below 3.5 → double the monthly DCA clip.</span></div>
+      <div class="rule-item"><span class="rule-pill">dormant</span><span>Composite below 2.5 → deploy remaining dry powder aggressively.</span></div>
+      <div class="rule-item"><span class="rule-pill">dormant</span><span>HY spreads widening past 500bps alongside an equity drawdown → begin staged dry-powder deployment: a tranche at -10% S&amp;P drawdown, more at -15%/-20%, the bulk at -20%+ with spreads confirming.</span></div>
+    </div>
+  </section>
+
+  <footer class="fine-print">
+    <p class="backtest">At composite 4.5+, historically a 40% probability that a 20%+ real decline begins within 36 months (29% for 30%+) - but 4.5+ zones also produced the longest melt-ups. The signal is regime, not timing.</p>
+    <p>Data vintage: S&amp;P 7,812 at 2026-10-09 (live index level supplied by the routine); Shiller dataset (live); Shiller CPI column ends 2023-09-01; CPI assumed forward from 2023-09-01; 10yr real earnings avg carried from 2023-06-01; web research 2026-10-12.</p>
+    <div>Gaps flagged this run:
+      <ul><li>Live FRED feed unavailable: FRED series served from cache or routine fallbacks.</li><li>CPI extrapolated from 2023-09-01 to 2026-09-01 at the routine-supplied 3.6%/yr run-rate; real values are approximate.</li></ul>
+    </div>
+    <p>Not investment advice. <a href="/projects/froth">Every run →</a></p>
+  </footer>
+</div>
+</body>
+</html>
