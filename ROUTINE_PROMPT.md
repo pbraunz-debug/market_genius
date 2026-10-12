@@ -22,6 +22,12 @@ Never invent a number. If you cannot source a value, leave the field out and let
 pipeline flag it.
 
 == SETUP ==
+- Attach BOTH repos with push access before anything else: call the add_repo tool
+  (claude-code-remote; load it with ToolSearch if it is deferred) for
+  pbraunz-debug/market_genius and pbraunz-debug/anotherroof, each with access "push", and
+  clone each to the path the tool returns. A run without push access can research and
+  build perfectly and still ship nothing - that is what broke this routine from 24 Aug to
+  12 Oct 2026. If add_repo is unavailable or refused, stop and say so in your summary.
 - Pull the latest repo state. Note the branch name; you will push back to it.
 - Read FRAMEWORK.md in full. It is the single source of truth: weights, scoring anchors,
   the roster, the reading-list rules and my deployment rules all live there, and I edit it
@@ -52,6 +58,15 @@ pipeline flag it.
 5. VERIFY THE PUSH LANDED: run `git log origin/<branch> -1 --oneline` and confirm your
    commit is there. A run that researched perfectly and pushed nothing is a failed run -
    this has happened before, for seven consecutive weeks, so check rather than assume.
+5b. Publish to the website: run
+   `python3 scripts/publish_site.py --site <path to the anotherroof clone>`
+   then, in the anotherroof clone:
+     git config user.name anotherroof
+     git config user.email 302586710+pbraunz-debug@users.noreply.github.com
+     git add public/projects/froth src/data/froth
+     git commit -m "froth run {YYYY-MM-DD}" && git push
+   (Vercel only deploys commits whose author it can tie to the account, hence that email.)
+   Verify with `git log origin/main -1 --oneline` in the anotherroof clone.
 6. Run: bash scripts/send_email.sh. If it fails, retry once, then carry on to pass two
    and report the failure with the Resend response body in your summary.
 
@@ -74,6 +89,7 @@ pipeline flag it.
    naming a specific indicator or roster member.
 9. Merge both into data/weekly_inputs.json, rerun build_report.py, re-send the email, then
    commit and push again with "weekly report {YYYY-MM-DD} (enriched)". Re-verify the push.
+   Then rerun publish_site.py and push anotherroof again with "froth run {YYYY-MM-DD} (enriched)".
 
 == IF SOMETHING BREAKS ==
 - build_report.py failing outright is almost always bad JSON in weekly_inputs.json.
@@ -86,7 +102,7 @@ pipeline flag it.
   commit or an explicit statement of what stopped you.
 
 == SUMMARISE ==
-Finish with: composite score and band, the delta vs last report, the HY spread and its
+Finish with: the market_genius and anotherroof commit SHAs you pushed, composite score and band, the delta vs last report, the HY spread and its
 move since the last report, whether the FRAMEWORK 1.5 top-signal line fired, which roster
 members changed, which names you did not get to, and every gap the build flagged.
 ```

@@ -12,12 +12,15 @@ ROUTINE_PROMPT.md         the prompt to paste into /schedule for the weekly clou
 scripts/build_report.py   fetches data, scores, renders the report and the email.
 scripts/send_email.sh     sends out/email.html via Resend.
 templates/report.html     the email body (inline CSS, no JS, email-client safe).
+templates/web.html        the same report as a web page, published on anotherroof.com.
+scripts/publish_site.py   copies a run's page + numbers into the anotherroof repo.
 data/sentiment_baseline.json   frozen 2026-08-21 baseline — week 1's diff basis.
 data/sentiment_current.json    rolling sentiment state, updated each run and committed.
 data/weekly_inputs.json        what the routine researched this week (overwritten weekly).
 data/weekly_inputs.example.json  every supported field, documented.
 reports/report-YYYY-MM-DD.md   the archive you converse with.
 reports/data/*.json            machine-readable archive, used for week-over-week diffs.
+reports/web/*.html             each run's web page, as published.
 tests/smoke_test.py       offline check that the pipeline still scores and renders.
 out/                      email.html + meta.json (gitignored, rebuilt every run).
 ```

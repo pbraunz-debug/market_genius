@@ -44,6 +44,7 @@ DATA = ROOT / "data"
 CACHE = DATA / "cache"
 REPORTS = ROOT / "reports"
 REPORT_DATA = REPORTS / "data"
+REPORT_WEB = REPORTS / "web"
 OUT = ROOT / "out"
 TEMPLATES = ROOT / "templates"
 
@@ -1078,6 +1079,18 @@ def render_markdown(ctx) -> str:
     return "\n".join(L) + "\n"
 
 
+def render_web(ctx) -> str:
+    """The same report as a standalone web page (published on anotherroof.com)."""
+    env = Environment(
+        loader=FileSystemLoader(str(TEMPLATES)),
+        autoescape=select_autoescape(["html"]),
+        trim_blocks=True,
+        lstrip_blocks=True,
+    )
+    return env.get_template("web.html").render(**ctx, rules=DEPLOYMENT_RULES,
+                                               backtest=BACKTEST_LINE)
+
+
 def render_html(ctx) -> str:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
@@ -1195,6 +1208,12 @@ def main() -> int:
         html = "<pre style=\"font:14px/1.5 -apple-system,Segoe UI,sans-serif;white-space:pre-wrap\">" + \
                md.replace("&", "&amp;").replace("<", "&lt;") + "</pre>"
 
+    try:
+        web = render_web(ctx)
+    except Exception as exc:  # noqa: BLE001 - the web page must not kill the email
+        gap(f"Web template failed ({exc.__class__.__name__}: {exc}); no web page this run.")
+        web = None
+
     if args.no_write:
         print(md)
         return 0
@@ -1202,6 +1221,8 @@ def main() -> int:
     if args.preview:
         OUT.mkdir(parents=True, exist_ok=True)
         (OUT / "preview.html").write_text(html)
+        if web:
+            (OUT / "preview-web.html").write_text(web)
         print(f"preview: composite={ctx['composite_display']} band={band_label} "
               f"indicators={len(indicators)}/8 gaps={len(GAPS)} -> out/preview.html", file=sys.stderr)
         return 0
@@ -1238,6 +1259,9 @@ def main() -> int:
     (REPORT_DATA / f"report-{today}.json").write_text(json.dumps(record, indent=2))
     (DATA / "sentiment_current.json").write_text(json.dumps(sentiment_state, indent=2))
     (OUT / "email.html").write_text(html)
+    if web:
+        REPORT_WEB.mkdir(parents=True, exist_ok=True)
+        (REPORT_WEB / f"report-{today}.html").write_text(web)
     (OUT / "meta.json").write_text(
         json.dumps(
             {
@@ -1258,7 +1282,8 @@ def main() -> int:
         f"indicators={len(indicators)}/8 gaps={len(GAPS)}",
         file=sys.stderr,
     )
-    print(f"wrote reports/report-{today}.md and out/email.html", file=sys.stderr)
+    print(f"wrote reports/report-{today}.md, out/email.html"
+          + (f" and reports/web/report-{today}.html" if web else ""), file=sys.stderr)
     return 0
 
 
