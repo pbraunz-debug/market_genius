@@ -584,7 +584,8 @@ def score_indicators(series, fred, inputs, prev, today) -> dict:
     bval, bstale, bsrc, basof = b.get("value"), 0, b.get("source", "web"), b.get("as_of")
     if bval is None:
         bval, bstale = carried(prev, "buffett", today)
-        bsrc, basof = "carried from previous report", (prev or {}).get("date")
+        bsrc = "carried from previous report"
+        basof = (((prev or {}).get("indicators") or {}).get("buffett") or {}).get("as_of") or (prev or {}).get("date")
         if bval is not None:
             gap(f"Buffett indicator not supplied this week; carried forward (stale {bstale} weeks).")
     if bval is not None:
@@ -746,7 +747,8 @@ def score_indicators(series, fred, inputs, prev, today) -> dict:
             debt = db_val
     if deficit is None:
         deficit, f_stale = carried(prev, "fiscal", today)
-        f_src, f_asof = "carried from previous report", (prev or {}).get("date")
+        f_src = "carried from previous report"
+        f_asof = (((prev or {}).get("indicators") or {}).get("fiscal") or {}).get("as_of") or (prev or {}).get("date")
     if deficit is not None:
         note = "~6% deficits at full employment scores 4.5"
         if debt:
@@ -1140,8 +1142,15 @@ def main() -> int:
         obs, _, _ = fetch_fred(sid, today, args.offline, years)
         fred[sid] = obs
 
-    series = (build_series(parse_shiller(shiller_text), fred.get("CPIAUCSL"), inputs)
-              if shiller_text else {})
+    # Point-in-time cutoff: a back-dated build (--date in the past) must not see Shiller
+    # months or FRED observations after its own report date, or momentum/trend/CPI leak
+    # the future into a historical week.
+    cutoff_month = today.replace(day=1).isoformat()
+    shiller_rows = [r for r in parse_shiller(shiller_text) if r["date"] <= cutoff_month] \
+        if shiller_text else []
+    fred = {sid: [o for o in (obs or []) if o[0] <= today.isoformat()] for sid, obs in fred.items()}
+    series = (build_series(shiller_rows, fred.get("CPIAUCSL"), inputs)
+              if shiller_rows else {})
 
     prev_all = previous_reports(today)
     prev = pick_prev(prev_all)

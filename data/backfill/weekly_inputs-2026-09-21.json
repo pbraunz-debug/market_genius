@@ -1,0 +1,146 @@
+{
+  "_comment": "BACKFILL built on 2026-10-12 for a week the scheduled routine missed (24 Aug - 5 Oct it could not push). Every value is point-in-time as of the report's Friday close; the build cuts the Shiller CSV and FRED data at the report date. The Buffett indicator has no dated gurufocus reading in this span, so it is carried from the previous report and marked stale.",
+  "research_date": "2026-10-12",
+  "spx_current": {
+    "level": 7650.5,
+    "date": "2026-09-18",
+    "source": "S&P 500 close 2026-09-18 (from a week-ahead piece citing the 4pm close), two days after the first Fed hike since 2023 (https://ts2.tech/en/stock-market-week-ahead-sp-500-at-7650-meets-a-5-treasury-yield/)"
+  },
+  "cape_web": {
+    "value": 41.12,
+    "source": "Motley Fool 'as of September' (YCharts chart)",
+    "url": "https://www.fool.com/investing/2026/09/18/market-signal-seen-only-once-point-next/",
+    "as_of": "2026-09-18"
+  },
+  "cpi_fallback": {
+    "annual_rate_pct": 3.4,
+    "source": "August 2026 CPI +3.4% y/y (released 2026-09-11)",
+    "url": "https://cpiinflationcalculator.com/the-consumer-price-index-rises-0-4-in-august-2026-seasonally-adjusted-and-holds-at-3-4-annually/",
+    "as_of": "2026-09-11"
+  },
+  "fred_fallback": {
+    "DGS10": 5.01,
+    "T10Y2Y": 0.25,
+    "BAMLH0A0HYM2": 268,
+    "source": "FRED series via equibles.com mirrors, all for 2026-09-18: DGS10 5.01%, T10Y2Y +0.25, HY OAS 2.68% = 268bps",
+    "url": "https://equibles.com/economicdata/bamlh0a0hym2",
+    "as_of": "2026-09-18"
+  },
+  "curve_post_inversion": true,
+  "fed": {
+    "stance": "HIKED 25bps to 3.75-4.00% on 2026-09-16, 12-0 - the first increase since 2023. Warsh: 'removing accommodation', no forward guidance; median dot 4.125% end-2026, 16 of 18 officials see at least one more 2026 hike",
+    "read": "the headwind became an actual tightening; October hike odds ~51% on 09-17",
+    "as_of": "2026-09-17"
+  },
+  "sentiment_updates": [
+    {
+      "name": "Yardeni",
+      "s12": 2,
+      "s24": 3,
+      "s36": 4,
+      "conviction": 4.0,
+      "note": "DOWNGRADE: the Street-high bull cut his own target; bearish-scenario odds raised from 20% to 30% on 09-12",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-16",
+        "summary": "Cut YE S&P target 8,400 -> 7,900, 'proceed with caution' as the 10y passed 5%",
+        "url": "https://www.yardeniquicktakes.com/proceed-with-caution/"
+      }
+    },
+    {
+      "name": "Lee",
+      "s12": 4,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 5.0,
+      "note": "Held: the loudest bull, now openly split from Yardeni",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-15",
+        "summary": "CNBC Closing Bell: S&P could 'easily be above 8,200 by the end of the year' as long as the AI trade isn't extinguished; Q4 'one of the biggest rallies'",
+        "url": "https://stocktwits.com/news-articles/markets/equity/fundstrat-s-tom-lee-sees-s-and-p-500-above-8-200-by-year-end-but-this-analyst-just-slashed-the-target-for-2026/cZtYJYfRB2L"
+      }
+    },
+    {
+      "name": "Sonders",
+      "s12": 1,
+      "s24": 1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: probably not one-and-done, but not a long cycle either",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-18",
+        "summary": "Schwab Market Perspective: stocks fell sharply after Warsh's press conference; slow hiking cycles have historically produced milder declines",
+        "url": "https://www.schwab.com/learn/story/stock-market-outlook"
+      }
+    },
+    {
+      "name": "Dimon",
+      "s12": -3,
+      "s24": -2,
+      "s36": -1,
+      "conviction": 3.5,
+      "note": "Held: inflation 'not clear it's over'; prepare for rate volatility; no recession call",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-16",
+        "summary": "Yahoo Finance interview hours after the hike: 'it's not clear to me it's over yet'; 'a lot of things out there which are quite dangerous'",
+        "url": "https://www.thestreet.com/investing/jpmorgan-ceo-said-inflation-not-over-economy-verdict"
+      }
+    },
+    {
+      "name": "Slok",
+      "s12": 0,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: backs the hike, no equity call (summary from headline only)",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-17",
+        "summary": "CNBC: 'Market clearly saying the Fed rate hike was a good decision'",
+        "url": "https://www.cnbc.com/video/2026/09/17/market-clearly-saying-the-fed-rate-hike-was-a-good-decision-says-apollo-globals-torsten-slok.html"
+      }
+    },
+    {
+      "name": "Rosenberg",
+      "s12": -2,
+      "s24": -3,
+      "s36": -2,
+      "conviction": 4.5,
+      "note": "Held: bonds over stocks, a recession surprise ahead; talk only, no positioning",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-15",
+        "summary": "Kitco interview: one hike is not a mistake but four or five would be; 'block your nose and buy' Treasuries; expects bonds to outperform stocks within months",
+        "url": "https://www.kitco.com/news/article/2026-09-15/rosenberg-says-one-fed-hike-isnt-mistake-five-would-be"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "FOMC statement, September 16, 2026",
+      "url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20260916a1.pdf",
+      "source": "Federal Reserve Board",
+      "date": "2026-09-16",
+      "primary": true,
+      "why": "The first hike since 2023, 12-0 - the 10y crossed 5% the same week, moving the Excess CAPE Yield and curve tiles"
+    },
+    {
+      "title": "Proceed With Caution",
+      "url": "https://www.yardeniquicktakes.com/proceed-with-caution/",
+      "source": "Yardeni QuickTakes",
+      "date": "2026-09-15",
+      "primary": true,
+      "why": "The Street-high bull cutting his own target - the first big roster move of the hiking cycle"
+    }
+  ],
+  "fiscal": {
+    "deficit_pct_gdp": 5.8,
+    "debt_to_gdp": 122.6,
+    "source": "CBO August Monthly Budget Review (09-09): $2.0tn deficit over 11 months; full-year projection ~5.8% of GDP. Debt/GDP 122.6% is the Q1-2026 GFDEGDQ188S print",
+    "url": "https://www.crfb.org/press-releases/cbo-estimates-20-trillion-deficit-first-11-months-fy-2026",
+    "as_of": "2026-09-09"
+  }
+}

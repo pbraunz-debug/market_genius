@@ -1,0 +1,118 @@
+{
+  "_comment": "BACKFILL built on 2026-10-12 for a week the scheduled routine missed (24 Aug - 5 Oct it could not push). Every value is point-in-time as of the report's Friday close; the build cuts the Shiller CSV and FRED data at the report date. The Buffett indicator has no dated gurufocus reading in this span, so it is carried from the previous report and marked stale.",
+  "research_date": "2026-10-12",
+  "spx_current": {
+    "level": 7656.98,
+    "date": "2026-09-11",
+    "source": "S&P 500 close 2026-09-11, +65.28 (+0.9%), August CPI release day (https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-9112026-nid11092026/)"
+  },
+  "cape_web": {
+    "value": 41.1,
+    "source": "CryptoBriefing via KuCoin, 'approximately 41.1'",
+    "url": "https://www.kucoin.com/news/flash/s-p-500-cape-ratio-hits-41-highest-since-dot-com-bubble",
+    "as_of": "2026-09-13"
+  },
+  "cpi_fallback": {
+    "annual_rate_pct": 3.4,
+    "source": "August 2026 CPI +0.4% m/m, +3.4% y/y, core +0.3% m/m (released 2026-09-11; third-party summary, not yet checked against BLS)",
+    "url": "https://cpiinflationcalculator.com/the-consumer-price-index-rises-0-4-in-august-2026-seasonally-adjusted-and-holds-at-3-4-annually/",
+    "as_of": "2026-09-11"
+  },
+  "fred_fallback": {
+    "DGS10": 4.96,
+    "T10Y2Y": 0.33,
+    "BAMLH0A0HYM2": 265,
+    "source": "FRED series via equibles.com mirrors, all for 2026-09-11: DGS10 4.96%, T10Y2Y +0.33, HY OAS 2.65% = 265bps",
+    "url": "https://equibles.com/economicdata/bamlh0a0hym2",
+    "as_of": "2026-09-11"
+  },
+  "curve_post_inversion": true,
+  "fed": {
+    "stance": "hold 3.50-3.75% ahead of the 09-16 meeting; August core CPI +0.3% m/m vs 0.2% expected",
+    "read": "hike near-certain: CME September odds ~85%, up from ~70% before CPI",
+    "as_of": "2026-09-11"
+  },
+  "sentiment_updates": [
+    {
+      "name": "Druckenmiller",
+      "s12": 1,
+      "s24": 1,
+      "s36": 0,
+      "conviction": 4.0,
+      "note": "CUT and GAP CLOSED: reportedly cut AI holdings to ~20% of their level six months earlier (FT, via secondary source), calls AI a likely 'profit bubble' and rates too low",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-10",
+        "summary": "Piper Sandler closed-door meeting (FT): Fed members calling policy restrictive are 'just ridiculous'; 'We are likely in a profit bubble because this AI construction boom will eventually end'",
+        "url": "https://allweatherfinance.com/warsh-mentor-and-legendary-trader-druckenmiller-held-a-closed-door-meeting-us-interest-rates-are-too-low-dovish-stance-is-absurd-and-ai-may-have-a-profit-bubble/"
+      }
+    },
+    {
+      "name": "Wood",
+      "s12": 4,
+      "s24": 4,
+      "s36": 5,
+      "conviction": 5.0,
+      "note": "Held: rotation within megacaps (out of GOOGL, into META), not de-risking",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-09",
+        "summary": "ARK sold ~$28.7M of Alphabet (09-09/09-11) and bought ~$27.9M of Meta",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-sells-28-7-013700981.html"
+      }
+    },
+    {
+      "name": "Siegel",
+      "s12": 2,
+      "s24": 2,
+      "s36": 2,
+      "conviction": 3.5,
+      "note": "Held: expects a hike, a 'shudder' and sell-off, then a range-bound market",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-10",
+        "summary": "CNBC Closing Bell: Warsh will 'bite the bullet and raise rates'; 'you'll see a sell off'",
+        "url": "https://247wallst.com/investing/2026/09/11/youll-see-a-sell-off-jeremy-siegel-says-warsh-will-be-forced-to-raise-rates-and-predicts-what-happens-to-stocks-next/"
+      }
+    },
+    {
+      "name": "Sonders",
+      "s12": 1,
+      "s24": 1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: correction-level drawdowns tend to come within 12 months of a first hike; slow cycles are milder",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-09",
+        "summary": "Schwab 'Take a Hike: Rate Hikes and Market Impacts': fast-cycle average drawdown ~-16% vs ~-12% for slow cycles",
+        "url": "https://www.schwab.com/learn/story/take-hike-rate-hikes-and-market-impacts"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "Take a Hike: Rate Hikes and Market Impacts",
+      "url": "https://www.schwab.com/learn/story/take-hike-rate-hikes-and-market-impacts",
+      "source": "Charles Schwab (Sonders/Gordon)",
+      "date": "2026-09-09",
+      "primary": true,
+      "why": "Sonders' drawdown history for hiking cycles - the base rate for what the first hike since 2023 does to the momentum tile"
+    },
+    {
+      "title": "CBO estimates $2.0 trillion deficit for first 11 months of FY2026",
+      "url": "https://www.crfb.org/press-releases/cbo-estimates-20-trillion-deficit-first-11-months-fy-2026",
+      "source": "CRFB on CBO's August Monthly Budget Review",
+      "date": "2026-09-09",
+      "primary": true,
+      "why": "The fiscal tile's input: the deficit is tracking ~6% of GDP at full employment"
+    }
+  ],
+  "fiscal": {
+    "deficit_pct_gdp": 5.8,
+    "debt_to_gdp": 122.6,
+    "source": "CBO August Monthly Budget Review (09-09): $2.0tn deficit over the first 11 months of FY2026, consistent with the ~5.8% full-year projection. CRFB puts the 12-month rolling deficit at ~5.5% of GDP. Debt/GDP 122.6% is the Q1-2026 GFDEGDQ188S print",
+    "url": "https://www.crfb.org/press-releases/cbo-estimates-20-trillion-deficit-first-11-months-fy-2026",
+    "as_of": "2026-09-09"
+  }
+}

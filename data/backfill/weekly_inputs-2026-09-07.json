@@ -1,0 +1,133 @@
+{
+  "_comment": "BACKFILL built on 2026-10-12 for a week the scheduled routine missed (24 Aug - 5 Oct it could not push). Every value is point-in-time as of the report's Friday close; the build cuts the Shiller CSV and FRED data at the report date. The Buffett indicator has no dated gurufocus reading in this span, so it is carried from the previous report and marked stale.",
+  "research_date": "2026-10-12",
+  "spx_current": {
+    "level": 7718.6,
+    "date": "2026-09-04",
+    "source": "S&P 500 close 2026-09-04, -29.11 (-0.4%) as a strong August payrolls print (+162k) lifted hike bets (https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-942026-nid04092026/)"
+  },
+  "cape_web": {
+    "value": 40.9,
+    "source": "multpl.com monthly table, September 2026 row",
+    "url": "https://www.multpl.com/shiller-pe/table/by-month",
+    "as_of": "2026-09-01"
+  },
+  "cpi_fallback": {
+    "annual_rate_pct": 3.4,
+    "source": "July 2026 CPI +3.4% y/y (August CPI not released until 09-11)",
+    "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates/",
+    "as_of": "2026-08-12"
+  },
+  "fred_fallback": {
+    "DGS10": 4.78,
+    "T10Y2Y": 0.41,
+    "BAMLH0A0HYM2": 268,
+    "source": "FRED series via equibles.com mirrors, all for 2026-09-04: DGS10 4.78%, T10Y2Y +0.41, HY OAS 2.68% = 268bps",
+    "url": "https://equibles.com/economicdata/bamlh0a0hym2",
+    "as_of": "2026-09-04"
+  },
+  "curve_post_inversion": true,
+  "fed": {
+    "stance": "hold 3.50-3.75%; August payrolls +162k vs 56k expected, unemployment 4.1% (09-04)",
+    "read": "hawkish drift; CME September hike odds 58%",
+    "as_of": "2026-09-04"
+  },
+  "sentiment_updates": [
+    {
+      "name": "Yardeni",
+      "s12": 4,
+      "s24": 4,
+      "s36": 4,
+      "conviction": 5.0,
+      "note": "Held: Warsh more hawkish than expected, but 1-2 hikes don't derail the target",
+      "gap": false,
+      "statement": {
+        "date": "2026-08-29",
+        "summary": "'US MARKET CALL: Warsh Proof': keeps YE 8,400 (forward EPS $415 x 20.2); 10y still in a 4-5% 'normal-for-longer' range",
+        "url": "https://www.yardeniquicktakes.com/us-market-call-warsh-proof/"
+      }
+    },
+    {
+      "name": "Siegel",
+      "s12": 2,
+      "s24": 2,
+      "s36": 2,
+      "conviction": 3.5,
+      "note": "Held: gives Warsh an A, policy not restrictive, constructive on AI and earnings",
+      "gap": false,
+      "statement": {
+        "date": "2026-08-31",
+        "summary": "'Warsh Gets an A': 'Warsh does not believe current policy is particularly restrictive'",
+        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/archive-august-31-2026"
+      }
+    },
+    {
+      "name": "Roubini",
+      "s12": 2,
+      "s24": 2,
+      "s36": 2,
+      "conviction": 3.0,
+      "note": "RAISED from +1: not worried about an AI bubble; rising real yields reflect AI capex and growth, not a bond crisis",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-04",
+        "summary": "Cernobbio interview (Bloomberg video 'Roubini Says He's Not Concerned About an AI Bubble'): stocks rise with growth, though 'some corrections' possible",
+        "url": "https://www.bitget.com/news/detail/12560605790505"
+      }
+    },
+    {
+      "name": "Slok",
+      "s12": 0,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "12m cut to 0: frames early 2027 as AI succeeds or fails - in the failure case the Nasdaq could fall 50%",
+      "gap": false,
+      "statement": {
+        "date": "2026-08-29",
+        "summary": "Daily Spark 'Think Six Months Ahead': long rates much lower in six months either way; AI failure means rotation out of equities",
+        "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/think-six-months-ahead"
+      }
+    },
+    {
+      "name": "El-Erian",
+      "s12": 0,
+      "s24": -1,
+      "s36": 1,
+      "conviction": 3.5,
+      "note": "Conviction up: more bond-bearish, AI market path getting bumpier; no explicit equity call",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-04",
+        "summary": "CNBC at Cernobbio: global bond sell-off not over; 'I don't see any appetite in the U.S. for immediate fiscal consolidation'",
+        "url": "https://www.cnbc.com/2026/09/04/el-erian-government-bond-selloff.html"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "US MARKET CALL: Warsh Proof",
+      "url": "https://www.yardeniquicktakes.com/us-market-call-warsh-proof/",
+      "source": "Yardeni QuickTakes",
+      "date": "2026-08-29",
+      "primary": true,
+      "why": "Yardeni's last reiteration of 8,400 with its EPS x P/E math - the bull case the 10y later broke"
+    },
+    {
+      "title": "Think Six Months Ahead",
+      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/think-six-months-ahead",
+      "source": "Apollo Daily Spark (Slok)",
+      "date": "2026-08-29",
+      "primary": true,
+      "why": "Slok's AI success/failure binary with a Nasdaq -50% tail - the reason his 12m goes to 0"
+    },
+    {
+      "title": "AI's Market Path Will Get Bumpier",
+      "url": "https://www.project-syndicate.org/commentary/ai-bumpy-road-ahead-borrowing-costs-public-resistance-shallow-adoption-by-mohamed-a-el-erian-2026-09",
+      "source": "Project Syndicate (El-Erian)",
+      "date": "2026-09-02",
+      "primary": true,
+      "why": "El-Erian on AI financing getting harder as borrowing costs rise - CAPE and momentum both lean on the AI trade"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "_comment": "BACKFILL built on 2026-10-12 for a week the scheduled routine missed (24 Aug - 5 Oct it could not push). Every value is point-in-time as of the report's Friday close; the build cuts the Shiller CSV and FRED data at the report date. The Buffett indicator has no dated gurufocus reading in this span, so it is carried from the previous report and marked stale.",
+  "research_date": "2026-10-12",
+  "spx_current": {
+    "level": 7743.41,
+    "date": "2026-09-25",
+    "source": "S&P 500 close 2026-09-25, +39.28 (+0.5%) (https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-9252026-nid25092026/)"
+  },
+  "cape_web": {
+    "value": 41.12,
+    "source": "Motley Fool 'as of September' (YCharts) - no newer dated reading; the S&P is +1.2% since, so the true figure is nearer 41.6",
+    "url": "https://www.fool.com/investing/2026/09/18/market-signal-seen-only-once-point-next/",
+    "as_of": "2026-09-18"
+  },
+  "cpi_fallback": {
+    "annual_rate_pct": 3.4,
+    "source": "August 2026 CPI +3.4% y/y (released 2026-09-11)",
+    "url": "https://cpiinflationcalculator.com/the-consumer-price-index-rises-0-4-in-august-2026-seasonally-adjusted-and-holds-at-3-4-annually/",
+    "as_of": "2026-09-11"
+  },
+  "fred_fallback": {
+    "DGS10": 5.17,
+    "T10Y2Y": 0.36,
+    "BAMLH0A0HYM2": 293,
+    "source": "FRED series via equibles.com mirrors, all for 2026-09-25: DGS10 5.17%, T10Y2Y +0.36, HY OAS 2.93% = 293bps",
+    "url": "https://equibles.com/economicdata/bamlh0a0hym2",
+    "as_of": "2026-09-25"
+  },
+  "curve_post_inversion": true,
+  "fed": {
+    "stance": "hold 3.75-4.00% after the 09-16 hike, guidance 'will deliver price stability'",
+    "read": "leaning to another hike; October odds drifted to ~64-70% by week's end (approximate - inferred from later articles)",
+    "as_of": "2026-09-25"
+  },
+  "sentiment_updates": [
+    {
+      "name": "Siegel",
+      "s12": 1,
+      "s24": 2,
+      "s36": 2,
+      "conviction": 3.5,
+      "note": "12m trimmed to +1: a 10y near 5% and TIPS ~2.6% compete with equities, equity risk premium ~2.4pp, 'no major near-term upside catalyst'",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-21",
+        "summary": "WisdomTree 'Higher Rates Test Stocks, But Growth Endures': 'If long-term yields decisively move above 5%, it becomes much more difficult for stocks to advance'",
+        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/archive-september-21-2026"
+      }
+    },
+    {
+      "name": "Yardeni",
+      "s12": 2,
+      "s24": 3,
+      "s36": 4,
+      "conviction": 4.0,
+      "note": "Held: formal note on the cut, 8,400 pushed to mid-2027, 70/30 Roaring-2020s/bear odds",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-19",
+        "summary": "'US MARKET CALL: Investors Curbing Their Enthusiasm...': 'Our new year-end target is 7,900'",
+        "url": "https://www.yardeniquicktakes.com/us-market-call-investors-curbing-their-enthusiasm-as-less-fomo-offsets-more-femo/"
+      }
+    },
+    {
+      "name": "Wood",
+      "s12": 4,
+      "s24": 4,
+      "s36": 5,
+      "conviction": 5.0,
+      "note": "Held: post-hike newsletter calls the Fed a sideshow next to tech-driven deflation (paraphrase only)",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-22",
+        "summary": "Wood newsletter (via Crypto Briefing): the hike is a sideshow; innovation pushes inflation toward 0-1%",
+        "url": "https://cryptobriefing.com/cathie-wood-downplays-fed-rate-hike-fears/"
+      }
+    },
+    {
+      "name": "Marks",
+      "s12": -1,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: fiscal and long-rate alarm, but explicitly says the problem isn't US stocks and advises against exiting US assets",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-22",
+        "summary": "Oaktree memo 'Shall We Repeal the Laws of Economics - Part III': buybacks are an ice pack on a fever; long rates stay elevated",
+        "url": "https://www.oaktreecapital.com/insights/memo/shall-we-repeal-the-laws-of-economics---part-iii"
+      }
+    },
+    {
+      "name": "Buffett-Berkshire",
+      "s12": 0,
+      "s24": 1,
+      "s36": 1,
+      "conviction": 4.0,
+      "note": "Revealed buying: ~2.7M Lennar shares bought 09-17..09-21, stake ~10% - a contrarian housing bet into the weakness Burry is shorting",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-22",
+        "summary": "SEC filing: Berkshire bought almost 2.7M Lennar class A shares over 3 sessions, now ~23.7M shares (~$1.8bn)",
+        "url": "https://tradersunion.com/news/financial-news/show/3439013-berkshire-lennar-stake-homebuilder-rates/"
+      }
+    },
+    {
+      "name": "El-Erian",
+      "s12": -1,
+      "s24": -1,
+      "s36": 1,
+      "conviction": 3.5,
+      "note": "12m cut to -1 as the 10y closed at 5.11%, the highest since July 2007",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-24",
+        "summary": "Says the yield surge 'shouldn't be as big a surprise'; fundamentals evident for some time; 'psychological anchoring' to years of repressed yields",
+        "url": "https://www.benzinga.com/markets/bonds/26/09/61968162/bond-market-alarm-bells-are-ringing-but-mohamed-el-erian-says-psychology-may-be-fueling-the-fear-more-than-fundamentals"
+      }
+    },
+    {
+      "name": "Slok",
+      "s12": 0,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: relative preference for bonds, not a call against stocks",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-22",
+        "summary": "Daily Spark 'Yield Levels Starting To Look Juicy': income without excessive risk even if rates rise further",
+        "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/yield-levels-starting-to-look-juicy"
+      }
+    },
+    {
+      "name": "Dimon",
+      "s12": -3,
+      "s24": -2,
+      "s36": -1,
+      "conviction": 3.5,
+      "note": "Held: AI capex and capital-demand theme (summary from headline only)",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-21",
+        "summary": "CNBC: hyperscaler AI spending could hit $1 trillion next year (JPM India conference)",
+        "url": "https://www.cnbc.com/2026/09/21/jamie-dimon-jpm-jpmorgan-indiaconference.html"
+      }
+    },
+    {
+      "name": "Dalio",
+      "s12": -2,
+      "s24": -3,
+      "s36": -3,
+      "conviction": 4.5,
+      "note": "Held: consistent with his debt-cycle view",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-22",
+        "summary": "WEF video (Fortune): AI drives productivity but is also 'a bubble that is going to have devastating effects on many people'",
+        "url": "https://www.fortune.com/2026/09/22/ray-dalio-optimists-pessimists-both-correct-ai-calls-productivity-inequality/"
+      }
+    },
+    {
+      "name": "Burry",
+      "s12": -4,
+      "s24": -4,
+      "s36": -2,
+      "conviction": 5.0,
+      "note": "Held: new shorts are revealed positioning on semis/AI, but he says new index highs make a short-term bearish call difficult and does not call a top",
+      "gap": false,
+      "statement": {
+        "date": "2026-09-22",
+        "summary": "Substack: added to shorts in Micron, Nebius, Palantir and SOXX; memory stocks at 'ridiculous prices'",
+        "url": "https://247wallst.com/investing/2026/09/23/palantir-gains-2-nebius-pulls-back-micron-barely-budges-as-michael-burry-adds-to-shorts-in-all-three/"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "Shall We Repeal the Laws of Economics - Part III",
+      "url": "https://www.oaktreecapital.com/insights/memo/shall-we-repeal-the-laws-of-economics---part-iii",
+      "source": "Oaktree memo (Marks)",
+      "date": "2026-09-22",
+      "primary": true,
+      "why": "Marks on fiscal, yields and the dollar - the fiscal tile's story - while arguing against selling US stocks"
+    },
+    {
+      "title": "A Catalyst for the AI Bubble Break (GMO 3Q 2026 letter, Inker and Pease)",
+      "url": "https://www.gmo.com/americas/research-library/a-catalyst-for-the-ai-bubble-break_gmoquarterlyletter/",
+      "source": "GMO",
+      "date": "2026-09-24",
+      "primary": true,
+      "why": "GMO's house view behind Grantham's -3/-4/-3: equity supply as the trigger - not authored by Grantham himself"
+    },
+    {
+      "title": "Yield Levels Starting To Look Juicy",
+      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/yield-levels-starting-to-look-juicy",
+      "source": "Apollo Daily Spark (Slok)",
+      "date": "2026-09-22",
+      "primary": true,
+      "why": "Fixed income now competing with equities - the Excess CAPE Yield tile in Slok's words"
+    },
+    {
+      "title": "Higher Rates Test Stocks, But Growth Endures",
+      "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/archive-september-21-2026",
+      "source": "WisdomTree (Siegel)",
+      "date": "2026-09-21",
+      "primary": true,
+      "why": "Siegel's 5% 10y threshold and ~2.4pp equity risk premium - why his 12m drops to +1"
+    }
+  ],
+  "fiscal": {
+    "deficit_pct_gdp": 5.8,
+    "debt_to_gdp": 122.6,
+    "source": "CBO August Monthly Budget Review (09-09): $2.0tn deficit over 11 months; full-year projection ~5.8% of GDP. Debt/GDP 122.6% is the Q1-2026 GFDEGDQ188S print",
+    "url": "https://www.crfb.org/press-releases/cbo-estimates-20-trillion-deficit-first-11-months-fy-2026",
+    "as_of": "2026-09-09"
+  }
+}

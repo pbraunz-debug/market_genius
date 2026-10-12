@@ -1,0 +1,133 @@
+{
+  "_comment": "BACKFILL built on 2026-10-12 for a week the scheduled routine missed (24 Aug - 5 Oct it could not push). Every value is point-in-time as of the report's Friday close; the build cuts the Shiller CSV and FRED data at the report date. The Buffett indicator has no dated gurufocus reading in this span, so it is carried from the previous report and marked stale.",
+  "research_date": "2026-10-12",
+  "spx_current": {
+    "level": 7711.76,
+    "date": "2026-08-28",
+    "source": "S&P 500 close 2026-08-28, -0.25%, the day of Warsh's Jackson Hole keynote (https://tapeboard.com/blog/market-pulse-2026-08-28)"
+  },
+  "cape_web": {
+    "value": 41.13,
+    "source": "multpl.com monthly table, August 2026 row (no dated daily reading for late August; the S&P is within 0.1% of the 08-20 level the 41.2 last report used)",
+    "url": "https://www.multpl.com/shiller-pe/table/by-month",
+    "as_of": "2026-08-01"
+  },
+  "cpi_fallback": {
+    "annual_rate_pct": 3.4,
+    "source": "July 2026 CPI +3.4% y/y, released 2026-08-12",
+    "url": "https://www.usinflationcalculator.com/inflation/current-inflation-rates/",
+    "as_of": "2026-08-12"
+  },
+  "fred_fallback": {
+    "DGS10": 4.73,
+    "T10Y2Y": 0.39,
+    "BAMLH0A0HYM2": 260,
+    "source": "FRED series via equibles.com mirrors, all for 2026-08-28: DGS10 4.73%, T10Y2Y +0.39, HY OAS 2.60% = 260bps",
+    "url": "https://equibles.com/economicdata/bamlh0a0hym2",
+    "as_of": "2026-08-28"
+  },
+  "curve_post_inversion": true,
+  "fed": {
+    "stance": "hold 3.50-3.75%; Chair Warsh's Jackson Hole keynote (08-28): 2% target 'firm', 'predominant focus right now should be on prices', policy not restrictive, no forward guidance - 'committed to a discipline, not to a decision'",
+    "read": "hawkish; September hike odds rose to ~54-60% after the speech (from ~35% before)",
+    "as_of": "2026-08-28"
+  },
+  "sentiment_updates": [
+    {
+      "name": "Druckenmiller",
+      "s12": 2,
+      "s24": 2,
+      "s36": 0,
+      "conviction": 4.0,
+      "note": "Bond/fiscal critique, no new equity view; still long megacap tech from the Q2 13F while attacking rate suppression",
+      "gap": true,
+      "statement": {
+        "date": "2026-08-24",
+        "summary": "WSJ op-ed: Bessent's expanded long-bond buybacks are 'price management'; the long bond is 'the only fiscal disciplinarian the U.S. has left'",
+        "url": "https://www.axios.com/2026/08/25/treasury-bonds-druckenmiller-bessent"
+      }
+    },
+    {
+      "name": "Siegel",
+      "s12": 2,
+      "s24": 2,
+      "s36": 2,
+      "conviction": 3.5,
+      "note": "Held: equities' 'impressive resilience', inflation risks building, no hike expected before the midterms",
+      "gap": false,
+      "statement": {
+        "date": "2026-08-24",
+        "summary": "WisdomTree weekly commentary 'Markets Hold Firm as Inflation Risks Build'",
+        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/archive-august-24-2026"
+      }
+    },
+    {
+      "name": "Slok",
+      "s12": 1,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: rates/fiscal call, no equity view - hyperscaler issuance crowding out Treasury demand",
+      "gap": false,
+      "statement": {
+        "date": "2026-08-26",
+        "summary": "Daily Spark 'Rates Will Stay Higher for Longer': debt growing faster than GDP, Fed weighing a hike",
+        "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/Rates-will-stay-higher-for-longer"
+      }
+    },
+    {
+      "name": "El-Erian",
+      "s12": 0,
+      "s24": -1,
+      "s36": 1,
+      "conviction": 3.0,
+      "note": "Held: Fed-process commentary only",
+      "gap": false,
+      "statement": {
+        "date": "2026-08-28",
+        "summary": "X post on Warsh's Jackson Hole speech: the balance is 'difficult to strike' and 'almost certain to leave some unsatisfied'; leans to the 'longer-term secular side'",
+        "url": "https://stocktwits.com/news-articles/markets/equity/kevin-warsh-jackson-hole-speech-mohamed-el-erian-reaction-function-secular-spirit/cZYABOqRJAZ"
+      }
+    },
+    {
+      "name": "Krugman",
+      "s12": -2,
+      "s24": -2,
+      "s36": -1,
+      "conviction": 3.0,
+      "note": "Held: Fed commentary, no equity view",
+      "gap": false,
+      "statement": {
+        "date": "2026-08-28",
+        "summary": "Yahoo Finance interview: Warsh's speech 'utterly conventional' - 'tight money until we see a lot better data'",
+        "url": "https://finance.yahoo.com/video/feds-warsh-came-off-utterly-160716677.html"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "Keynote remarks by Chairman Warsh at the 2026 Jackson Hole Economic Policy Symposium",
+      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "source": "Federal Reserve Board",
+      "date": "2026-08-28",
+      "primary": true,
+      "why": "Sets the reaction function behind the September hike - the policy input to the 10y and the Excess CAPE Yield tile"
+    },
+    {
+      "title": "Rates Will Stay Higher for Longer",
+      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/Rates-will-stay-higher-for-longer",
+      "source": "Apollo Daily Spark (Slok)",
+      "date": "2026-08-26",
+      "primary": true,
+      "why": "Slok's fiscal case for structurally higher long rates - the fiscal tile feeding the 10y"
+    },
+    {
+      "title": "Markets Hold Firm as Inflation Risks Build",
+      "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/archive-august-24-2026",
+      "source": "WisdomTree (Siegel)",
+      "date": "2026-08-24",
+      "primary": true,
+      "why": "Siegel's pre-Jackson Hole base case: no hike before the midterms - the call the Fed then broke"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "date": "2026-10-05",
-  "composite": 4.326075929572434,
+  "composite": 4.326075929572433,
   "band": "frothy / hold dry powder",
-  "weight_covered": 0.9999999999999999,
+  "weight_covered": 1.0,
   "indicators": {
     "cape": {
       "value": 41.4,
@@ -29,7 +29,7 @@
       "source": "derived: FRED DGS10 + Shiller CPI"
     },
     "trend": {
-      "value": 1.5711833569058096,
+      "value": 1.5711833569058098,
       "score": 4.626499143346659,
       "display": "1.57x",
       "as_of": "2026-10-02",
@@ -70,18 +70,15 @@
     }
   },
   "sentiment_changes": [
-    "Yardeni: 12m +4 -> +2; 24m +4 -> +3; conviction 5.0 -> 4.0",
-    "El-Erian: 12m +0 -> -1; 24m -1 -> -2; conviction 3.0 -> 4.0",
+    "El-Erian: 24m -1 -> -2; conviction 3.5 -> 4.0",
     "Buffett-Berkshire: 12m +0 -> +1",
     "Dalio: 24m -3 -> -4; conviction 4.5 -> 5.0",
     "Burry: 36m -2 -> -3",
-    "Fed: hold 3.50-3.75% (9-3 vote, 28-29 July), three dissents wanting a HIKE, September hike priced near 61% -> HIKED 25bps to 3.75-4.00% on 2026-09-16, unanimously - the first increase since 2023 - with the dot plot pointing to one more hike this year (median 4.1% end-2026, no change in 2027, cuts in 2028-29)"
+    "Gross: 12m +0 -> -1; 24m +0 -> -1",
+    "Fed: hold 3.75-4.00% after the 09-16 hike, guidance 'will deliver price stability' -> HIKED 25bps to 3.75-4.00% on 2026-09-16, unanimously - the first increase since 2023 - with the dot plot pointing to one more hike this year (median 4.1% end-2026, no change in 2027, cuts in 2028-29)"
   ],
-  "new_statements": [
-    "Lee",
-    "Druckenmiller"
-  ],
-  "top_signal": "TOP-SIGNAL WATCH: 12-month momentum is turning DOWN (score 4.03 -> 3.60, now +11.0%) while valuation stays red (CAPE, Buffett and price-vs-trend average 4.85). FRAMEWORK 1.5 calls that combination the classic top signal. Credit is confirming: HY OAS 270 -> 324bps over the same span. This is the pattern to watch, not the composite, which can sit still while its parts rotate.",
+  "new_statements": [],
+  "top_signal": "TOP-SIGNAL WATCH: 12-month momentum is turning DOWN (score 3.81 -> 3.60, now +11.0%) while valuation stays red (CAPE, Buffett and price-vs-trend average 4.85). FRAMEWORK 1.5 calls that combination the classic top signal. Credit is confirming: HY OAS 293 -> 324bps over the same span. This is the pattern to watch, not the composite, which can sit still while its parts rotate.",
   "sentiment_snapshot": {
     "as_of": "2026-10-05",
     "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
@@ -104,11 +101,12 @@
         "s36": 4,
         "conviction": 4.0,
         "school": "strategist",
-        "note": "DOWNGRADE: the Street-high bull cut his own target. 7,900 is barely above spot, and he lifted his bearish-scenario odds from 20% to 30%",
-        "last_statement": "2026-09-16",
+        "note": "Held: formal note on the cut, 8,400 pushed to mid-2027, 70/30 Roaring-2020s/bear odds",
+        "last_statement": "2026-09-19",
         "changed_this_week": true,
-        "statement_summary": "Cut year-end S&P target 8,400 -> 7,900 and said 'proceed with caution' as the 10y passed 5%; forward P/E assumption 19.8 -> 18.6",
-        "statement_url": "https://www.cnbc.com/2026/09/16/yardeni-trims-sp-500-target-says-proceed-with-caution-as-rates-rise.html"
+        "statement_summary": "'US MARKET CALL: Investors Curbing Their Enthusiasm...': 'Our new year-end target is 7,900'",
+        "statement_url": "https://www.yardeniquicktakes.com/us-market-call-investors-curbing-their-enthusiasm-as-less-fomo-offsets-more-femo/",
+        "gap": false
       },
       {
         "name": "Wood",
@@ -117,11 +115,12 @@
         "s36": 5,
         "conviction": 5.0,
         "school": "strategist",
-        "note": "'Golden Age' thesis intact: deflationary tech + fiscal push",
-        "last_statement": "2026-08-14",
+        "note": "Held: post-hike newsletter calls the Fed a sideshow next to tech-driven deflation (paraphrase only)",
+        "last_statement": "2026-09-22",
         "changed_this_week": true,
-        "statement_summary": "Q2-26 13F: book up to $15.4bn across 191 names; Tesla/AMD/SpaceX/Tempus/Robinhood ~25% of assets",
-        "statement_url": "https://seekingalpha.com/article/4938481-cathie-wood-ark-invest-13f-portfolio-q2-2026-update"
+        "statement_summary": "Wood newsletter (via Crypto Briefing): the hike is a sideshow; innovation pushes inflation toward 0-1%",
+        "statement_url": "https://cryptobriefing.com/cathie-wood-downplays-fed-rate-hike-fears/",
+        "gap": false
       },
       {
         "name": "Lee",
@@ -130,24 +129,26 @@
         "s36": 3,
         "conviction": 5.0,
         "school": "strategist",
-        "note": "now the loudest bull on the roster, and openly split from Yardeni: reads the hike as REMOVING the pressure for more, and therefore as yields-down, equities-up",
-        "last_statement": "2026-09-18",
+        "note": "Held: the loudest bull, now openly split from Yardeni",
+        "last_statement": "2026-09-15",
         "changed_this_week": true,
-        "statement_summary": "Holds S&P above 8,200 by year-end despite the hike, calls it good news for stocks and predicts a historic Q4 rally",
-        "statement_url": "https://parameter.io/tom-lee-remains-bullish-sp-500-could-soar-past-8200-despite-fed-rate-hikes/"
+        "statement_summary": "CNBC Closing Bell: S&P could 'easily be above 8,200 by the end of the year' as long as the AI trade isn't extinguished; Q4 'one of the biggest rallies'",
+        "statement_url": "https://stocktwits.com/news-articles/markets/equity/fundstrat-s-tom-lee-sees-s-and-p-500-above-8-200-by-year-end-but-this-analyst-just-slashed-the-target-for-2026/cZtYJYfRB2L",
+        "gap": false
       },
       {
         "name": "Siegel",
-        "s12": 2,
+        "s12": 1,
         "s24": 2,
         "s36": 2,
         "conviction": 3.5,
         "school": "strategist",
-        "note": "constructive but names AI spend, valuations and bond yields as the worries",
-        "last_statement": "2026-08-10",
+        "note": "12m trimmed to +1: a 10y near 5% and TIPS ~2.6% compete with equities, equity risk premium ~2.4pp, 'no major near-term upside catalyst'",
+        "last_statement": "2026-09-21",
         "changed_this_week": true,
-        "statement_summary": "Weak July payrolls 'overstate' labour-market weakness; still does not expect a bear market",
-        "statement_url": "https://www.thinkadvisor.com/2026/07/27/jeremy-siegel-stays-optimistic-as-market-risks-pile-up/"
+        "statement_summary": "WisdomTree 'Higher Rates Test Stocks, But Growth Endures': 'If long-term yields decisively move above 5%, it becomes much more difficult for stocks to advance'",
+        "statement_url": "https://resources.wisdomtree.com/weekly-siegel-commentary/archive-september-21-2026",
+        "gap": false
       },
       {
         "name": "Sonders",
@@ -156,51 +157,54 @@
         "s36": 0,
         "conviction": 3.0,
         "school": "strategist",
-        "note": "36m cut to 0: record margin debt, record equity allocations and index concentration are her stated longer-term risks",
-        "last_statement": "2026-08-18",
+        "note": "Held: probably not one-and-done, but not a long cycle either",
+        "last_statement": "2026-09-18",
         "changed_this_week": true,
-        "statement_summary": "Rotation backdrop persists and higher yields are biting; investors are 'reluctantly' long via ETF flows and margin debt",
-        "statement_url": "https://www.cnbc.com/video/2026/08/18/charles-schwabs-liz-ann-sonders-discusses-how-higher-yields-are-impacting-markets.html"
+        "statement_summary": "Schwab Market Perspective: stocks fell sharply after Warsh's press conference; slow hiking cycles have historically produced milder declines",
+        "statement_url": "https://www.schwab.com/learn/story/stock-market-outlook",
+        "gap": false
       },
       {
         "name": "Druckenmiller",
-        "s12": 2,
-        "s24": 2,
+        "s12": 1,
+        "s24": 1,
         "s36": 0,
         "conviction": 4.0,
         "school": "macro-trader",
-        "note": "GAP WIDENED, not closed: still positioned long megacap tech from Q2, while publicly arguing rates are too LOW and yield suppression is a subsidy to fiscal procrastination. Bearish bonds, long equities, hawkish Fed - pick two",
-        "last_statement": "2026-09-24",
+        "note": "CUT and GAP CLOSED: reportedly cut AI holdings to ~20% of their level six months earlier (FT, via secondary source), calls AI a likely 'profit bubble' and rates too low",
+        "last_statement": "2026-09-10",
         "changed_this_week": true,
-        "gap": true,
-        "statement_summary": "Says rates are already too low and cuts are unnecessary - 'committee members on the Fed who keep saying Fed fund rates are restrictive are just ridiculous'; WSJ op-ed against Treasury long-bond buybacks: if the 30y must trade at 5.5% 'that isn't a crisis, it is an invoice', and the only durable fix is the primary deficit",
-        "statement_url": "https://realinvestmentadvice.com/resources/blog/druckenmiller-warning-the-bond-market-already-priced-it/"
+        "gap": false,
+        "statement_summary": "Piper Sandler closed-door meeting (FT): Fed members calling policy restrictive are 'just ridiculous'; 'We are likely in a profit bubble because this AI construction boom will eventually end'",
+        "statement_url": "https://allweatherfinance.com/warsh-mentor-and-legendary-trader-druckenmiller-held-a-closed-door-meeting-us-interest-rates-are-too-low-dovish-stance-is-absurd-and-ai-may-have-a-profit-bubble/"
       },
       {
         "name": "Roubini",
-        "s12": 1,
-        "s24": 1,
-        "s36": 1,
+        "s12": 2,
+        "s24": 2,
+        "s36": 2,
         "conviction": 3.0,
         "school": "policy",
-        "note": "baseline still 'Goldilocks', but names a more fragile backdrop: Middle East war, AI job-shedding, private-credit stress",
-        "last_statement": "2026-08-05",
+        "note": "RAISED from +1: not worried about an AI bubble; rising real yields reflect AI capex and growth, not a bond crisis",
+        "last_statement": "2026-09-04",
         "changed_this_week": true,
-        "statement_summary": "Holds the Goldilocks 2026 baseline - tariffs walked back, growth slower, inflation only modestly higher",
-        "statement_url": "https://www.stern.nyu.edu/experience-stern/faculty-research/outlook-us-economy-2026"
+        "statement_summary": "Cernobbio interview (Bloomberg video 'Roubini Says He's Not Concerned About an AI Bubble'): stocks rise with growth, though 'some corrections' possible",
+        "statement_url": "https://www.bitget.com/news/detail/12560605790505",
+        "gap": false
       },
       {
         "name": "Slok",
-        "s12": 1,
+        "s12": 0,
         "s24": -1,
         "s36": 0,
         "conviction": 3.0,
         "school": "policy",
-        "note": "24m cut to -1: AI capex is running at ~0.85pp of GDP/yr vs 0.5pp in the housing boom, and he warns it 'can unwind at a similar pace'. Bull economy / bear market, with the risk framing moving from stagflation to overheating",
-        "last_statement": "2026-08-17",
+        "note": "Held: relative preference for bonds, not a call against stocks",
+        "last_statement": "2026-09-22",
         "changed_this_week": true,
-        "statement_summary": "AI capex growing nearly twice as fast as the housing boom; rising consumer delinquencies and a widening K-shaped economy on the other side of the ledger",
-        "statement_url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark"
+        "statement_summary": "Daily Spark 'Yield Levels Starting To Look Juicy': income without excessive risk even if rates rise further",
+        "statement_url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/yield-levels-starting-to-look-juicy",
+        "gap": false
       },
       {
         "name": "El-Erian",
@@ -213,20 +217,22 @@
         "last_statement": "2026-09-29",
         "changed_this_week": true,
         "statement_summary": "Expects the 10y to stay around 5% even if oil falls, citing a structural bond supply/demand imbalance; 'volatility will be a feature, and elevated yields will be a feature for the rest of the year', and 'the big danger' is rate risk turning into equity and credit risk",
-        "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr"
+        "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr",
+        "gap": false
       },
       {
         "name": "Gross",
-        "s12": 0,
-        "s24": 0,
+        "s12": -1,
+        "s24": -1,
         "s36": 0,
         "conviction": 3.0,
         "school": "macro",
-        "note": "'No crash, just a forward weave requiring a cane'; bearish long Treasuries on deficits, prefers energy infrastructure and MLPs to exuberant tech",
-        "last_statement": "2026-08-01",
+        "note": "MOVED CAUTIOUS from neutral: own nothing but 1-year T-bills, be cautious on stocks at record levels because higher yields will compress margins",
+        "last_statement": "2026-09-30",
         "changed_this_week": true,
-        "statement_summary": "Valuation casts a shadow over 2026; the record rally is at risk of stalling unless AI earnings show up",
-        "statement_url": "https://williamhgross.com/investment-outlook-archive/"
+        "statement_summary": "Investment Outlook / FT op-ed 'Don't own bonds and be cautious with stocks': 'be cautious with stocks at record levels as higher yields over time will contract profit margins'",
+        "statement_url": "https://williamhgross.com/dont-own-bonds-and-be-cautious-with-stocks/",
+        "gap": false
       },
       {
         "name": "Buffett-Berkshire",
@@ -250,10 +256,11 @@
         "conviction": 3.0,
         "school": "credit",
         "note": "No new memo inside the fortnight, but his private-credit memo is the live thesis: the US private-credit default rate hit a record 6.0% in April (Fitch) and the Proskauer index ran 2.73% in Q1 against 1.84% two quarters earlier - while loan spreads were still tightening. Exactly the 'not being paid for the risk' setup he described",
-        "last_statement": "2026-08-01",
+        "last_statement": "2026-09-22",
         "changed_this_week": false,
-        "statement_summary": "Memo 'What's Going On in Private Credit?' - direct lending's growth, and the issues rapid deployment created",
-        "statement_url": "https://www.oaktreecapital.com/insights/memo/whats-going-on-in-private-credit"
+        "statement_summary": "Oaktree memo 'Shall We Repeal the Laws of Economics - Part III': buybacks are an ice pack on a fever; long rates stay elevated",
+        "statement_url": "https://www.oaktreecapital.com/insights/memo/shall-we-repeal-the-laws-of-economics---part-iii",
+        "gap": false
       },
       {
         "name": "Dimon",
@@ -263,11 +270,11 @@
         "conviction": 3.5,
         "school": "credit",
         "note": "No new statement inside the fortnight, but the tape is validating the April letter and his Norges Bank remarks: private-credit default rates hit a record 6.0% (Fitch, April) and HY OAS has widened 54bps since the last report. 'Credit will perform worse than people expect' is becoming measurable rather than rhetorical - the rhetoric>action gap is closing from the data side, not from him",
-        "gap": true,
-        "last_statement": "2026-08-06",
+        "gap": false,
+        "last_statement": "2026-09-21",
         "changed_this_week": false,
-        "statement_summary": "'Margin debt is the highest it has ever been', much of it hidden in prime brokerage, ETFs and Treasury-basis trades; says he would not buy the S&P 500 or long-dated Treasuries at today's prices and the market is one bad trade from panic selling",
-        "statement_url": "https://www.cnbc.com/2026/08/06/jpmorgan-jamie-dimon-leverage-market-disruption.html"
+        "statement_summary": "CNBC: hyperscaler AI spending could hit $1 trillion next year (JPM India conference)",
+        "statement_url": "https://www.cnbc.com/2026/09/21/jamie-dimon-jpm-jpmorgan-indiaconference.html"
       },
       {
         "name": "Summers",
@@ -287,11 +294,12 @@
         "s36": -1,
         "conviction": 3.0,
         "school": "policy",
-        "note": "bearish the real economy rather than the index - the gap between the two is his point",
-        "last_statement": "2026-08-13",
+        "note": "Held: Fed commentary, no equity view",
+        "last_statement": "2026-08-28",
         "changed_this_week": true,
-        "statement_summary": "August Substack run - 'An Explosion of Misery' (Aug 5) and 'This is your economy on crack (spread)' (Aug 13): the US economy is in worse shape than the tape looks",
-        "statement_url": "https://paulkrugman.substack.com/p/an-explosion-of-misery"
+        "statement_summary": "Yahoo Finance interview: Warsh's speech 'utterly conventional' - 'tight money until we see a lot better data'",
+        "statement_url": "https://finance.yahoo.com/video/feds-warsh-came-off-utterly-160716677.html",
+        "gap": false
       },
       {
         "name": "Dalio",
@@ -304,7 +312,8 @@
         "last_statement": "2026-10-04",
         "changed_this_week": true,
         "statement_summary": "Says the US is 'on the brink' and that if the fiscal path does not change a debt shock could hit within two years",
-        "statement_url": "https://kingworldnews.com/ray-dalio-us-debt-collapse-is-coming-michael-burry-the-big-short-is-about-to-repeat/"
+        "statement_url": "https://kingworldnews.com/ray-dalio-us-debt-collapse-is-coming-michael-burry-the-big-short-is-about-to-repeat/",
+        "gap": false
       },
       {
         "name": "Rosenberg",
@@ -313,11 +322,12 @@
         "s36": -2,
         "conviction": 4.5,
         "school": "bear",
-        "note": "conviction up: says credit markets are already writing the warning - directly relevant to the HY tripwire",
-        "last_statement": "2026-08-19",
+        "note": "Held: bonds over stocks, a recession surprise ahead; talk only, no positioning",
+        "last_statement": "2026-09-15",
         "changed_this_week": true,
-        "statement_summary": "With Richard Bernstein: the AI trade is a bubble, real disposable income is fractionally negative y/y, and ex-AI the four-quarter real GDP trend is under 1.5% - a K-shaped economy where profits take all the income growth",
-        "statement_url": "https://advisoranalyst.com/2026/08/19/when-everybody-is-on-the-same-side-of-the-trade-david-rosenberg-richard-bernstein.html/"
+        "statement_summary": "Kitco interview: one hike is not a mistake but four or five would be; 'block your nose and buy' Treasuries; expects bonds to outperform stocks within months",
+        "statement_url": "https://www.kitco.com/news/article/2026-09-15/rosenberg-says-one-fed-hike-isnt-mistake-five-would-be",
+        "gap": false
       },
       {
         "name": "Grantham",
@@ -343,7 +353,8 @@
         "last_statement": "2026-10-04",
         "changed_this_week": true,
         "statement_summary": "'The Big Short is about to repeat itself': rates up six straight weeks, mortgage applications -6% w/w, purchase applications -14% y/y, refis -56% y/y, and serious 90+ day delinquencies up for the first time in five months, +19% y/y. Separately questions how fast Nvidia's AI chips lose economic value, citing the 1968 computer-financing cycle, and calls AI infrastructure commitments liabilities in 'hypergrowth mode'",
-        "statement_url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-issues-nvidia-ai-125356102.html"
+        "statement_url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-issues-nvidia-ai-125356102.html",
+        "gap": false
       }
     ]
   },

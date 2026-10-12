@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Froth Dashboard · 2026-09-21 · anotherroof</title>
+<meta name="description" content="Weekly froth dashboard for 2026-09-21: composite 4.37, frothy / hold dry powder.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#EEF1EC; --paper-raised:#FFFFFF; --paper-sunken:#E4E9E2;
+    --ink:#16211C; --ink-soft:#49564C; --ink-faint:#6B786D;
+    --rule:#D2D9CE; --rule-strong:#B7C1B2;
+    --accent:#1F5C46; --accent-strong:#154234; --accent-soft:#DCE8DF;
+    --good:#2F8F5B; --dca:#A9812A; --frothy:#BD6430; --extreme:#AE3B34; --neutral:#8B9587;
+    --bear:#AE3B34; --bull:#2F8F5B;
+    --shadow:0 1px 2px rgba(22,33,28,.06),0 8px 24px -12px rgba(22,33,28,.18);
+    --bar-bg:#f7f7f5; --bar-line:#e3e3df; --bar-ink:#55555c; --bar-faint:#6e6e76; --bar-strong:#1a1a1c; --bar-accent:#b4410c;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#10140F; --paper-raised:#171D15; --paper-sunken:#0B0E0A;
+      --ink:#E9EDE6; --ink-soft:#A9B4A4; --ink-faint:#8A968A;
+      --rule:#293026; --rule-strong:#38412F;
+      --accent:#5CB98C; --accent-strong:#7DCBA3; --accent-soft:#1C2A20;
+      --good:#4FAE7B; --dca:#D4A845; --frothy:#DE8A55; --extreme:#DE7168; --neutral:#7C8880;
+      --bear:#DE7168; --bull:#4FAE7B;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 28px -14px rgba(0,0,0,.6);
+      --bar-bg:#141416; --bar-line:#2e2e33; --bar-ink:#b0b0b8; --bar-faint:#8e8e97; --bar-strong:#ececee; --bar-accent:#f08a4b;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:var(--accent-strong);text-decoration-color:var(--rule-strong);text-underline-offset:2px}
+  a:hover{text-decoration-color:currentColor}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+  .num,.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+  /* site bar */
+  .sitebar{font:13px/1.4 "IBM Plex Mono",ui-monospace,monospace;background:var(--bar-bg);color:var(--bar-faint);border-bottom:1px solid var(--bar-line);padding:12px 16px}
+  .sitebar .in{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px}
+  .sitebar ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 8px}
+  .sitebar li+li::before{content:"/";margin-right:8px;opacity:.5}
+  .sitebar a{color:var(--bar-ink);text-decoration:none}.sitebar a:hover{color:var(--bar-accent)}
+  .sitebar [aria-current]{color:var(--bar-strong)}
+
+  .page{max-width:1040px;margin:0 auto;padding:2.75rem 1.5rem 4rem}
+  @media (max-width:640px){.page{padding:2rem 1.1rem 3rem}}
+
+  .masthead{display:flex;flex-direction:column;gap:.7rem;padding-bottom:1.75rem;border-bottom:1px solid var(--rule);margin-bottom:2.25rem}
+  .masthead-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-strong);font-weight:600}
+  .report-date{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-faint)}
+  .title{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:600;line-height:1.15;max-width:24ch}
+  .dek{font-size:1.02rem;color:var(--ink-soft);max-width:60ch;line-height:1.55}
+
+  .gauge-panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);padding:1.8rem 1.9rem 1.6rem;margin-bottom:2.5rem;display:grid;gap:1.1rem}
+  @media (max-width:640px){.gauge-panel{padding:1.3rem 1.1rem}}
+  .gauge-reading{display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+  .gauge-number{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(3rem,7vw,4rem);line-height:.9}
+  .gauge-labels{display:flex;flex-direction:column;gap:.35rem;padding-bottom:.35rem}
+  .gauge-band-pill{display:inline-flex;width:fit-content;font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;padding:.25rem .6rem;border-radius:999px;border:1px solid currentColor;background:var(--paper)}
+  .gauge-delta{font-size:.85rem;color:var(--ink-faint)}
+  .gauge-delta b{color:var(--ink-soft);font-weight:600}
+  svg.gauge-svg{width:100%;height:auto;display:block;overflow:visible}
+  .gauge-footnote{font-size:.82rem;color:var(--ink-faint);line-height:1.55;border-top:1px solid var(--rule);padding-top:1rem}
+
+  .signal{margin:-1.2rem 0 2.5rem;padding:1rem 1.2rem;border-radius:10px;background:color-mix(in srgb,var(--frothy) 12%,var(--paper-raised));border:1px solid color-mix(in srgb,var(--frothy) 40%,transparent);font-size:.92rem;line-height:1.55;color:var(--ink)}
+  .signal b{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.08em;color:var(--frothy);display:block;margin-bottom:.3rem}
+
+  section{margin-bottom:2.6rem}
+  .quadrant-panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:12px;padding:1rem 1rem .6rem;box-shadow:var(--shadow)}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .section-head h2{font-size:1.35rem;font-weight:600}
+  .section-sub{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--ink-faint)}
+
+  .indicator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:.9rem}
+  .indicator-card{background:var(--paper-raised);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.05rem 1.05rem;display:flex;flex-direction:column;gap:.55rem}
+  .indicator-head{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+  .indicator-label{font-weight:600;font-size:.88rem}
+  .indicator-weight{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--ink-faint)}
+  .indicator-value{font-family:"Fraunces",serif;font-size:1.55rem;font-weight:600;line-height:1}
+  .score-row{display:flex;align-items:center;gap:.55rem}
+  .score-bar{position:relative;flex:1;height:6px;border-radius:999px;background:var(--paper-sunken);overflow:hidden}
+  .score-fill{position:absolute;inset:0 auto 0 0;border-radius:999px}
+  .score-num{font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:600;min-width:2.4em;text-align:right}
+  .trend{font-size:.85rem;width:1.2em;text-align:center}
+  .trend.up{color:var(--frothy)}.trend.down{color:var(--good)}.trend.flat{color:var(--ink-faint)}
+  .indicator-note{font-size:.83rem;color:var(--ink-soft);line-height:1.5}
+  .indicator-meta{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--ink-faint);margin-top:auto;padding-top:.2rem}
+  .stale{color:var(--frothy)}
+
+  .changelog-list{margin:0;padding:0;border-top:1px solid var(--rule)}
+  .changelog-list li{list-style:none;display:flex;gap:.8rem;padding:.65rem 0;border-bottom:1px solid var(--rule);font-size:.9rem;line-height:1.5;color:var(--ink-soft)}
+  .changelog-list li::before{content:"–";color:var(--accent-strong);font-weight:600;flex-shrink:0;font-family:"IBM Plex Mono",monospace}
+
+  .roster-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+  @media (max-width:820px){.roster-columns{grid-template-columns:1fr}}
+  .roster-col-head{display:flex;align-items:center;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding-bottom:.5rem;margin-bottom:.6rem;border-bottom:2px solid}
+  .bears .roster-col-head{color:var(--bear);border-color:var(--bear)}
+  .middle .roster-col-head{color:var(--neutral);border-color:var(--neutral)}
+  .bulls .roster-col-head{color:var(--bull);border-color:var(--bull)}
+  .roster-count{font-weight:400;color:var(--ink-faint)}
+  .roster-row{padding:.7rem 0 .8rem .8rem;border-bottom:1px solid var(--rule);border-left:2px solid transparent}
+  .roster-row.changed{border-left-color:var(--accent)}
+  .roster-row:last-child{border-bottom:none}
+  .roster-name-line{display:flex;align-items:baseline;gap:.4rem;flex-wrap:wrap;margin-bottom:.3rem}
+  .roster-name{font-weight:600;font-size:.95rem}
+  .roster-school{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em}
+  .roster-updated{font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--accent-strong);font-weight:600}
+  .roster-scores{display:flex;gap:.3rem;margin-bottom:.4rem;flex-wrap:wrap}
+  .dchip{font-family:"IBM Plex Mono",monospace;font-size:.68rem;font-weight:600;padding:.08rem .38rem;border-radius:4px;display:inline-flex;gap:.2rem}
+  .dchip .p{opacity:.6;font-weight:400}
+  .dchip.pos{color:var(--bull);background:color-mix(in srgb,var(--bull) 14%,var(--paper-raised))}
+  .dchip.neg{color:var(--bear);background:color-mix(in srgb,var(--bear) 14%,var(--paper-raised))}
+  .dchip.zero{color:var(--ink-faint);background:var(--paper-sunken)}
+  .roster-note{font-size:.82rem;color:var(--ink-soft);line-height:1.48;margin-bottom:.35rem}
+  .roster-statement{font-size:.8rem;color:var(--ink-faint);line-height:1.45;margin-bottom:.35rem}
+  .roster-meta-line{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:.72rem;color:var(--ink-faint)}
+  .roster-meta-line a{font-family:"IBM Plex Mono",monospace}
+  .conviction{display:inline-flex;gap:.15rem;vertical-align:middle}
+  .conviction i{width:6px;height:6px;border-radius:50%;background:var(--rule-strong);display:inline-block}
+  .conviction i.on{background:var(--accent)}
+  .conviction i.half{background:linear-gradient(90deg,var(--accent) 50%,var(--rule-strong) 50%)}
+
+  .fed-block{margin-top:1.6rem;padding:1.1rem 1.3rem;background:var(--accent-soft);border-radius:10px;border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+  .fed-block h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;color:var(--accent-strong)}
+  .fed-block p{font-size:.87rem;line-height:1.6;color:var(--ink-soft)}
+  .fed-tag{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--accent-strong);font-weight:600;letter-spacing:.04em}
+
+  .reading-item{display:grid;grid-template-columns:6.6rem minmax(0,1fr);gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--rule)}
+  .reading-item:first-child{border-top:1px solid var(--rule)}
+  .reading-date{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--ink-faint);padding-top:.2rem}
+  .reading-title{font-weight:600;font-size:.94rem;margin-bottom:.15rem;display:block}
+  .reading-source{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em}
+  .reading-primary{color:var(--accent-strong)}
+  .reading-why{font-size:.85rem;color:var(--ink-soft);line-height:1.5;margin-top:.3rem}
+  @media (max-width:560px){.reading-item{grid-template-columns:1fr;gap:.2rem}}
+
+  .dca-panel{background:var(--paper-raised);border:1px solid var(--rule);border-radius:12px;padding:1.5rem 1.6rem;box-shadow:var(--shadow)}
+  .dca-lead{font-size:.95rem;margin-bottom:1.1rem;line-height:1.6}
+  .rule-item{display:flex;gap:.8rem;align-items:flex-start;padding:.65rem 0;border-top:1px solid var(--rule);font-size:.87rem;color:var(--ink-soft);line-height:1.5}
+  .rule-pill{flex-shrink:0;font-family:"IBM Plex Mono",monospace;font-size:.66rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:999px;margin-top:.05rem;background:var(--paper-sunken);color:var(--ink-faint);border:1px solid var(--rule-strong)}
+  .rule-pill.armed{background:color-mix(in srgb,var(--dca) 18%,var(--paper-raised));color:var(--dca);border-color:color-mix(in srgb,var(--dca) 45%,transparent)}
+
+  .fine-print{border-top:1px solid var(--rule);padding-top:1.4rem;margin-top:.5rem;display:flex;flex-direction:column;gap:.7rem;font-size:.78rem;color:var(--ink-faint);line-height:1.6}
+  .fine-print .backtest{color:var(--ink-soft);font-style:italic}
+  .fine-print ul{margin:0;padding-left:1.1rem}
+</style>
+</head>
+<body>
+<nav class="sitebar" aria-label="Breadcrumb"><div class="in">
+  <ol>
+    <li><a href="/">anotherroof</a></li>
+    <li><a href="/projects">projects</a></li>
+    <li><a href="/projects/froth">froth dashboard</a></li>
+    <li aria-current="page">2026-09-21</li>
+  </ol>
+  <span>not investment advice</span>
+</div></nav>
+
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="eyebrow">Weekly Froth Dashboard</span>
+      <span class="report-date num">2026-09-21</span>
+    </div>
+    <h1 class="title">Composite 4.37: frothy / hold dry powder</h1>
+    <p class="dek">Eight valuation, credit and fiscal instruments plus a nineteen-voice sentiment roster, read against the deployment rules.</p>
+  </header>
+
+  <section class="gauge-panel" aria-label="Composite score">
+    <div class="gauge-reading">
+      <span class="gauge-number num" style="color:var(--frothy)">4.37</span>
+      <div class="gauge-labels">
+        <span class="gauge-band-pill" style="color:var(--frothy)">frothy / hold dry powder</span>
+        <span class="gauge-delta">vs <b class="num">4.37</b> on 2026-09-14 (+0.00)</span>
+      </div>
+    </div>
+    <svg class="gauge-svg" viewBox="0 -34 1000 110" role="img" aria-label="Composite gauge from 1.0 to 5.0, currently 4.37">
+      <rect x="0" y="0" width="375" height="22" fill="var(--good)" opacity=".85"/>
+      <rect x="375" y="0" width="250" height="22" fill="var(--dca)" opacity=".85"/>
+      <rect x="625" y="0" width="250" height="22" fill="var(--frothy)" opacity=".85"/>
+      <rect x="875" y="0" width="125" height="22" fill="var(--extreme)" opacity=".85"/>
+      <g stroke="var(--rule-strong)" stroke-width="2">
+        <line x1="1" y1="22" x2="1" y2="30"/><line x1="375" y1="22" x2="375" y2="30"/><line x1="625" y1="22" x2="625" y2="30"/><line x1="875" y1="22" x2="875" y2="30"/><line x1="999" y1="22" x2="999" y2="30"/>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="15" fill="var(--ink-faint)">
+        <text x="0" y="46">1.0</text><text x="375" y="46" text-anchor="middle">2.5</text><text x="625" y="46" text-anchor="middle">3.5</text><text x="875" y="46" text-anchor="middle">4.5</text><text x="1000" y="46" text-anchor="end">5.0</text>
+      </g>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="13" fill="var(--ink-faint)">
+        <text x="0" y="66">deploy aggr.</text><text x="378" y="66">DCA mode</text><text x="628" y="66">frothy</text><text x="878" y="66">extreme</text>
+      </g>
+      <line x1="841.8" y1="-6" x2="841.8" y2="28" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="2 3"/>
+      <polygon points="842.0,-4 854.0,-22 830.0,-22" fill="var(--ink)"/>
+    </svg>
+    <p class="gauge-footnote">At composite 4.5+, historically a 40% probability that a 20%+ real decline begins within 36 months (29% for 30%+) - but 4.5+ zones also produced the longest melt-ups. The signal is regime, not timing.</p>
+  </section>
+
+
+  <section>
+    <div class="section-head">
+      <h2>Eight instruments</h2>
+      <span class="section-sub">weight × score · arrows are the 4-week trend</span>
+    </div>
+    <div class="indicator-grid">
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Shiller CAPE</span><span class="indicator-weight num">20%</span></div>
+        <div class="indicator-value num">41.1</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:98.2%;background:var(--extreme)"></div></div>
+          <span class="score-num num">4.93</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">98th pct since 1881; web 41.1 vs computed 47.4; divergence 6.2 pts - earnings vintage suspect; 10yr real earnings carried from 2023-06-01 (39 months)</p>        <p class="indicator-meta">as of 2026-09-18</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Buffett Indicator</span><span class="indicator-weight num">15%</span></div>
+        <div class="indicator-value num">238% of GDP</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:100.0%;background:var(--extreme)"></div></div>
+          <span class="score-num num">5.00</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">median ~85%, dotcom peak 146-172%; 200%+ is the top of the historical range</p>        <p class="indicator-meta">as of 2026-08-20 · <span class="stale">stale 4w</span></p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Excess CAPE Yield</span><span class="indicator-weight num">15%</span></div>
+        <div class="indicator-value num">+0.86%</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:76.8%;background:var(--frothy)"></div></div>
+          <span class="score-num num">4.07</span>
+          <span class="trend up" title="4-week trend">▲</span>
+        </div>
+<p class="indicator-note">1/CAPE 2.43% - real 10y 1.57% (nominal 5.01% - trailing 10y CPI 3.44%)</p>        <p class="indicator-meta">as of 2026-09-18</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Price vs 10-year trend</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">1.58x</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:90.8%;background:var(--extreme)"></div></div>
+          <span class="score-num num">4.63</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">real price vs its 120-month average; 91st pct historically</p>        <p class="indicator-meta">as of 2026-09-18</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">12-month momentum</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">+12.4%</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:67.8%;background:var(--frothy)"></div></div>
+          <span class="score-num num">3.71</span>
+          <span class="trend down" title="4-week trend">▼</span>
+        </div>
+<p class="indicator-note">trailing 12m real price change, 68th pct. Froth marker, not a sell signal - the classic top is momentum turning DOWN while valuation stays red</p>        <p class="indicator-meta">as of 2026-09-18</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">High-yield credit spreads</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">268bps</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:88.0%;background:var(--extreme)"></div></div>
+          <span class="score-num num">4.52</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">EARLY-WARNING TRIPWIRE. +3bps vs the 2026-09-14 report (WIDENING). Tight = complacent; past 500bps alongside an equity drawdown is the staged-deployment trigger</p>        <p class="indicator-meta">as of 2026-09-18</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Yield curve 10y-2y</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">+0.25 pts</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:50.0%;background:var(--dca)"></div></div>
+          <span class="score-num num">3.00</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">positive after a post-inversion re-steepening = 3.0 (*) - recessions historically arrive 12-18 months AFTER un-inversion, not during the inversion</p>        <p class="indicator-meta">as of 2026-09-18</p>
+      </article>
+      <article class="indicator-card">
+        <div class="indicator-head"><span class="indicator-label">Fiscal / debt trajectory</span><span class="indicator-weight num">10%</span></div>
+        <div class="indicator-value num">5.8% of GDP deficit</div>
+        <div class="score-row">
+          <div class="score-bar"><div class="score-fill" style="width:83.7%;background:var(--frothy)"></div></div>
+          <span class="score-num num">4.35</span>
+          <span class="trend flat" title="4-week trend">—</span>
+        </div>
+<p class="indicator-note">federal debt/GDP 123%. ~6% deficits at full employment scores 4.5</p>        <p class="indicator-meta">as of 2026-09-09</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>What changed</h2><span class="section-sub">since 2026-09-14</span></div>
+    <ul class="changelog-list">
+<li>Yardeni: 12m +4 -&gt; +2; 24m +4 -&gt; +3; conviction 5.0 -&gt; 4.0</li><li>Fed: hold 3.50-3.75% ahead of the 09-16 meeting; August core CPI +0.3% m/m vs 0.2% expected -&gt; HIKED 25bps to 3.75-4.00% on 2026-09-16, 12-0 - the first increase since 2023. Warsh: &#39;removing accommodation&#39;, no forward guidance; median dot 4.125% end-2026, 16 of 18 officials see at least one more 2026 hike</li><li>New statements, scores unchanged: Dimon, Lee, Rosenberg, Slok, Sonders</li>    </ul>
+  </section>
+
+  <section class="quadrant">
+    <div class="section-head">
+      <h2>Who expects what</h2>
+      <span class="section-sub">12-month vs 36-month outlook · size = conviction · tails from 2026-09-14</span>
+    </div>
+    <div class="quadrant-panel"><svg viewBox="0 0 760 690" role="img" aria-label="Prognosticator quadrant: each voice&#x27;s 12-month outlook against their 36-month outlook, sized by conviction" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;font-family:'IBM Plex Mono',ui-monospace,monospace"><rect x="380.0" y="46.0" width="270.0" height="270.0" fill="var(--bull)" fill-opacity="0.07"/><rect x="110.0" y="316.0" width="270.0" height="270.0" fill="var(--bear)" fill-opacity="0.07"/><rect x="110.0" y="46.0" width="270.0" height="270.0" fill="var(--neutral)" fill-opacity="0.035"/><rect x="380.0" y="316.0" width="270.0" height="270.0" fill="var(--neutral)" fill-opacity="0.035"/><rect x="110" y="46" width="540" height="540" fill="none" stroke="var(--rule)"/><line x1="187.1" y1="46" x2="187.1" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="508.9" x2="650" y2="508.9" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="235.4" y1="46" x2="235.4" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="460.6" x2="650" y2="460.6" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="283.6" y1="46" x2="283.6" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="412.4" x2="650" y2="412.4" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="331.8" y1="46" x2="331.8" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="364.2" x2="650" y2="364.2" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="428.2" y1="46" x2="428.2" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="267.8" x2="650" y2="267.8" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="476.4" y1="46" x2="476.4" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="219.6" x2="650" y2="219.6" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="524.6" y1="46" x2="524.6" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="171.4" x2="650" y2="171.4" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="572.9" y1="46" x2="572.9" y2="586" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="110" y1="123.1" x2="650" y2="123.1" stroke="var(--rule)" stroke-width="1" stroke-dasharray="2 4"/><line x1="380.0" y1="46" x2="380.0" y2="586" stroke="var(--rule-strong)" stroke-width="1.5"/><line x1="110" y1="316.0" x2="650" y2="316.0" stroke="var(--rule-strong)" stroke-width="1.5"/><text x="138.9" y="604" font-size="11" fill="var(--ink-faint)" text-anchor="middle">-5</text><text x="100" y="561.1" font-size="11" fill="var(--ink-faint)" text-anchor="end">-5</text><text x="187.1" y="604" font-size="11" fill="var(--ink-faint)" text-anchor="middle">-4</text><text x="100" y="512.9" font-size="11" fill="var(--ink-faint)" text-anchor="end">-4</text><text x="283.6" y="604" font-size="11" fill="var(--ink-faint)" text-anchor="middle">-2</text><text x="100" y="416.4" font-size="11" fill="var(--ink-faint)" text-anchor="end">-2</text><text x="380.0" y="604" font-size="11" fill="var(--ink-faint)" text-anchor="middle">0</text><text x="100" y="320.0" font-size="11" fill="var(--ink-faint)" text-anchor="end">0</text><text x="476.4" y="604" font-size="11" fill="var(--ink-faint)" text-anchor="middle">+2</text><text x="100" y="223.6" font-size="11" fill="var(--ink-faint)" text-anchor="end">+2</text><text x="572.9" y="604" font-size="11" fill="var(--ink-faint)" text-anchor="middle">+4</text><text x="100" y="127.1" font-size="11" fill="var(--ink-faint)" text-anchor="end">+4</text><text x="621.1" y="604" font-size="11" fill="var(--ink-faint)" text-anchor="middle">+5</text><text x="100" y="78.9" font-size="11" fill="var(--ink-faint)" text-anchor="end">+5</text><text x="380.0" y="628" font-size="12" fill="var(--ink-soft)" text-anchor="middle">next 12 months  ←  bearish · bullish  →</text><text transform="translate(62 316.0) rotate(-90)" font-size="12" fill="var(--ink-soft)" text-anchor="middle">next 36 months  ←  bearish · bullish  →</text><text x="650" y="36" font-size="10.5" font-weight="600" letter-spacing=".08em" fill="var(--bull)" text-anchor="end">BULL NOW · BULL LATER</text><text x="120" y="576" font-size="10.5" font-weight="600" letter-spacing=".08em" fill="var(--bear)" text-anchor="start">BEAR NOW · BEAR LATER</text><text x="110" y="36" font-size="10.5" font-weight="600" letter-spacing=".08em" fill="var(--ink-faint)" text-anchor="start">PAIN NOW · GAIN LATER</text><text x="640" y="576" font-size="10.5" font-weight="600" letter-spacing=".08em" fill="var(--ink-faint)" text-anchor="end">PARTY NOW · PAY LATER</text><line x1="572.9" y1="123.1" x2="476.4" y2="123.1" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3" stroke-opacity=".7"/><circle cx="572.9" cy="123.1" r="3" fill="none" stroke="var(--accent)" stroke-opacity=".7"/><circle cx="572.9" cy="74.9" r="11.5" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Wood: 12m +4, 24m +4, 36m +5, conviction 5.0</title></circle><circle cx="572.9" cy="74.9" r="15.0" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="572.9" cy="171.4" r="11.5" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Lee: 12m +4, 24m +3, 36m +3, conviction 5.0</title></circle><circle cx="572.9" cy="171.4" r="15.0" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="187.1" cy="412.4" r="11.5" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Burry: 12m -4, 24m -4, 36m -2, conviction 5.0</title></circle><circle cx="187.1" cy="412.4" r="15.0" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="283.6" cy="460.6" r="10.7" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Dalio: 12m -2, 24m -3, 36m -3, conviction 4.5</title></circle><circle cx="283.6" cy="460.6" r="14.2" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="283.6" cy="412.4" r="10.7" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Rosenberg: 12m -2, 24m -3, 36m -2, conviction 4.5</title></circle><circle cx="283.6" cy="412.4" r="14.2" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="476.4" cy="123.1" r="9.9" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Yardeni: 12m +2, 24m +3, 36m +4, conviction 4.0</title></circle><circle cx="476.4" cy="123.1" r="13.4" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="428.2" cy="303.0" r="9.9" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Druckenmiller: 12m +1, 24m +1, 36m +0, conviction 4.0</title></circle><circle cx="428.2" cy="303.0" r="13.4" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="380.0" cy="254.8" r="9.9" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Buffett-Berkshire: 12m +0, 24m +1, 36m +1, conviction 4.0</title></circle><circle cx="380.0" cy="254.8" r="13.4" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="235.4" cy="460.6" r="9.9" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Grantham: 12m -3, 24m -4, 36m -3, conviction 4.0</title></circle><circle cx="235.4" cy="460.6" r="13.4" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="476.4" cy="232.6" r="9.1" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Siegel: 12m +2, 24m +2, 36m +2, conviction 3.5</title></circle><circle cx="476.4" cy="232.6" r="12.6" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="380.0" cy="280.8" r="9.1" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>El-Erian: 12m +0, 24m -1, 36m +1, conviction 3.5</title></circle><circle cx="380.0" cy="280.8" r="12.6" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="235.4" cy="364.2" r="9.1" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Dimon: 12m -3, 24m -2, 36m -1, conviction 3.5</title></circle><circle cx="235.4" cy="364.2" r="12.6" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="476.4" cy="206.6" r="8.3" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Roubini: 12m +2, 24m +2, 36m +2, conviction 3.0</title></circle><circle cx="476.4" cy="206.6" r="11.8" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="428.2" cy="329.0" r="8.3" fill="var(--bull)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Sonders: 12m +1, 24m +1, 36m +0, conviction 3.0</title></circle><circle cx="428.2" cy="329.0" r="11.8" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="380.0" cy="303.0" r="8.3" fill="var(--neutral)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Gross: 12m +0, 24m +0, 36m +0, conviction 3.0</title></circle><circle cx="380.0" cy="303.0" r="11.8" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="380.0" cy="329.0" r="8.3" fill="var(--neutral)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Slok: 12m +0, 24m -1, 36m +0, conviction 3.0</title></circle><circle cx="380.0" cy="329.0" r="11.8" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="331.8" cy="316.0" r="8.3" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Marks: 12m -1, 24m -1, 36m +0, conviction 3.0</title></circle><circle cx="331.8" cy="316.0" r="11.8" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="283.6" cy="351.2" r="8.3" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Krugman: 12m -2, 24m -2, 36m -1, conviction 3.0</title></circle><circle cx="283.6" cy="351.2" r="11.8" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="283.6" cy="377.2" r="8.3" fill="var(--bear)" fill-opacity=".8" stroke="var(--paper-raised)" stroke-width="1.5"><title>Summers: 12m -2, 24m -2, 36m -1, conviction 3.0</title></circle><text x="490.3" y="127.1" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Yardeni</text><text x="588.4" y="78.9" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Wood</text><text x="588.4" y="175.4" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Lee</text><text x="488.7" y="210.6" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Roubini</text><text x="489.5" y="236.6" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Siegel</text><text x="442.1" y="307.0" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Druckenmiller</text><text x="440.5" y="333.0" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Sonders</text><text x="367.7" y="295.0" font-weight="600" text-anchor="end" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Gross</text><text x="380.0" y="352.3" font-weight="600" text-anchor="middle" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Slok</text><text x="393.9" y="258.8" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Buffett-Berkshire</text><text x="393.1" y="284.8" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">El-Erian</text><text x="319.5" y="320.0" font-weight="600" text-anchor="end" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Marks</text><text x="222.3" y="368.2" font-weight="600" text-anchor="end" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Dimon</text><text x="295.9" y="355.2" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Krugman</text><text x="295.9" y="381.2" font-weight="400" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Summers</text><text x="298.3" y="464.6" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Dalio</text><text x="298.3" y="416.4" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Rosenberg</text><text x="221.5" y="464.6" font-weight="600" text-anchor="end" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Grantham</text><text x="202.6" y="416.4" font-weight="600" text-anchor="start" font-size="11.5" fill="var(--ink)" paint-order="stroke" stroke="var(--paper-raised)" stroke-width="3" stroke-linejoin="round">Burry</text><g font-size="11" fill="var(--ink-faint)"><circle cx="116" cy="676" r="5.1" fill="var(--ink-faint)" fill-opacity=".6"/><circle cx="136" cy="676" r="11.5" fill="var(--ink-faint)" fill-opacity=".6"/><text x="154" y="680">conviction 1 → 5</text><circle cx="310" cy="676" r="6" fill="none" stroke="var(--accent)" stroke-width="1.5"/><text x="324" y="680">changed this run</text><line x1="460" y1="676" x2="490" y2="676" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3"/><text x="498" y="680">moved from last report</text></g></svg></div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Sentiment roster</h2>
+      <span class="section-sub">19 voices · 12 / 24 / 36 months · conviction 1–5</span>
+    </div>
+    <div class="roster-columns">
+      <div class="roster-col bears">
+        <div class="roster-col-head"><span>Bears</span><span class="roster-count">7</span></div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Burry</span>
+            <span class="roster-school">value</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-4</span><span class="dchip neg"><span class="p">24m</span>-4</span><span class="dchip neg"><span class="p">36m</span>-2</span></div>
+<p class="roster-note">Scion stopped filing 13Fs in Nov 2025 - positions now come from his Cassandra Unchained Substack, so the disclosure lag is his choice and the newest trades (Aug 4) are paywalled</p><p class="roster-statement">Disclosed bearish book: puts on NVDA and PLTR at up to ~80% of the portfolio (~$1.1bn notional), plus TSLA, CAT, AMAT, SMH and MU opened 30 June and added 24 July</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 5.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+<a href="https://investingtimedaily.com/michael-burry-portfolio-2026/" rel="noopener">2026-08-04 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Dimon</span>
+            <span class="roster-school">credit</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-3</span><span class="dchip neg"><span class="p">24m</span>-2</span><span class="dchip neg"><span class="p">36m</span>-1</span></div>
+<p class="roster-note">Held: inflation &#39;not clear it&#39;s over&#39;; prepare for rate volatility; no recession call</p><p class="roster-statement">Yahoo Finance interview hours after the hike: &#39;it&#39;s not clear to me it&#39;s over yet&#39;; &#39;a lot of things out there which are quite dangerous&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i><i class=""></i></span>
+<a href="https://www.thestreet.com/investing/jpmorgan-ceo-said-inflation-not-over-economy-verdict" rel="noopener">2026-09-16 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Grantham</span>
+            <span class="roster-school">value</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-3</span><span class="dchip neg"><span class="p">24m</span>-4</span><span class="dchip neg"><span class="p">36m</span>-3</span></div>
+<p class="roster-note">latest sourced statement is June 2026 - inside the 6-month window but not fresh this fortnight</p><p class="roster-statement">Calls this &#39;the most expensive market in American history&#39;; a reversion to trend would be closer to a wipeout than a correction, and the odds an AI bubble does not bust are &#39;slim to none&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://247wallst.com/investing/2026/06/26/jeremy-grantham-warns-u-s-stocks-could-plunge-70-in-the-most-expensive-market-in-history/" rel="noopener">2026-06-26 →</a>          </div>
+        </div>
+        <div class="roster-row">
+          <div class="roster-name-line">
+            <span class="roster-name">Summers</span>
+            <span class="roster-school">policy</span>
+          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-2</span><span class="dchip neg"><span class="p">36m</span>-1</span></div>
+          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<span class="num">2026-08-21 (baseline)</span>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Krugman</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-2</span><span class="dchip neg"><span class="p">36m</span>-1</span></div>
+<p class="roster-note">Held: Fed commentary, no equity view</p><p class="roster-statement">Yahoo Finance interview: Warsh&#39;s speech &#39;utterly conventional&#39; - &#39;tight money until we see a lot better data&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://finance.yahoo.com/video/feds-warsh-came-off-utterly-160716677.html" rel="noopener">2026-08-28 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Dalio</span>
+            <span class="roster-school">debt-cycle</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-3</span><span class="dchip neg"><span class="p">36m</span>-3</span></div>
+<p class="roster-note">conviction up: says his own indicators already put AI stocks in bubble territory, and the next crisis is sovereign rather than banking</p><p class="roster-statement">Late-stage debt cycle; Fed balance-sheet expansion is &#39;stimulus into a bubble&#39;; most likely path is a 1970s-style stagflationary spiral with the Fed monetising</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i></span>
+<a href="https://finance.yahoo.com/news/ray-dalio-warns-next-big-011449318.html" rel="noopener">2026-08-10 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Rosenberg</span>
+            <span class="roster-school">bear</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-2</span><span class="dchip neg"><span class="p">24m</span>-3</span><span class="dchip neg"><span class="p">36m</span>-2</span></div>
+<p class="roster-note">Held: bonds over stocks, a recession surprise ahead; talk only, no positioning</p><p class="roster-statement">Kitco interview: one hike is not a mistake but four or five would be; &#39;block your nose and buy&#39; Treasuries; expects bonds to outperform stocks within months</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i></span>
+<a href="https://www.kitco.com/news/article/2026-09-15/rosenberg-says-one-fed-hike-isnt-mistake-five-would-be" rel="noopener">2026-09-15 →</a>          </div>
+        </div>
+      </div>
+      <div class="roster-col middle">
+        <div class="roster-col-head"><span>Middle</span><span class="roster-count">7</span></div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Sonders</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+1</span><span class="dchip pos"><span class="p">24m</span>+1</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">Held: probably not one-and-done, but not a long cycle either</p><p class="roster-statement">Schwab Market Perspective: stocks fell sharply after Warsh&#39;s press conference; slow hiking cycles have historically produced milder declines</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.schwab.com/learn/story/stock-market-outlook" rel="noopener">2026-09-18 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Druckenmiller</span>
+            <span class="roster-school">macro-trader</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+1</span><span class="dchip pos"><span class="p">24m</span>+1</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">CUT and GAP CLOSED: reportedly cut AI holdings to ~20% of their level six months earlier (FT, via secondary source), calls AI a likely &#39;profit bubble&#39; and rates too low</p><p class="roster-statement">Piper Sandler closed-door meeting (FT): Fed members calling policy restrictive are &#39;just ridiculous&#39;; &#39;We are likely in a profit bubble because this AI construction boom will eventually end&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://allweatherfinance.com/warsh-mentor-and-legendary-trader-druckenmiller-held-a-closed-door-meeting-us-interest-rates-are-too-low-dovish-stance-is-absurd-and-ai-may-have-a-profit-bubble/" rel="noopener">2026-09-10 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Slok</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip zero"><span class="p">12m</span>0</span><span class="dchip neg"><span class="p">24m</span>-1</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">Held: backs the hike, no equity call (summary from headline only)</p><p class="roster-statement">CNBC: &#39;Market clearly saying the Fed rate hike was a good decision&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.cnbc.com/video/2026/09/17/market-clearly-saying-the-fed-rate-hike-was-a-good-decision-says-apollo-globals-torsten-slok.html" rel="noopener">2026-09-17 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">El-Erian</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip zero"><span class="p">12m</span>0</span><span class="dchip neg"><span class="p">24m</span>-1</span><span class="dchip pos"><span class="p">36m</span>+1</span></div>
+<p class="roster-note">Conviction up: more bond-bearish, AI market path getting bumpier; no explicit equity call</p><p class="roster-statement">CNBC at Cernobbio: global bond sell-off not over; &#39;I don&#39;t see any appetite in the U.S. for immediate fiscal consolidation&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i><i class=""></i></span>
+<a href="https://www.cnbc.com/2026/09/04/el-erian-government-bond-selloff.html" rel="noopener">2026-09-04 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Gross</span>
+            <span class="roster-school">macro</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip zero"><span class="p">12m</span>0</span><span class="dchip zero"><span class="p">24m</span>0</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">&#39;No crash, just a forward weave requiring a cane&#39;; bearish long Treasuries on deficits, prefers energy infrastructure and MLPs to exuberant tech</p><p class="roster-statement">Valuation casts a shadow over 2026; the record rally is at risk of stalling unless AI earnings show up</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://williamhgross.com/investment-outlook-archive/" rel="noopener">2026-08-01 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Buffett-Berkshire</span>
+            <span class="roster-school">value</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip zero"><span class="p">12m</span>0</span><span class="dchip pos"><span class="p">24m</span>+1</span><span class="dchip pos"><span class="p">36m</span>+1</span></div>
+<p class="roster-note">REVEALED PREFERENCE FLIPPED: first net buying in 15 quarters. Cash still $365bn, so the caution is real - but the direction of travel reversed</p><p class="roster-statement">Q2-26: ~$19.8bn net equity purchases after 14 straight quarters of net selling; cash $397.4bn -&gt; $365.5bn; $4.5bn of buybacks; Alphabet now the third-largest holding at $36.6bn</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/" rel="noopener">2026-08-14 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Marks</span>
+            <span class="roster-school">credit</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip neg"><span class="p">12m</span>-1</span><span class="dchip neg"><span class="p">24m</span>-1</span><span class="dchip zero"><span class="p">36m</span>0</span></div>
+<p class="roster-note">current worry is private credit, not public equity: fast capital deployment into direct lending, with PE portfolio-company performance as the hinge</p><p class="roster-statement">Memo &#39;What&#39;s Going On in Private Credit?&#39; - direct lending&#39;s growth, and the issues rapid deployment created</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.oaktreecapital.com/insights/memo/whats-going-on-in-private-credit" rel="noopener">2026-08-01 →</a>          </div>
+        </div>
+      </div>
+      <div class="roster-col bulls">
+        <div class="roster-col-head"><span>Bulls</span><span class="roster-count">5</span></div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Wood</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+4</span><span class="dchip pos"><span class="p">24m</span>+4</span><span class="dchip pos"><span class="p">36m</span>+5</span></div>
+<p class="roster-note">Held: rotation within megacaps (out of GOOGL, into META), not de-risking</p><p class="roster-statement">ARK sold ~$28.7M of Alphabet (09-09/09-11) and bought ~$27.9M of Meta</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 5.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+<a href="https://finance.yahoo.com/markets/stocks/articles/cathie-wood-sells-28-7-013700981.html" rel="noopener">2026-09-09 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Lee</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+4</span><span class="dchip pos"><span class="p">24m</span>+3</span><span class="dchip pos"><span class="p">36m</span>+3</span></div>
+<p class="roster-note">Held: the loudest bull, now openly split from Yardeni</p><p class="roster-statement">CNBC Closing Bell: S&amp;P could &#39;easily be above 8,200 by the end of the year&#39; as long as the AI trade isn&#39;t extinguished; Q4 &#39;one of the biggest rallies&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 5.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+<a href="https://stocktwits.com/news-articles/markets/equity/fundstrat-s-tom-lee-sees-s-and-p-500-above-8-200-by-year-end-but-this-analyst-just-slashed-the-target-for-2026/cZtYJYfRB2L" rel="noopener">2026-09-15 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Yardeni</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+2</span><span class="dchip pos"><span class="p">24m</span>+3</span><span class="dchip pos"><span class="p">36m</span>+4</span></div>
+<p class="roster-note">DOWNGRADE: the Street-high bull cut his own target; bearish-scenario odds raised from 20% to 30% on 09-12</p><p class="roster-statement">Cut YE S&amp;P target 8,400 -&gt; 7,900, &#39;proceed with caution&#39; as the 10y passed 5%</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 4.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span>
+<a href="https://www.yardeniquicktakes.com/proceed-with-caution/" rel="noopener">2026-09-16 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Siegel</span>
+            <span class="roster-school">strategist</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+2</span><span class="dchip pos"><span class="p">24m</span>+2</span><span class="dchip pos"><span class="p">36m</span>+2</span></div>
+<p class="roster-note">Held: expects a hike, a &#39;shudder&#39; and sell-off, then a range-bound market</p><p class="roster-statement">CNBC Closing Bell: Warsh will &#39;bite the bullet and raise rates&#39;; &#39;you&#39;ll see a sell off&#39;</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i><i class=""></i></span>
+<a href="https://247wallst.com/investing/2026/09/11/youll-see-a-sell-off-jeremy-siegel-says-warsh-will-be-forced-to-raise-rates-and-predicts-what-happens-to-stocks-next/" rel="noopener">2026-09-10 →</a>          </div>
+        </div>
+        <div class="roster-row changed">
+          <div class="roster-name-line">
+            <span class="roster-name">Roubini</span>
+            <span class="roster-school">policy</span>
+<span class="roster-updated">UPDATED</span>          </div>
+          <div class="roster-scores"><span class="dchip pos"><span class="p">12m</span>+2</span><span class="dchip pos"><span class="p">24m</span>+2</span><span class="dchip pos"><span class="p">36m</span>+2</span></div>
+<p class="roster-note">RAISED from +1: not worried about an AI bubble; rising real yields reflect AI capex and growth, not a bond crisis</p><p class="roster-statement">Cernobbio interview (Bloomberg video &#39;Roubini Says He&#39;s Not Concerned About an AI Bubble&#39;): stocks rise with growth, though &#39;some corrections&#39; possible</p>          <div class="roster-meta-line">
+            <span class="conviction" title="conviction 3.0/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>
+<a href="https://www.bitget.com/news/detail/12560605790505" rel="noopener">2026-09-04 →</a>          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fed-block">
+      <span class="fed-tag">FED · 2026-09-17</span>
+      <h3>Policy</h3>
+      <p>HIKED 25bps to 3.75-4.00% on 2026-09-16, 12-0 - the first increase since 2023. Warsh: &#39;removing accommodation&#39;, no forward guidance; median dot 4.125% end-2026, 16 of 18 officials see at least one more 2026 hike. the headwind became an actual tightening; October hike odds ~51% on 09-17</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Reading list</h2></div>
+    <div>
+      <div class="reading-item">
+        <div class="reading-date">2026-09-16</div>
+        <div>
+          <a class="reading-title" href="https://www.federalreserve.gov/monetarypolicy/files/monetary20260916a1.pdf" rel="noopener">FOMC statement, September 16, 2026</a>
+          <span class="reading-source reading-primary">Federal Reserve Board · primary source</span>
+<p class="reading-why">The first hike since 2023, 12-0 - the 10y crossed 5% the same week, moving the Excess CAPE Yield and curve tiles</p>        </div>
+      </div>
+      <div class="reading-item">
+        <div class="reading-date">2026-09-15</div>
+        <div>
+          <a class="reading-title" href="https://www.yardeniquicktakes.com/proceed-with-caution/" rel="noopener">Proceed With Caution</a>
+          <span class="reading-source reading-primary">Yardeni QuickTakes · primary source</span>
+<p class="reading-why">The Street-high bull cutting his own target - the first big roster move of the hiking cycle</p>        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>For the DCA plan</h2></div>
+    <div class="dca-panel">
+      <p class="dca-lead">Composite 4.37 (frothy / hold dry powder). Base DCA continues regardless of score. Above 3.5, so the DCA-doubling rule stays dormant; it arms at 3.5 (+0.87 away). Hold dry powder. Direction matters more than the level here: spreads widened 3bps since 2026-09-14, and the 500bps staged-deployment trigger is 232bps away - roughly 77.3 more moves of that size. Have the tranche sizes decided before it gets there, not after. HY spreads at 268bps are still inside 500bps, so the staged dry-powder trigger is not armed. Credit is the tripwire: it goes first.</p>
+      <div class="rule-item"><span class="rule-pill">always</span><span>Base DCA continues regardless of score.</span></div>
+      <div class="rule-item"><span class="rule-pill">dormant</span><span>Composite drops below 3.5 → double the monthly DCA clip.</span></div>
+      <div class="rule-item"><span class="rule-pill">dormant</span><span>Composite below 2.5 → deploy remaining dry powder aggressively.</span></div>
+      <div class="rule-item"><span class="rule-pill">dormant</span><span>HY spreads widening past 500bps alongside an equity drawdown → begin staged dry-powder deployment: a tranche at -10% S&amp;P drawdown, more at -15%/-20%, the bulk at -20%+ with spreads confirming.</span></div>
+    </div>
+  </section>
+
+  <footer class="fine-print">
+    <p class="backtest">At composite 4.5+, historically a 40% probability that a 20%+ real decline begins within 36 months (29% for 30%+) - but 4.5+ zones also produced the longest melt-ups. The signal is regime, not timing.</p>
+    <p>Data vintage: S&amp;P 7,650 at 2026-09-18 (live index level supplied by the routine); Shiller dataset (live); Shiller CPI column ends 2023-09-01; CPI assumed forward from 2023-09-01; 10yr real earnings avg carried from 2023-06-01; web research 2026-10-12.</p>
+    <div>Gaps flagged this run:
+      <ul><li>Live FRED feed unavailable: FRED series served from cache or routine fallbacks.</li><li>CPI extrapolated from 2023-09-01 to 2026-09-01 at the routine-supplied 3.4%/yr run-rate; real values are approximate.</li><li>Buffett indicator not supplied this week; carried forward (stale 4 weeks).</li></ul>
+    </div>
+    <p>Not investment advice. <a href="/projects/froth">Every run →</a></p>
+  </footer>
+</div>
+</body>
+</html>

@@ -93,7 +93,7 @@
       "s24": 2,
       "s36": 2,
       "conviction": 3.5,
-      "note": "Held: reads 5% yields as growth, not inflation or deficits; Q4 rally intact while oil stays under $90",
+      "note": "12m back to +2: reads 5% yields as growth, not inflation or deficits; Q4 rally intact while oil stays under $90",
       "gap": false,
       "statement": {
         "date": "2026-10-05",
@@ -103,9 +103,9 @@
     },
     {
       "name": "Roubini",
-      "s12": 1,
-      "s24": 1,
-      "s36": 1,
+      "s12": 2,
+      "s24": 2,
+      "s36": 2,
       "conviction": 3.0,
       "note": "Held: benign baseline, tail risks judged less likely; nothing US-equity specific in the visible text",
       "gap": false,
@@ -117,7 +117,7 @@
     },
     {
       "name": "Slok",
-      "s12": 1,
+      "s12": 0,
       "s24": -1,
       "s36": 0,
       "conviction": 3.0,
@@ -127,20 +127,6 @@
         "date": "2026-10-09",
         "summary": "Daily Spark: 'AI's Insensitivity to Interest Rates Is a Problem for the Fed' - 'the Fed will have to keep interest rates higher for longer' (follows 10-06 'Are Rates Peaking Within the Next Month?')",
         "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/ais-insensitivity-to-interest-rates-is-a-problem-for-the-fed"
-      }
-    },
-    {
-      "name": "Gross",
-      "s12": -1,
-      "s24": -1,
-      "s36": 0,
-      "conviction": 3.0,
-      "note": "MOVED CAUTIOUS from neutral: own nothing but 1-year T-bills, be cautious on stocks at record levels because higher yields will compress margins. FT is paywalled; quotes via secondary coverage, op-ed likely ran 09-30",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-04",
-        "summary": "FT op-ed: 'don't own bonds, with the exception of one-year Treasury bills'; 'be cautious with stocks at record levels as higher yields over time will contract profit margins'",
-        "url": "https://www.ft.com/content/c05f3ba5-e24e-4c88-86ed-04f4b229cd15"
       }
     },
     {

@@ -71,13 +71,12 @@
   },
   "sentiment_changes": [
     "Yardeni: conviction 4.0 -> 3.5",
-    "Gross: 12m +0 -> -1; 24m +0 -> -1",
+    "Siegel: 12m +1 -> +2",
     "Fed: HIKED 25bps to 3.75-4.00% on 2026-09-16, unanimously - the first increase since 2023 - with the dot plot pointing to one more hike this year (median 4.1% end-2026, no change in 2027, cuts in 2028-29) -> hold at 3.75-4.00% after the 9-16 hike, hike bias intact: September minutes (released 10-07) show all 19 participants backed the hike and most see another 'likely appropriate by year end'; Waller (10-08) expects more hikes, not necessarily back-to-back. Markets price ~20-25% odds of a hike on 10-27/28"
   ],
   "new_statements": [
     "Wood",
     "Lee",
-    "Siegel",
     "Roubini",
     "Slok",
     "Buffett-Berkshire",
@@ -151,7 +150,7 @@
         "s36": 2,
         "conviction": 3.5,
         "school": "strategist",
-        "note": "Held: reads 5% yields as growth, not inflation or deficits; Q4 rally intact while oil stays under $90",
+        "note": "12m back to +2: reads 5% yields as growth, not inflation or deficits; Q4 rally intact while oil stays under $90",
         "last_statement": "2026-10-05",
         "changed_this_week": true,
         "statement_summary": "Goldilocks jobs report gives Warsh 'cover to hold' in October; stocks can keep rallying in Q4 despite a 'tremendous rise' in yields, which he expects to stay at or above ~5%",
@@ -165,31 +164,32 @@
         "s36": 0,
         "conviction": 3.0,
         "school": "strategist",
-        "note": "36m cut to 0: record margin debt, record equity allocations and index concentration are her stated longer-term risks",
-        "last_statement": "2026-08-18",
+        "note": "Held: probably not one-and-done, but not a long cycle either",
+        "last_statement": "2026-09-18",
         "changed_this_week": true,
-        "statement_summary": "Rotation backdrop persists and higher yields are biting; investors are 'reluctantly' long via ETF flows and margin debt",
-        "statement_url": "https://www.cnbc.com/video/2026/08/18/charles-schwabs-liz-ann-sonders-discusses-how-higher-yields-are-impacting-markets.html"
+        "statement_summary": "Schwab Market Perspective: stocks fell sharply after Warsh's press conference; slow hiking cycles have historically produced milder declines",
+        "statement_url": "https://www.schwab.com/learn/story/stock-market-outlook",
+        "gap": false
       },
       {
         "name": "Druckenmiller",
-        "s12": 2,
-        "s24": 2,
+        "s12": 1,
+        "s24": 1,
         "s36": 0,
         "conviction": 4.0,
         "school": "macro-trader",
-        "note": "GAP WIDENED, not closed: still positioned long megacap tech from Q2, while publicly arguing rates are too LOW and yield suppression is a subsidy to fiscal procrastination. Bearish bonds, long equities, hawkish Fed - pick two",
-        "last_statement": "2026-09-24",
+        "note": "CUT and GAP CLOSED: reportedly cut AI holdings to ~20% of their level six months earlier (FT, via secondary source), calls AI a likely 'profit bubble' and rates too low",
+        "last_statement": "2026-09-10",
         "changed_this_week": true,
-        "gap": true,
-        "statement_summary": "Says rates are already too low and cuts are unnecessary - 'committee members on the Fed who keep saying Fed fund rates are restrictive are just ridiculous'; WSJ op-ed against Treasury long-bond buybacks: if the 30y must trade at 5.5% 'that isn't a crisis, it is an invoice', and the only durable fix is the primary deficit",
-        "statement_url": "https://realinvestmentadvice.com/resources/blog/druckenmiller-warning-the-bond-market-already-priced-it/"
+        "gap": false,
+        "statement_summary": "Piper Sandler closed-door meeting (FT): Fed members calling policy restrictive are 'just ridiculous'; 'We are likely in a profit bubble because this AI construction boom will eventually end'",
+        "statement_url": "https://allweatherfinance.com/warsh-mentor-and-legendary-trader-druckenmiller-held-a-closed-door-meeting-us-interest-rates-are-too-low-dovish-stance-is-absurd-and-ai-may-have-a-profit-bubble/"
       },
       {
         "name": "Roubini",
-        "s12": 1,
-        "s24": 1,
-        "s36": 1,
+        "s12": 2,
+        "s24": 2,
+        "s36": 2,
         "conviction": 3.0,
         "school": "policy",
         "note": "Held: benign baseline, tail risks judged less likely; nothing US-equity specific in the visible text",
@@ -201,7 +201,7 @@
       },
       {
         "name": "Slok",
-        "s12": 1,
+        "s12": 0,
         "s24": -1,
         "s36": 0,
         "conviction": 3.0,
@@ -224,7 +224,8 @@
         "last_statement": "2026-09-29",
         "changed_this_week": true,
         "statement_summary": "Expects the 10y to stay around 5% even if oil falls, citing a structural bond supply/demand imbalance; 'volatility will be a feature, and elevated yields will be a feature for the rest of the year', and 'the big danger' is rate risk turning into equity and credit risk",
-        "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr"
+        "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr",
+        "gap": false
       },
       {
         "name": "Gross",
@@ -233,11 +234,11 @@
         "s36": 0,
         "conviction": 3.0,
         "school": "macro",
-        "note": "MOVED CAUTIOUS from neutral: own nothing but 1-year T-bills, be cautious on stocks at record levels because higher yields will compress margins. FT is paywalled; quotes via secondary coverage, op-ed likely ran 09-30",
-        "last_statement": "2026-10-04",
+        "note": "MOVED CAUTIOUS from neutral: own nothing but 1-year T-bills, be cautious on stocks at record levels because higher yields will compress margins",
+        "last_statement": "2026-09-30",
         "changed_this_week": true,
-        "statement_summary": "FT op-ed: 'don't own bonds, with the exception of one-year Treasury bills'; 'be cautious with stocks at record levels as higher yields over time will contract profit margins'",
-        "statement_url": "https://www.ft.com/content/c05f3ba5-e24e-4c88-86ed-04f4b229cd15",
+        "statement_summary": "Investment Outlook / FT op-ed 'Don't own bonds and be cautious with stocks': 'be cautious with stocks at record levels as higher yields over time will contract profit margins'",
+        "statement_url": "https://williamhgross.com/dont-own-bonds-and-be-cautious-with-stocks/",
         "gap": false
       },
       {
@@ -262,10 +263,11 @@
         "conviction": 3.0,
         "school": "credit",
         "note": "No new memo inside the fortnight, but his private-credit memo is the live thesis: the US private-credit default rate hit a record 6.0% in April (Fitch) and the Proskauer index ran 2.73% in Q1 against 1.84% two quarters earlier - while loan spreads were still tightening. Exactly the 'not being paid for the risk' setup he described",
-        "last_statement": "2026-08-01",
+        "last_statement": "2026-09-22",
         "changed_this_week": false,
-        "statement_summary": "Memo 'What's Going On in Private Credit?' - direct lending's growth, and the issues rapid deployment created",
-        "statement_url": "https://www.oaktreecapital.com/insights/memo/whats-going-on-in-private-credit"
+        "statement_summary": "Oaktree memo 'Shall We Repeal the Laws of Economics - Part III': buybacks are an ice pack on a fever; long rates stay elevated",
+        "statement_url": "https://www.oaktreecapital.com/insights/memo/shall-we-repeal-the-laws-of-economics---part-iii",
+        "gap": false
       },
       {
         "name": "Dimon",
@@ -327,11 +329,12 @@
         "s36": -2,
         "conviction": 4.5,
         "school": "bear",
-        "note": "conviction up: says credit markets are already writing the warning - directly relevant to the HY tripwire",
-        "last_statement": "2026-08-19",
+        "note": "Held: bonds over stocks, a recession surprise ahead; talk only, no positioning",
+        "last_statement": "2026-09-15",
         "changed_this_week": true,
-        "statement_summary": "With Richard Bernstein: the AI trade is a bubble, real disposable income is fractionally negative y/y, and ex-AI the four-quarter real GDP trend is under 1.5% - a K-shaped economy where profits take all the income growth",
-        "statement_url": "https://advisoranalyst.com/2026/08/19/when-everybody-is-on-the-same-side-of-the-trade-david-rosenberg-richard-bernstein.html/"
+        "statement_summary": "Kitco interview: one hike is not a mistake but four or five would be; 'block your nose and buy' Treasuries; expects bonds to outperform stocks within months",
+        "statement_url": "https://www.kitco.com/news/article/2026-09-15/rosenberg-says-one-fed-hike-isnt-mistake-five-would-be",
+        "gap": false
       },
       {
         "name": "Grantham",
