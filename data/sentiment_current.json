@@ -8,23 +8,23 @@
   ],
   "fed": {
     "name": "Fed / Warsh",
-    "stance": "hold at 3.75-4.00% after the 9-16 hike, hike bias intact; September CPI 3.7% (10-14) keeps markets expecting rates held elevated through year-end, with risk of a further hike if crude stays above $100. FOMC 10-27/28",
+    "stance": "hold at 3.75-4.00% after the 9-16 hike, hawkish: Sept CPI 3.7% (core 2.6%) and PPI +1.3% m/m pushed October hike odds to ~27-34% (CME, 10-15) and a December hike to ~67%; Hammack wants more tightening, Barkin/Goolsbee uncomfortable with CPI, Warsh (IMF Bangkok 10-16) non-committal. Blackout from 10-17; FOMC 10-27/28",
     "read": "policy headwind, still tightening - no pivot",
     "as_of": "2026-10-16"
   },
   "roster": [
     {
       "name": "Yardeni",
-      "s12": 2,
+      "s12": 1,
       "s24": 3,
       "s36": 4,
-      "conviction": 3.5,
+      "conviction": 3.0,
       "school": "strategist",
-      "note": "Direction held, conviction trimmed: pushed the 8,400 target out to mid-2027 and now says a 10y at 5.25%+ competes with stocks - Bloomberg (10-08) has him calling yields a 'danger zone'",
-      "last_statement": "2026-09-28",
+      "note": "12m cut 2->1: after the 10-14 selloff says the AI trade is 'getting messy', risk-off should keep compressing multiples, still advises caution - but buying opportunities rising and 7,900 YE still reachable; 2027 EPS $425 held",
+      "last_statement": "2026-10-15",
       "changed_this_week": true,
-      "statement_summary": "CNBC: keeps 7,900 for YE2026, 8,400 moved to mid-2027; earnings 'phenomenal' but can't rule out a 10y at 5.5%+, and 5.25% is 'pretty attractive' versus stocks",
-      "statement_url": "https://finance.yahoo.com/markets/stocks/articles/ed-yardeni-says-phenomenal-earnings-120724010.html",
+      "statement_summary": "Yardeni Research note (via Wallstreetcn): 'our concern is not earnings but valuations'; expects risk aversion to persist and squeeze multiples; 7,900 year-end still reachable",
+      "statement_url": "https://wallstreetcn.com/articles/3783719",
       "gap": false
     },
     {
@@ -58,15 +58,15 @@
     {
       "name": "Siegel",
       "s12": 2,
-      "s24": 2,
-      "s36": 2,
+      "s24": 3,
+      "s36": 3,
       "conviction": 3.5,
       "school": "strategist",
-      "note": "12m back to +2: reads 5% yields as growth, not inflation or deficits; Q4 rally intact while oil stays under $90",
-      "last_statement": "2026-10-05",
+      "note": "24m/36m raised 2->3: explicitly upgraded his equity view, reading rising real rates as stronger growth; 12m held at +2 given a possible 25-50bp hike later and AI-capex obsolescence risk",
+      "last_statement": "2026-10-12",
       "changed_this_week": true,
-      "statement_summary": "Goldilocks jobs report gives Warsh 'cover to hold' in October; stocks can keep rallying in Q4 despite a 'tremendous rise' in yields, which he expects to stay at or above ~5%",
-      "statement_url": "https://finance.yahoo.com/economy/policy/articles/fed-hike-again-october-jeremy-011623876.html",
+      "statement_summary": "WisdomTree Weekly Siegel Commentary 'Rising Real Rates Signal Stronger Growth: Upgrading Equity View': long-run real equity return estimate raised to ~5.5-6.5%; 10y seen 4.75-5.25%, possibly 5.5%",
+      "statement_url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
       "gap": false
     },
     {
@@ -76,10 +76,10 @@
       "s36": 0,
       "conviction": 3.0,
       "school": "strategist",
-      "note": "Held: probably not one-and-done, but not a long cycle either",
-      "last_statement": "2026-09-18",
+      "note": "Held: higher rates mostly growth-driven and don't automatically mean lower stocks; stay invested, but expensive growth names vulnerable and leadership narrow",
+      "last_statement": "2026-10-16",
       "changed_this_week": true,
-      "statement_summary": "Schwab Market Perspective: stocks fell sharply after Warsh's press conference; slow hiking cycles have historically produced milder declines",
+      "statement_summary": "Schwab Market Perspective: AI boosting profits but keeping leadership narrow; favours strong balance sheets, financials, some energy/materials/industrials; plus 10-15 'Panic Is Not a Strategy - Nor Is Greed'",
       "statement_url": "https://www.schwab.com/learn/story/stock-market-outlook",
       "gap": false
     },
@@ -160,12 +160,12 @@
       "s36": 1,
       "conviction": 4.0,
       "school": "value",
-      "note": "Held: still a net buyer - ~2.4M Lennar A shares (~$190M) bought into homebuilder weakness on 10-01/02. Small next to $365bn cash, but buying housing exactly where Burry is shorting",
+      "note": "Held: still a selective net buyer - another $330M into Bending Spoons (stake to 4%) after the 10-01/02 Lennar buys. Unconfirmed report (Edaily via Stockhub) that a subsidiary trimmed Broadcom/Alphabet - not scored",
       "gap": false,
-      "last_statement": "2026-10-05",
+      "last_statement": "2026-10-14",
       "changed_this_week": true,
-      "statement_summary": "Form 4: bought ~2.40M LEN Class A at ~$78-82 on Oct 1-2, stake now 28.44M A shares (via Kalkine summary of the filing)",
-      "statement_url": "https://kalkinemedia.com/us/news/announcements/berkshire-hathaway-increases-lennar-holdings-with-significant-purchases-in-october-2026"
+      "statement_summary": "Reuters (via Capital.com): Berkshire buys 10M new Bending Spoons shares at $33 (~$330M) in a private placement, stake now 4%",
+      "statement_url": "https://capital.com/en-gb/news/berkshire-raises-bending-spoons-stake-to-4-with-fresh-330"
     },
     {
       "name": "Marks",
@@ -188,12 +188,12 @@
       "s36": -1,
       "conviction": 3.5,
       "school": "credit",
-      "note": "Held: the warning is now explicitly about credit spreads on refinancing - the HY tripwire in his own words. JPM Q3 earnings call mid-October is the next read",
+      "note": "Held: Q3 call repeats deficits/sticky inflation/high asset prices/rising rates as risks; JPM cut buybacks and is tightening standards on loose leveraged-finance covenants - action now matches rhetoric",
       "gap": false,
-      "last_statement": "2026-10-06",
+      "last_statement": "2026-10-13",
       "changed_this_week": true,
-      "statement_summary": "Bloomberg interview in London: global demand for capital means 'the market will ask for more'; are refinancing borrowers 'prepared for higher credit spreads or not?'",
-      "statement_url": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-sharpens-warning-about-a-corporate-credit-squeeze-the-market-will-ask-for-more-151359247.html"
+      "statement_summary": "JPMorgan Q3 2026 call: 'high asset prices and fairly low credit losses' may not last; tightening lending standards; 'more uncertainty than normal' on 2027 NII",
+      "statement_url": "https://www.benzinga.com/node/62321579"
     },
     {
       "name": "Summers",
@@ -236,16 +236,16 @@
     },
     {
       "name": "Rosenberg",
-      "s12": -2,
+      "s12": -3,
       "s24": -3,
       "s36": -2,
       "conviction": 4.5,
       "school": "bear",
-      "note": "Held: bonds over stocks, a recession surprise ahead; talk only, no positioning",
-      "last_statement": "2026-09-15",
+      "note": "12m cut -2->-3: calls the US market the 'most stretched' of his 40-year career on valuation, leverage and positioning; shifting to Treasuries and international equities (talk and stated positioning agree)",
+      "last_statement": "2026-10-13",
       "changed_this_week": true,
-      "statement_summary": "Kitco interview: one hike is not a mistake but four or five would be; 'block your nose and buy' Treasuries; expects bonds to outperform stocks within months",
-      "statement_url": "https://www.kitco.com/news/article/2026-09-15/rosenberg-says-one-fed-hike-isnt-mistake-five-would-be",
+      "statement_summary": "Bloomberg (via Roic News): 'most stretched' market in four decades, more AI-dependent than tech was pre-dotcom; average S&P stock ~20% below its 52-week high",
+      "statement_url": "https://www.roic.ai/news/rosenberg-warns-us-stock-market-is-the-most-stretched-in-40-years-10-13-2026",
       "gap": false
     },
     {

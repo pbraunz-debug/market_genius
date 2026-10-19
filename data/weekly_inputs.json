@@ -41,10 +41,128 @@
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
   "fed": {
-    "stance": "hold at 3.75-4.00% after the 9-16 hike, hike bias intact; September CPI 3.7% (10-14) keeps markets expecting rates held elevated through year-end, with risk of a further hike if crude stays above $100. FOMC 10-27/28",
+    "stance": "hold at 3.75-4.00% after the 9-16 hike, hawkish: Sept CPI 3.7% (core 2.6%) and PPI +1.3% m/m pushed October hike odds to ~27-34% (CME, 10-15) and a December hike to ~67%; Hammack wants more tightening, Barkin/Goolsbee uncomfortable with CPI, Warsh (IMF Bangkok 10-16) non-committal. Blackout from 10-17; FOMC 10-27/28",
     "read": "policy headwind, still tightening - no pivot",
     "as_of": "2026-10-16"
   },
-  "sentiment_updates": [],
-  "reading_list": []
+  "sentiment_updates": [
+    {
+      "name": "Yardeni",
+      "s12": 1,
+      "s24": 3,
+      "s36": 4,
+      "conviction": 3.0,
+      "note": "12m cut 2->1: after the 10-14 selloff says the AI trade is 'getting messy', risk-off should keep compressing multiples, still advises caution - but buying opportunities rising and 7,900 YE still reachable; 2027 EPS $425 held",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-15",
+        "summary": "Yardeni Research note (via Wallstreetcn): 'our concern is not earnings but valuations'; expects risk aversion to persist and squeeze multiples; 7,900 year-end still reachable",
+        "url": "https://wallstreetcn.com/articles/3783719"
+      }
+    },
+    {
+      "name": "Siegel",
+      "s12": 2,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 3.5,
+      "note": "24m/36m raised 2->3: explicitly upgraded his equity view, reading rising real rates as stronger growth; 12m held at +2 given a possible 25-50bp hike later and AI-capex obsolescence risk",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-12",
+        "summary": "WisdomTree Weekly Siegel Commentary 'Rising Real Rates Signal Stronger Growth: Upgrading Equity View': long-run real equity return estimate raised to ~5.5-6.5%; 10y seen 4.75-5.25%, possibly 5.5%",
+        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/"
+      }
+    },
+    {
+      "name": "Sonders",
+      "s12": 1,
+      "s24": 1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: higher rates mostly growth-driven and don't automatically mean lower stocks; stay invested, but expensive growth names vulnerable and leadership narrow",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-16",
+        "summary": "Schwab Market Perspective: AI boosting profits but keeping leadership narrow; favours strong balance sheets, financials, some energy/materials/industrials; plus 10-15 'Panic Is Not a Strategy - Nor Is Greed'",
+        "url": "https://www.schwab.com/learn/story/stock-market-outlook"
+      }
+    },
+    {
+      "name": "Rosenberg",
+      "s12": -3,
+      "s24": -3,
+      "s36": -2,
+      "conviction": 4.5,
+      "note": "12m cut -2->-3: calls the US market the 'most stretched' of his 40-year career on valuation, leverage and positioning; shifting to Treasuries and international equities (talk and stated positioning agree)",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-13",
+        "summary": "Bloomberg (via Roic News): 'most stretched' market in four decades, more AI-dependent than tech was pre-dotcom; average S&P stock ~20% below its 52-week high",
+        "url": "https://www.roic.ai/news/rosenberg-warns-us-stock-market-is-the-most-stretched-in-40-years-10-13-2026"
+      }
+    },
+    {
+      "name": "Buffett-Berkshire",
+      "s12": 1,
+      "s24": 1,
+      "s36": 1,
+      "conviction": 4.0,
+      "note": "Held: still a selective net buyer - another $330M into Bending Spoons (stake to 4%) after the 10-01/02 Lennar buys. Unconfirmed report (Edaily via Stockhub) that a subsidiary trimmed Broadcom/Alphabet - not scored",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-14",
+        "summary": "Reuters (via Capital.com): Berkshire buys 10M new Bending Spoons shares at $33 (~$330M) in a private placement, stake now 4%",
+        "url": "https://capital.com/en-gb/news/berkshire-raises-bending-spoons-stake-to-4-with-fresh-330"
+      }
+    },
+    {
+      "name": "Dimon",
+      "s12": -3,
+      "s24": -2,
+      "s36": -1,
+      "conviction": 3.5,
+      "note": "Held: Q3 call repeats deficits/sticky inflation/high asset prices/rising rates as risks; JPM cut buybacks and is tightening standards on loose leveraged-finance covenants - action now matches rhetoric",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-13",
+        "summary": "JPMorgan Q3 2026 call: 'high asset prices and fairly low credit losses' may not last; tightening lending standards; 'more uncertainty than normal' on 2027 NII",
+        "url": "https://www.benzinga.com/node/62321579"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "JPMorgan Chase Q3 2026 earnings call transcript",
+      "url": "https://www.webull.com/news/15741198075913216",
+      "source": "JPMorgan Chase (automated transcript via Benzinga/Webull; 8-K filed 2026-10-13)",
+      "date": "2026-10-13",
+      "primary": true,
+      "why": "Dimon says high asset prices and low credit losses may not last and JPM is tightening standards on loose covenants - the HY spread tripwire from inside the biggest lender"
+    },
+    {
+      "title": "Consumer Price Index - September 2026",
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "source": "U.S. Bureau of Labor Statistics",
+      "date": "2026-10-14",
+      "primary": true,
+      "why": "3.7% headline feeds the real 10y in Excess CAPE Yield and drove October hike odds toward a third - the Fed headwind"
+    },
+    {
+      "title": "Minutes of the FOMC, September 15-16, 2026",
+      "url": "https://federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "source": "Federal Reserve Board",
+      "date": "2026-10-07",
+      "primary": true,
+      "why": "Unanimous hike and most see another this year - sets the 2y end of the 10y-2y curve, which flattened to +0.35"
+    },
+    {
+      "title": "Rising Real Rates Signal Stronger Growth: Upgrading Equity View",
+      "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
+      "source": "WisdomTree / Jeremy Siegel",
+      "date": "2026-10-12",
+      "primary": true,
+      "why": "The bull case against the Excess CAPE Yield reading: Siegel argues 5%+ real-rate rises reflect growth, and raised his long-run equity view"
+    }
+  ]
 }
