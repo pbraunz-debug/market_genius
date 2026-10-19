@@ -1,237 +1,50 @@
 {
-  "research_date": "2026-10-12",
+  "research_date": "2026-10-19",
   "spx_current": {
-    "level": 7811.51,
-    "date": "2026-10-09",
-    "source": "S&P 500 close 2026-10-09, +46.15 (+0.59%), weekly gain as oil and Treasury yields stabilised; +1.1% vs the 7,722.72 close in the 2026-10-05 report (TheStreet market wrap)"
+    "level": 7659.44,
+    "date": "2026-10-16",
+    "source": "S&P 500 close 2026-10-16, -84.62 (-1.09%) on the day; -1.95% on the week (TradingKey weekly wrap) and vs the 7,811.51 close in the 2026-10-12 report. Nasdaq -4.48% w/w, biggest weekly drop since June, on AI-infrastructure credit worries (ycharts)",
+    "url": "https://ycharts.com/indices/^SPX/level"
   },
   "cape_web": {
-    "value": 41.87,
-    "source": "multpl.com 41.87 at the 2026-10-09 close (preferred source). gurufocus monthly print 41.18 (2026-10-01); last report used gurufocus 41.4, so part of the +0.5 is a source switch to the preferred multpl",
-    "url": "https://www.multpl.com/shiller-pe",
-    "as_of": "2026-10-09"
+    "value": 40.54,
+    "source": "multpl.com 40.54 at 2026-10-16 (same source as last report's 41.87)",
+    "url": "https://www.multpl.com/shiller-pe/table",
+    "as_of": "2026-10-16"
   },
   "buffett_indicator": {
-    "value": 238.3,
-    "source": "gurufocus 238.3% (page dated 2026-10-09), same methodology family as the 235.2% last report. buffettindicator.org-style total-market measures print ~300%; score is 5.0 either way",
-    "url": "https://www.gurufocus.com/stock-market-valuations.php",
-    "as_of": "2026-10-09"
+    "value": 233.6,
+    "source": "gurufocus 233.6% (2.336, 2026-10-16; 236.3 prior day), same methodology family as the 238.3% last report. buffettindicator.org-style total-market measures print ~300%; score is 5.0 either way",
+    "url": "https://www.gurufocus.com/economic_indicators/60/buffett-indicator",
+    "as_of": "2026-10-16"
   },
   "fiscal": {
     "deficit_pct_gdp": 6.2,
     "debt_to_gdp": 122.6,
-    "source": "CBO Monthly Budget Review: FY2026 deficit ~$2.0tn, ~6.2% of GDP (AAF summary 2026-10-08), up from the 5.8% projection used last report. Debt held by the public ~100% of GDP; the 122.6% gross debt/GDP is still the Q1-2026 GFDEGDQ188S print (stale denominator)",
-    "url": "https://www.cbo.gov/publication/61985",
+    "source": "CBO Monthly Budget Review (CRFB/AAF summaries 2026-10-08): FY2026 deficit ~$2.0tn, ~6.2% of GDP, unchanged since last report. Debt/GDP 122.6% is still the Q1-2026 GFDEGDQ188S print (stale denominator)",
+    "url": "https://www.crfb.org/press-releases/cbo-estimates-20-trillion-deficit-fiscal-year-2026",
     "as_of": "2026-10-08"
   },
   "cpi_fallback": {
-    "annual_rate_pct": 3.6,
-    "source": "Cleveland Fed nowcast (updated 2026-10-09): September CPI 3.60% y/y, October 3.63%; core 2.39%. Official September CPI due 2026-10-14",
-    "url": "https://www.clevelandfed.org/indicators-and-data/inflation-nowcasting",
-    "as_of": "2026-10-09"
+    "annual_rate_pct": 3.7,
+    "source": "BLS September CPI released 2026-10-14: headline 3.7% y/y (+0.6% m/m), energy-driven (CNN/Forbes/Advisor Perspectives); up from the 3.6% nowcast used last report",
+    "url": "https://advisorperspectives.com/dshort/updates/2026/10/14/cpi-consumer-price-index-inflation-september-2026",
+    "as_of": "2026-10-14"
   },
   "fred_fallback": {
-    "DGS10": 5.22,
-    "T10Y2Y": 0.44,
-    "BAMLH0A0HYM2": 315,
-    "source": "FRED mirrors via equibles.com: DGS10 5.22% (2026-10-08; 5.31 on 10-05), T10Y2Y +0.44 (2026-10-09), HY OAS 3.15% = 315bps (2026-10-08). HY path since last report: 324 (10-01) -> 310, 312, 303, 309, 315 - a 9bp TIGHTENING vs the 324 in the last report, but off a 303 low on 10-06 it has re-widened 12bps in two sessions",
-    "as_of": "2026-10-09"
+    "DGS10": 5.1,
+    "T10Y2Y": 0.35,
+    "BAMLH0A0HYM2": 323,
+    "source": "FRED mirror govspending.org (FRED_API_KEY absent this run): DGS10 5.10% (2026-10-15; ~5.08% by 10-16 per TradingKey, intraday >5.2% earlier in the week), T10Y2Y +0.35 (2026-10-16, flattening from +0.44), HY OAS 3.23% = 323bps (2026-10-15) - an 8bp WIDENING vs 315 in the last report, during an equity selloff and AI-infrastructure credit scrutiny",
+    "as_of": "2026-10-16"
   },
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
   "fed": {
-    "stance": "hold at 3.75-4.00% after the 9-16 hike, hike bias intact: September minutes (released 10-07) show all 19 participants backed the hike and most see another 'likely appropriate by year end'; Waller (10-08) expects more hikes, not necessarily back-to-back. Markets price ~20-25% odds of a hike on 10-27/28",
+    "stance": "hold at 3.75-4.00% after the 9-16 hike, hike bias intact; September CPI 3.7% (10-14) keeps markets expecting rates held elevated through year-end, with risk of a further hike if crude stays above $100. FOMC 10-27/28",
     "read": "policy headwind, still tightening - no pivot",
-    "as_of": "2026-10-08"
+    "as_of": "2026-10-16"
   },
-  "sentiment_updates": [
-    {
-      "name": "Yardeni",
-      "s12": 2,
-      "s24": 3,
-      "s36": 4,
-      "conviction": 3.5,
-      "note": "Direction held, conviction trimmed: pushed the 8,400 target out to mid-2027 and now says a 10y at 5.25%+ competes with stocks - Bloomberg (10-08) has him calling yields a 'danger zone'",
-      "gap": false,
-      "statement": {
-        "date": "2026-09-28",
-        "summary": "CNBC: keeps 7,900 for YE2026, 8,400 moved to mid-2027; earnings 'phenomenal' but can't rule out a 10y at 5.5%+, and 5.25% is 'pretty attractive' versus stocks",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/ed-yardeni-says-phenomenal-earnings-120724010.html"
-      }
-    },
-    {
-      "name": "Wood",
-      "s12": 4,
-      "s24": 4,
-      "s36": 5,
-      "conviction": 5.0,
-      "note": "Held: ARK is rotating within the innovation theme (out of SHOP/HOOD/GOOG/TER, into CRWV/KTOS/ACHR/META), not de-risking. Talk and trades agree",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-08",
-        "summary": "ARK daily trades: sold ~$23M SHOP, ~$22M HOOD, ~$9M GOOG; bought KTOS, NRIX, GENI, PONY (10-06: sold TER, bought VCYT, ACHR, CRWV, META)",
-        "url": "https://www.investing.com/news/company-news/cathie-woods-ark-sells-shopify-stock-buys-kratos-defense-93CH-4940030"
-      }
-    },
-    {
-      "name": "Lee",
-      "s12": 4,
-      "s24": 3,
-      "s36": 3,
-      "conviction": 5.0,
-      "note": "Held: still the loudest bull; softened his October pullback call to a pre-midterm 'speed bump'",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-05",
-        "summary": "CNBC: sees S&P 8,200-8,400 by year-end, Q3 EPS growth near 30%, 2027 estimates up 20%+ YTD make stocks 'cheaper'",
-        "url": "https://coinpedia.org/news/tom-lee-says-cryptos-rally-is-signal-fed-will-ease-and-democrats-will-back-clarity-act-after-midterms/"
-      }
-    },
-    {
-      "name": "Siegel",
-      "s12": 2,
-      "s24": 2,
-      "s36": 2,
-      "conviction": 3.5,
-      "note": "12m back to +2: reads 5% yields as growth, not inflation or deficits; Q4 rally intact while oil stays under $90",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-05",
-        "summary": "Goldilocks jobs report gives Warsh 'cover to hold' in October; stocks can keep rallying in Q4 despite a 'tremendous rise' in yields, which he expects to stay at or above ~5%",
-        "url": "https://finance.yahoo.com/economy/policy/articles/fed-hike-again-october-jeremy-011623876.html"
-      }
-    },
-    {
-      "name": "Roubini",
-      "s12": 2,
-      "s24": 2,
-      "s36": 2,
-      "conviction": 3.0,
-      "note": "Held: benign baseline, tail risks judged less likely; nothing US-equity specific in the visible text",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-02",
-        "summary": "Project Syndicate 'Why Is the Global Economy So Resilient?': markets and economy held up despite tariffs and the energy shock; growth improves in 2027",
-        "url": "https://www.project-syndicate.org/commentary/global-economy-positive-outlook-barring-these-tail-risks-by-nouriel-roubini-2026-10"
-      }
-    },
-    {
-      "name": "Slok",
-      "s12": 0,
-      "s24": -1,
-      "s36": 0,
-      "conviction": 3.0,
-      "note": "Held: near-term rates may peak on oil relief, but AI capex ignores higher rates so the Fed stays higher for longer; flags AI-company CDS widening",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-09",
-        "summary": "Daily Spark: 'AI's Insensitivity to Interest Rates Is a Problem for the Fed' - 'the Fed will have to keep interest rates higher for longer' (follows 10-06 'Are Rates Peaking Within the Next Month?')",
-        "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/ais-insensitivity-to-interest-rates-is-a-problem-for-the-fed"
-      }
-    },
-    {
-      "name": "Buffett-Berkshire",
-      "s12": 1,
-      "s24": 1,
-      "s36": 1,
-      "conviction": 4.0,
-      "note": "Held: still a net buyer - ~2.4M Lennar A shares (~$190M) bought into homebuilder weakness on 10-01/02. Small next to $365bn cash, but buying housing exactly where Burry is shorting",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-05",
-        "summary": "Form 4: bought ~2.40M LEN Class A at ~$78-82 on Oct 1-2, stake now 28.44M A shares (via Kalkine summary of the filing)",
-        "url": "https://kalkinemedia.com/us/news/announcements/berkshire-hathaway-increases-lennar-holdings-with-significant-purchases-in-october-2026"
-      }
-    },
-    {
-      "name": "Dimon",
-      "s12": -3,
-      "s24": -2,
-      "s36": -1,
-      "conviction": 3.5,
-      "note": "Held: the warning is now explicitly about credit spreads on refinancing - the HY tripwire in his own words. JPM Q3 earnings call mid-October is the next read",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-06",
-        "summary": "Bloomberg interview in London: global demand for capital means 'the market will ask for more'; are refinancing borrowers 'prepared for higher credit spreads or not?'",
-        "url": "https://finance.yahoo.com/markets/article/jpmorgan-ceo-jamie-dimon-sharpens-warning-about-a-corporate-credit-squeeze-the-market-will-ask-for-more-151359247.html"
-      }
-    },
-    {
-      "name": "Krugman",
-      "s12": -2,
-      "s24": -2,
-      "s36": -1,
-      "conviction": 3.0,
-      "note": "Held: AI capex is pushing rates up and crowding out everything else; flags private-credit and CRE spillover; no explicit index call",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-06",
-        "summary": "Substack 'AI Versus Everything Else': hyperscaler boom is driving up interest rates and crowding out non-AI investment 'right now'",
-        "url": "https://paulkrugman.substack.com/p/ai-versus-everything-else"
-      }
-    },
-    {
-      "name": "Dalio",
-      "s12": -2,
-      "s24": -4,
-      "s36": -3,
-      "conviction": 5.0,
-      "note": "Held at maximum conviction: 'we are in a bond bear market', AI a classic bubble near bursting, equities' cushion against yields shrinking - but declines to call an imminent selloff",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-08",
-        "summary": "CNBC at Milken Asia (Singapore): stocks' buffer against rising bond yields is shrinking, credit spreads starting to widen, watch weakening free cash flow",
-        "url": "https://www.cnbc.com/2026/10/08/ray-dalio-stocks-bond-yields.html"
-      }
-    },
-    {
-      "name": "Burry",
-      "s12": -4,
-      "s24": -4,
-      "s36": -3,
-      "conviction": 5.0,
-      "note": "Held. GAP flagged the other way: rhetoric is maximal but no verifiable current positioning (Scion deregistered 2025), so the scores rest on talk. Market in the 'denial' stage that lasted 6-9 months in 2000/2008",
-      "gap": true,
-      "statement": {
-        "date": "2026-10-11",
-        "summary": "X posts: homebuilders' 'salad days won't last', Fannie/Freddie 'head-and-shoulders top' with heavy dilution risk; ~10-06 'first stage of grief, denial'",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-warns-fannie-mae-085656185.html"
-      }
-    }
-  ],
-  "reading_list": [
-    {
-      "title": "Minutes of the FOMC, September 15-16, 2026",
-      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260916.htm",
-      "source": "Federal Reserve Board",
-      "date": "2026-10-07",
-      "primary": true,
-      "why": "Unanimous support for the hike and a year-end hike bias with core PCE ~3.4%: the input behind the 10y above 5.2% and the Excess CAPE Yield tile at +0.65%"
-    },
-    {
-      "title": "Are Rates Peaking Within the Next Month?",
-      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/are-rates-peaking-within-the-next-month",
-      "source": "Apollo Daily Spark (Slok)",
-      "date": "2026-10-06",
-      "primary": true,
-      "why": "Slok's case for a near-term rate peak, plus widening AI-company CDS - an early credit signal to read beside the HY tile at 315bps"
-    },
-    {
-      "title": "AI's Insensitivity to Interest Rates Is a Problem for the Fed",
-      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/ais-insensitivity-to-interest-rates-is-a-problem-for-the-fed",
-      "source": "Apollo Daily Spark (Slok)",
-      "date": "2026-10-09",
-      "primary": true,
-      "why": "Why rate hikes may not cool AI capex - the higher-for-longer mechanism that keeps the yield curve and ECY tiles red"
-    },
-    {
-      "title": "AI Versus Everything Else",
-      "url": "https://paulkrugman.substack.com/p/ai-versus-everything-else",
-      "source": "Paul Krugman (Substack)",
-      "date": "2026-10-06",
-      "primary": true,
-      "why": "Krugman's crowding-out argument: AI capex lifts rates for the rest of the economy, with private-credit spillover relevant to Dimon's and Marks's credit warnings"
-    }
-  ]
+  "sentiment_updates": [],
+  "reading_list": []
 }

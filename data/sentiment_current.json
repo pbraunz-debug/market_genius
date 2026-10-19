@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-12",
+  "as_of": "2026-10-19",
   "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
   "excluded_by_request": [
     "Ackman",
@@ -8,9 +8,9 @@
   ],
   "fed": {
     "name": "Fed / Warsh",
-    "stance": "hold at 3.75-4.00% after the 9-16 hike, hike bias intact: September minutes (released 10-07) show all 19 participants backed the hike and most see another 'likely appropriate by year end'; Waller (10-08) expects more hikes, not necessarily back-to-back. Markets price ~20-25% odds of a hike on 10-27/28",
+    "stance": "hold at 3.75-4.00% after the 9-16 hike, hike bias intact; September CPI 3.7% (10-14) keeps markets expecting rates held elevated through year-end, with risk of a further hike if crude stays above $100. FOMC 10-27/28",
     "read": "policy headwind, still tightening - no pivot",
-    "as_of": "2026-10-08"
+    "as_of": "2026-10-16"
   },
   "roster": [
     {
