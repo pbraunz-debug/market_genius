@@ -1,42 +1,42 @@
 {
-  "research_date": "2026-10-19",
+  "research_date": "2026-10-26",
   "spx_current": {
-    "level": 7659.44,
-    "date": "2026-10-16",
-    "source": "S&P 500 close 2026-10-16, -84.62 (-1.09%) on the day; -1.95% on the week (TradingKey weekly wrap) and vs the 7,811.51 close in the 2026-10-12 report. Nasdaq -4.48% w/w, biggest weekly drop since June, on AI-infrastructure credit worries (ycharts)",
-    "url": "https://ycharts.com/indices/^SPX/level"
+    "level": 7623.68,
+    "date": "2026-10-23",
+    "source": "S&P 500 close 2026-10-23, -0.52% on the day and ~-0.5% on the week vs 7,659.44 in the 2026-10-19 report (Capp Notes closing look; portfolio-terminal Oct-2026 page agrees)",
+    "url": "https://cappnotes.substack.com/p/closing-look-friday-october-23-2026"
   },
   "cape_web": {
-    "value": 40.54,
-    "source": "multpl.com 40.54 at 2026-10-16 (same source as last report's 41.87)",
+    "value": 40.36,
+    "source": "multpl.com 40.36 at 2026-10-23 (same source as last report's 40.54)",
     "url": "https://www.multpl.com/shiller-pe/table",
-    "as_of": "2026-10-16"
+    "as_of": "2026-10-23"
   },
   "buffett_indicator": {
-    "value": 233.6,
-    "source": "gurufocus 233.6% (2.336, 2026-10-16; 236.3 prior day), same methodology family as the 238.3% last report. buffettindicator.org-style total-market measures print ~300%; score is 5.0 either way",
-    "url": "https://www.gurufocus.com/economic_indicators/60/buffett-indicator",
-    "as_of": "2026-10-16"
+    "value": 233.0,
+    "source": "gurufocus total market cap / GDP 233% (header dated 2026-10-24), same methodology family as last report's 233.6%. totalmarketindex.com-style total-market measures print ~301.5% (10-23); score is 5.0 either way",
+    "url": "https://www.gurufocus.com/economic_indicators/4602/usa-ratio-of-total-market-cap-over-gdp",
+    "as_of": "2026-10-23"
   },
   "fiscal": {
-    "deficit_pct_gdp": 6.2,
+    "deficit_pct_gdp": 6.1,
     "debt_to_gdp": 122.6,
-    "source": "CBO Monthly Budget Review (CRFB/AAF summaries 2026-10-08): FY2026 deficit ~$2.0tn, ~6.2% of GDP, unchanged since last report. Debt/GDP 122.6% is still the Q1-2026 GFDEGDQ188S print (stale denominator)",
-    "url": "https://www.crfb.org/press-releases/cbo-estimates-20-trillion-deficit-fiscal-year-2026",
-    "as_of": "2026-10-08"
+    "source": "Treasury final FY2026 statement (2026-10-16; AAF 2026-10-18): deficit $1.99tn, ~6.1% of GDP (vs CBO's 6.2% estimate last report). Debt held by public ~100% of GDP; gross debt/GDP 122.6% is still the Q1-2026 GFDEGDQ188S print (stale)",
+    "url": "https://www.americanactionforum.org/insight/u-s-treasury-fy-2026-deficit-totaled-2-trillion/",
+    "as_of": "2026-10-16"
   },
   "cpi_fallback": {
     "annual_rate_pct": 3.7,
-    "source": "BLS September CPI released 2026-10-14: headline 3.7% y/y (+0.6% m/m), energy-driven (CNN/Forbes/Advisor Perspectives); up from the 3.6% nowcast used last report",
-    "url": "https://advisorperspectives.com/dshort/updates/2026/10/14/cpi-consumer-price-index-inflation-september-2026",
+    "source": "BLS September CPI (2026-10-14) 3.7% y/y; still the latest print (October CPI due mid-November)",
+    "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
     "as_of": "2026-10-14"
   },
   "fred_fallback": {
-    "DGS10": 5.1,
-    "T10Y2Y": 0.35,
-    "BAMLH0A0HYM2": 323,
-    "source": "FRED mirror govspending.org (FRED_API_KEY absent this run): DGS10 5.10% (2026-10-15; ~5.08% by 10-16 per TradingKey, intraday >5.2% earlier in the week), T10Y2Y +0.35 (2026-10-16, flattening from +0.44), HY OAS 3.23% = 323bps (2026-10-15) - an 8bp WIDENING vs 315 in the last report, during an equity selloff and AI-infrastructure credit scrutiny",
-    "as_of": "2026-10-16"
+    "DGS10": 5.0,
+    "T10Y2Y": 0.31,
+    "BAMLH0A0HYM2": 340,
+    "source": "FRED mirrors (FRED_API_KEY absent this run): DGS10 4.999% at 2026-10-23 close per Capp Notes (FRED 4.96% on 10-22, govspending.org); T10Y2Y +0.31 (2026-10-23, govspending.org; flattening from +0.35); HY OAS 3.40% = 340bps (2026-10-22, equibles/govspending FRED mirror; daily 3.31/3.29/3.33/3.27/3.40 for 10-16..10-22) - a 17bp WIDENING vs 323 in the last report",
+    "as_of": "2026-10-23"
   },
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
@@ -45,124 +45,6 @@
     "read": "policy headwind, still tightening - no pivot",
     "as_of": "2026-10-16"
   },
-  "sentiment_updates": [
-    {
-      "name": "Yardeni",
-      "s12": 1,
-      "s24": 3,
-      "s36": 4,
-      "conviction": 3.0,
-      "note": "12m cut 2->1: after the 10-14 selloff says the AI trade is 'getting messy', risk-off should keep compressing multiples, still advises caution - but buying opportunities rising and 7,900 YE still reachable; 2027 EPS $425 held",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-15",
-        "summary": "Yardeni Research note (via Wallstreetcn): 'our concern is not earnings but valuations'; expects risk aversion to persist and squeeze multiples; 7,900 year-end still reachable",
-        "url": "https://wallstreetcn.com/articles/3783719"
-      }
-    },
-    {
-      "name": "Siegel",
-      "s12": 2,
-      "s24": 3,
-      "s36": 3,
-      "conviction": 3.5,
-      "note": "24m/36m raised 2->3: explicitly upgraded his equity view, reading rising real rates as stronger growth; 12m held at +2 given a possible 25-50bp hike later and AI-capex obsolescence risk",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-12",
-        "summary": "WisdomTree Weekly Siegel Commentary 'Rising Real Rates Signal Stronger Growth: Upgrading Equity View': long-run real equity return estimate raised to ~5.5-6.5%; 10y seen 4.75-5.25%, possibly 5.5%",
-        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/"
-      }
-    },
-    {
-      "name": "Sonders",
-      "s12": 1,
-      "s24": 1,
-      "s36": 0,
-      "conviction": 3.0,
-      "note": "Held: higher rates mostly growth-driven and don't automatically mean lower stocks; stay invested, but expensive growth names vulnerable and leadership narrow",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-16",
-        "summary": "Schwab Market Perspective: AI boosting profits but keeping leadership narrow; favours strong balance sheets, financials, some energy/materials/industrials; plus 10-15 'Panic Is Not a Strategy - Nor Is Greed'",
-        "url": "https://www.schwab.com/learn/story/stock-market-outlook"
-      }
-    },
-    {
-      "name": "Rosenberg",
-      "s12": -3,
-      "s24": -3,
-      "s36": -2,
-      "conviction": 4.5,
-      "note": "12m cut -2->-3: calls the US market the 'most stretched' of his 40-year career on valuation, leverage and positioning; shifting to Treasuries and international equities (talk and stated positioning agree)",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-13",
-        "summary": "Bloomberg (via Roic News): 'most stretched' market in four decades, more AI-dependent than tech was pre-dotcom; average S&P stock ~20% below its 52-week high",
-        "url": "https://www.roic.ai/news/rosenberg-warns-us-stock-market-is-the-most-stretched-in-40-years-10-13-2026"
-      }
-    },
-    {
-      "name": "Buffett-Berkshire",
-      "s12": 1,
-      "s24": 1,
-      "s36": 1,
-      "conviction": 4.0,
-      "note": "Held: still a selective net buyer - another $330M into Bending Spoons (stake to 4%) after the 10-01/02 Lennar buys. Unconfirmed report (Edaily via Stockhub) that a subsidiary trimmed Broadcom/Alphabet - not scored",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-14",
-        "summary": "Reuters (via Capital.com): Berkshire buys 10M new Bending Spoons shares at $33 (~$330M) in a private placement, stake now 4%",
-        "url": "https://capital.com/en-gb/news/berkshire-raises-bending-spoons-stake-to-4-with-fresh-330"
-      }
-    },
-    {
-      "name": "Dimon",
-      "s12": -3,
-      "s24": -2,
-      "s36": -1,
-      "conviction": 3.5,
-      "note": "Held: Q3 call repeats deficits/sticky inflation/high asset prices/rising rates as risks; JPM cut buybacks and is tightening standards on loose leveraged-finance covenants - action now matches rhetoric",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-13",
-        "summary": "JPMorgan Q3 2026 call: 'high asset prices and fairly low credit losses' may not last; tightening lending standards; 'more uncertainty than normal' on 2027 NII",
-        "url": "https://www.benzinga.com/node/62321579"
-      }
-    }
-  ],
-  "reading_list": [
-    {
-      "title": "JPMorgan Chase Q3 2026 earnings call transcript",
-      "url": "https://www.webull.com/news/15741198075913216",
-      "source": "JPMorgan Chase (automated transcript via Benzinga/Webull; 8-K filed 2026-10-13)",
-      "date": "2026-10-13",
-      "primary": true,
-      "why": "Dimon says high asset prices and low credit losses may not last and JPM is tightening standards on loose covenants - the HY spread tripwire from inside the biggest lender"
-    },
-    {
-      "title": "Consumer Price Index - September 2026",
-      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
-      "source": "U.S. Bureau of Labor Statistics",
-      "date": "2026-10-14",
-      "primary": true,
-      "why": "3.7% headline feeds the real 10y in Excess CAPE Yield and drove October hike odds toward a third - the Fed headwind"
-    },
-    {
-      "title": "Minutes of the FOMC, September 15-16, 2026",
-      "url": "https://federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
-      "source": "Federal Reserve Board",
-      "date": "2026-10-07",
-      "primary": true,
-      "why": "Unanimous hike and most see another this year - sets the 2y end of the 10y-2y curve, which flattened to +0.35"
-    },
-    {
-      "title": "Rising Real Rates Signal Stronger Growth: Upgrading Equity View",
-      "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
-      "source": "WisdomTree / Jeremy Siegel",
-      "date": "2026-10-12",
-      "primary": true,
-      "why": "The bull case against the Excess CAPE Yield reading: Siegel argues 5%+ real-rate rises reflect growth, and raised his long-run equity view"
-    }
-  ]
+  "sentiment_updates": [],
+  "reading_list": []
 }
