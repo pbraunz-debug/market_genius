@@ -69,8 +69,19 @@
       "source": "Treasury final FY2026 statement (2026-10-16; AAF 2026-10-18): deficit $1.99tn, ~6.1% of GDP (vs CBO's 6.2% estimate last report). Debt held by public ~100% of GDP; gross debt/GDP 122.6% is still the Q1-2026 GFDEGDQ188S print (stale)"
     }
   },
-  "sentiment_changes": [],
-  "new_statements": [],
+  "sentiment_changes": [
+    "Fed: hold at 3.75-4.00% after the 9-16 hike, hawkish: Sept CPI 3.7% (core 2.6%) and PPI +1.3% m/m pushed October hike odds to ~27-34% (CME, 10-15) and a December hike to ~67%; Hammack wants more tightening, Barkin/Goolsbee uncomfortable with CPI, Warsh (IMF Bangkok 10-16) non-committal. Blackout from 10-17; FOMC 10-27/28 -> expected hold at 3.75-4.00% on 10-28 (Kalshi ~92-94% hold); December hike priced (Kalshi ~79% any hike, CME ~78% per Reuters 10-23; Reuters poll 100/100 economists see a December hike). Q3 GDP and Sept PCE due 10-29"
+  ],
+  "new_statements": [
+    "Wood",
+    "Lee",
+    "Siegel",
+    "Slok",
+    "El-Erian",
+    "Krugman",
+    "Dalio",
+    "Burry"
+  ],
   "top_signal": null,
   "sentiment_snapshot": {
     "as_of": "2026-10-26",
@@ -82,9 +93,9 @@
     ],
     "fed": {
       "name": "Fed / Warsh",
-      "stance": "hold at 3.75-4.00% after the 9-16 hike, hawkish: Sept CPI 3.7% (core 2.6%) and PPI +1.3% m/m pushed October hike odds to ~27-34% (CME, 10-15) and a December hike to ~67%; Hammack wants more tightening, Barkin/Goolsbee uncomfortable with CPI, Warsh (IMF Bangkok 10-16) non-committal. Blackout from 10-17; FOMC 10-27/28",
-      "read": "policy headwind, still tightening - no pivot",
-      "as_of": "2026-10-16"
+      "stance": "expected hold at 3.75-4.00% on 10-28 (Kalshi ~92-94% hold); December hike priced (Kalshi ~79% any hike, CME ~78% per Reuters 10-23; Reuters poll 100/100 economists see a December hike). Q3 GDP and Sept PCE due 10-29",
+      "read": "policy headwind, still tightening - no pivot; risk shifted to December and possibly early-2027 follow-up",
+      "as_of": "2026-10-26"
     },
     "roster": [
       {
@@ -108,11 +119,11 @@
         "s36": 5,
         "conviction": 5.0,
         "school": "strategist",
-        "note": "Held: ARK is rotating within the innovation theme (out of SHOP/HOOD/GOOG/TER, into CRWV/KTOS/ACHR/META), not de-risking. Talk and trades agree",
-        "last_statement": "2026-10-08",
+        "note": "Held: 'people are afraid means we are not in a bubble... still in the parking lot'; ARK added CoreWeave and Cerebras into the selloff - trades match talk",
+        "last_statement": "2026-10-16",
         "changed_this_week": true,
-        "statement_summary": "ARK daily trades: sold ~$23M SHOP, ~$22M HOOD, ~$9M GOOG; bought KTOS, NRIX, GENI, PONY (10-06: sold TER, bought VCYT, ACHR, CRWV, META)",
-        "statement_url": "https://www.investing.com/news/company-news/cathie-woods-ark-sells-shopify-stock-buys-kratos-defense-93CH-4940030",
+        "statement_summary": "Seoul remarks (Bloomberg via Briefs): AI not a bubble; ARK bought CoreWeave and Cerebras during the selloff week",
+        "statement_url": "https://www.briefs.co/news/cathie-wood-backs-coreweave-as-ai-jitters-hit-bonds-and-stoc/",
         "gap": false
       },
       {
@@ -122,11 +133,11 @@
         "s36": 3,
         "conviction": 5.0,
         "school": "strategist",
-        "note": "Held: still the loudest bull; softened his October pullback call to a pre-midterm 'speed bump'",
-        "last_statement": "2026-10-05",
+        "note": "Held: calls the tech/AI selloff a 'healthy correction' near its end, AI credit fears 'bottoming'; buy the dip; no new index target",
+        "last_statement": "2026-10-22",
         "changed_this_week": true,
-        "statement_summary": "CNBC: sees S&P 8,200-8,400 by year-end, Q3 EPS growth near 30%, 2027 estimates up 20%+ YTD make stocks 'cheaper'",
-        "statement_url": "https://coinpedia.org/news/tom-lee-says-cryptos-rally-is-signal-fed-will-ease-and-democrats-will-back-clarity-act-after-midterms/",
+        "statement_summary": "CNBC (via Benzinga 10-23): buy the tech dip, 'coiled-strength spring', compares now to Cisco in 1997",
+        "statement_url": "https://www.benzinga.com/markets/market-summary/26/10/62556338/tom-lee-urges-buying-the-tech-dip-calls-sell-off-a-healthy-correction-points-to-30-trillion-infrastructure-boom-ahead",
         "gap": false
       },
       {
@@ -136,10 +147,10 @@
         "s36": 3,
         "conviction": 3.5,
         "school": "strategist",
-        "note": "24m/36m raised 2->3: explicitly upgraded his equity view, reading rising real rates as stronger growth; 12m held at +2 given a possible 25-50bp hike later and AI-capex obsolescence risk",
-        "last_statement": "2026-10-12",
+        "note": "Held: 5-10% S&P pullback would be normal, 20-30% Nasdaq drop possible if AI capex disappoints; market overall not over-valued; no October hike, December likely",
+        "last_statement": "2026-10-19",
         "changed_this_week": true,
-        "statement_summary": "WisdomTree Weekly Siegel Commentary 'Rising Real Rates Signal Stronger Growth: Upgrading Equity View': long-run real equity return estimate raised to ~5.5-6.5%; 10y seen 4.75-5.25%, possibly 5.5%",
+        "statement_summary": "WisdomTree weekly commentary 'AI Buildout Drives Yields and Market Rotation': AI capex now a main driver of long yields",
         "statement_url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
         "gap": false
       },
@@ -192,11 +203,11 @@
         "s36": 0,
         "conviction": 3.0,
         "school": "policy",
-        "note": "Held: near-term rates may peak on oil relief, but AI capex ignores higher rates so the Fed stays higher for longer; flags AI-company CDS widening",
-        "last_statement": "2026-10-09",
+        "note": "Held: hot PPI plus softer spending is 'the definition of stagflation' and expects data-center build-out to slow, but still no recession",
+        "last_statement": "2026-10-15",
         "changed_this_week": true,
-        "statement_summary": "Daily Spark: 'AI's Insensitivity to Interest Rates Is a Problem for the Fed' - 'the Fed will have to keep interest rates higher for longer' (follows 10-06 'Are Rates Peaking Within the Next Month?')",
-        "statement_url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/ais-insensitivity-to-interest-rates-is-a-problem-for-the-fed",
+        "statement_summary": "CNBC (via Stocktwits): 'This is a definition of stagflation'; housing/autos weakening; 'we will not get a recession, but... some more dampening of the data center build-out'",
+        "statement_url": "https://stocktwits.com/news-articles/markets/equity/ppi-surge-complicates-fed-s-inflation-fight-says-apollo-chief-economist-this-is-the-definition-of-stagflation/cZxWDy4RBAz",
         "gap": false
       },
       {
@@ -206,11 +217,11 @@
         "s36": 1,
         "conviction": 4.0,
         "school": "policy",
-        "note": "CALLED IT: in August he said the Treasury buyback was financial engineering that left long rates untouched. The 10y then went through 5%. His new line - interest-rate risk becoming equity and credit risk - is precisely what the HY tile is now showing",
-        "last_statement": "2026-09-29",
+        "note": "Held: markets pricing too many hikes; non-tech economy vulnerable to the tech side; AI trade 'has started to realize it's tougher'",
+        "last_statement": "2026-10-16",
         "changed_this_week": true,
-        "statement_summary": "Expects the 10y to stay around 5% even if oil falls, citing a structural bond supply/demand imbalance; 'volatility will be a feature, and elevated yields will be a feature for the rest of the year', and 'the big danger' is rate risk turning into equity and credit risk",
-        "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-10-year-yield-could-stay-around-5-even-if-oil-falls-flags-too-much-of-an-imbalance-in-supply-and-demand-of-bonds/cZMSDHdRBQr",
+        "statement_summary": "CNBC (via Stocktwits): 'I don't think we're going to get three hikes'; low October / high December hike odds about right",
+        "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-markets-pricing-too-many-fed-rate-hikes/cZxNWUIRBtF",
         "gap": false
       },
       {
@@ -287,11 +298,11 @@
         "s36": -1,
         "conviction": 3.0,
         "school": "policy",
-        "note": "Held: AI capex is pushing rates up and crowding out everything else; flags private-credit and CRE spillover; no explicit index call",
-        "last_statement": "2026-10-06",
+        "note": "Held: lists triggers for the next slump (stagflation forcing big hikes, AI-bubble bust, debt crisis via long yields) rather than a dated call",
+        "last_statement": "2026-10-25",
         "changed_this_week": true,
-        "statement_summary": "Substack 'AI Versus Everything Else': hyperscaler boom is driving up interest rates and crowding out non-AI investment 'right now'",
-        "statement_url": "https://paulkrugman.substack.com/p/ai-versus-everything-else",
+        "statement_summary": "Substack 'The Crisis Next Time': a severe slump will eventually come; worried about a liquidity trap if AI capex collapses",
+        "statement_url": "https://paulkrugman.substack.com/p/the-crisis-next-time",
         "gap": false
       },
       {
@@ -301,11 +312,11 @@
         "s36": -3,
         "conviction": 5.0,
         "school": "debt-cycle",
-        "note": "Held at maximum conviction: 'we are in a bond bear market', AI a classic bubble near bursting, equities' cushion against yields shrinking - but declines to call an imminent selloff",
-        "last_statement": "2026-10-08",
+        "note": "Held: debt-supply thesis repeated ($2.1T net new marketable debt in 2026, yields rising despite buybacks); calls economy 'mid-cycle'. No new positioning until Q3 13F",
+        "last_statement": "2026-10-14",
         "changed_this_week": true,
-        "statement_summary": "CNBC at Milken Asia (Singapore): stocks' buffer against rising bond yields is shrinking, credit spreads starting to widen, watch weakening free cash flow",
-        "statement_url": "https://www.cnbc.com/2026/10/08/ray-dalio-stocks-bond-yields.html",
+        "statement_summary": "Benzinga: warns of a US debt 'death spiral' as debt and AI equity issuance swamp demand",
+        "statement_url": "https://www.benzinga.com/markets/bonds/26/10/62345537/ray-dalio-warns-us-debt-crisis-could-deepen-as-2-1t-in-new-treasury-supply-hits-market-credit-market-players-call-that-a-death-spiral",
         "gap": false
       },
       {
@@ -342,16 +353,49 @@
         "s36": -3,
         "conviction": 5.0,
         "school": "value",
-        "note": "Held. GAP flagged the other way: rhetoric is maximal but no verifiable current positioning (Scion deregistered 2025), so the scores rest on talk. Market in the 'denial' stage that lasted 6-9 months in 2000/2008",
-        "last_statement": "2026-10-11",
+        "note": "Held: 'more like 2000 than any time since, but not 2000 yet'; expects a grinding, leader-led decline; says Washington has little fiscal room. No new disclosed positions (Q3 13F due mid-Nov)",
+        "last_statement": "2026-10-23",
         "changed_this_week": true,
-        "statement_summary": "X posts: homebuilders' 'salad days won't last', Fannie/Freddie 'head-and-shoulders top' with heavy dilution risk; ~10-06 'first stage of grief, denial'",
-        "statement_url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-warns-fannie-mae-085656185.html",
-        "gap": true
+        "statement_summary": "Benzinga: Bear Market Ratio 55% at the 10-06 record (only Mar-2000 worse); 'unconscionable' debt build-up limits a bailout",
+        "statement_url": "https://benzinga.com/markets/equities/26/10/62568034/michael-burry-warns-washington-has-little-room-left-to-fight-the-next-crisis",
+        "gap": false
       }
     ]
   },
-  "reading_list": [],
+  "reading_list": [
+    {
+      "title": "Final Monthly Treasury Statement, FY2026 (September 2026)",
+      "url": "https://fiscaldata.treasury.gov/static-data/published-reports/mts/MonthlyTreasuryStatement_202609.pdf",
+      "source": "US Treasury, Bureau of the Fiscal Service",
+      "date": "2026-10-16",
+      "primary": true,
+      "why": "Fiscal indicator: FY26 deficit $1.99T (~6.1% of GDP) with net interest above $1T - the input behind this week's fiscal score and Dalio's/Burry's debt theses"
+    },
+    {
+      "title": "Beige Book, October 2026",
+      "url": "https://www.federalreserve.gov/monetarypolicy/files/BeigeBook_20261014.pdf",
+      "source": "Federal Reserve Board",
+      "date": "2026-10-14",
+      "primary": true,
+      "why": "Fed / yield curve: slight-to-moderate growth, flat consumer spending, elevated prices with oil passing through - the backdrop for a December hike that keeps flattening 10y-2y (now +0.31)"
+    },
+    {
+      "title": "The Crisis Next Time",
+      "url": "https://paulkrugman.substack.com/p/the-crisis-next-time",
+      "source": "Paul Krugman (Substack)",
+      "date": "2026-10-25",
+      "primary": true,
+      "why": "Krugman: maps stagflation, an AI-bubble bust and a long-yield debt crisis as slump triggers - all three show up in HY spreads first"
+    },
+    {
+      "title": "Foundations: Performance in the Next Bear Market",
+      "url": "https://michaeljburry.substack.com/p/foundations-performance-in-the-next",
+      "source": "Michael Burry, Cassandra Unchained (Substack)",
+      "date": "2026-10-17",
+      "primary": true,
+      "why": "Burry / Shiller CAPE: uses Shiller real-return history to argue for 15-20 years of poor real returns from today's valuation (mostly paywalled)"
+    }
+  ],
   "gaps": [
     "FRED_API_KEY not set: FRED series served from cache or routine fallbacks.",
     "CPI extrapolated from 2023-09-01 to 2026-09-01 at the routine-supplied 3.7%/yr run-rate; real values are approximate."

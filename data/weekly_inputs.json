@@ -41,10 +41,156 @@
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
   "fed": {
-    "stance": "hold at 3.75-4.00% after the 9-16 hike, hawkish: Sept CPI 3.7% (core 2.6%) and PPI +1.3% m/m pushed October hike odds to ~27-34% (CME, 10-15) and a December hike to ~67%; Hammack wants more tightening, Barkin/Goolsbee uncomfortable with CPI, Warsh (IMF Bangkok 10-16) non-committal. Blackout from 10-17; FOMC 10-27/28",
-    "read": "policy headwind, still tightening - no pivot",
-    "as_of": "2026-10-16"
+    "stance": "expected hold at 3.75-4.00% on 10-28 (Kalshi ~92-94% hold); December hike priced (Kalshi ~79% any hike, CME ~78% per Reuters 10-23; Reuters poll 100/100 economists see a December hike). Q3 GDP and Sept PCE due 10-29",
+    "read": "policy headwind, still tightening - no pivot; risk shifted to December and possibly early-2027 follow-up",
+    "as_of": "2026-10-26"
   },
-  "sentiment_updates": [],
-  "reading_list": []
+  "sentiment_updates": [
+    {
+      "name": "Wood",
+      "s12": 4,
+      "s24": 4,
+      "s36": 5,
+      "conviction": 5.0,
+      "note": "Held: 'people are afraid means we are not in a bubble... still in the parking lot'; ARK added CoreWeave and Cerebras into the selloff - trades match talk",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-16",
+        "summary": "Seoul remarks (Bloomberg via Briefs): AI not a bubble; ARK bought CoreWeave and Cerebras during the selloff week",
+        "url": "https://www.briefs.co/news/cathie-wood-backs-coreweave-as-ai-jitters-hit-bonds-and-stoc/"
+      }
+    },
+    {
+      "name": "Lee",
+      "s12": 4,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 5.0,
+      "note": "Held: calls the tech/AI selloff a 'healthy correction' near its end, AI credit fears 'bottoming'; buy the dip; no new index target",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-22",
+        "summary": "CNBC (via Benzinga 10-23): buy the tech dip, 'coiled-strength spring', compares now to Cisco in 1997",
+        "url": "https://www.benzinga.com/markets/market-summary/26/10/62556338/tom-lee-urges-buying-the-tech-dip-calls-sell-off-a-healthy-correction-points-to-30-trillion-infrastructure-boom-ahead"
+      }
+    },
+    {
+      "name": "Siegel",
+      "s12": 2,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 3.5,
+      "note": "Held: 5-10% S&P pullback would be normal, 20-30% Nasdaq drop possible if AI capex disappoints; market overall not over-valued; no October hike, December likely",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-19",
+        "summary": "WisdomTree weekly commentary 'AI Buildout Drives Yields and Market Rotation': AI capex now a main driver of long yields",
+        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/"
+      }
+    },
+    {
+      "name": "Slok",
+      "s12": 0,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: hot PPI plus softer spending is 'the definition of stagflation' and expects data-center build-out to slow, but still no recession",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-15",
+        "summary": "CNBC (via Stocktwits): 'This is a definition of stagflation'; housing/autos weakening; 'we will not get a recession, but... some more dampening of the data center build-out'",
+        "url": "https://stocktwits.com/news-articles/markets/equity/ppi-surge-complicates-fed-s-inflation-fight-says-apollo-chief-economist-this-is-the-definition-of-stagflation/cZxWDy4RBAz"
+      }
+    },
+    {
+      "name": "El-Erian",
+      "s12": -1,
+      "s24": -2,
+      "s36": 1,
+      "conviction": 4.0,
+      "note": "Held: markets pricing too many hikes; non-tech economy vulnerable to the tech side; AI trade 'has started to realize it's tougher'",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-16",
+        "summary": "CNBC (via Stocktwits): 'I don't think we're going to get three hikes'; low October / high December hike odds about right",
+        "url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-markets-pricing-too-many-fed-rate-hikes/cZxNWUIRBtF"
+      }
+    },
+    {
+      "name": "Krugman",
+      "s12": -2,
+      "s24": -2,
+      "s36": -1,
+      "conviction": 3.0,
+      "note": "Held: lists triggers for the next slump (stagflation forcing big hikes, AI-bubble bust, debt crisis via long yields) rather than a dated call",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-25",
+        "summary": "Substack 'The Crisis Next Time': a severe slump will eventually come; worried about a liquidity trap if AI capex collapses",
+        "url": "https://paulkrugman.substack.com/p/the-crisis-next-time"
+      }
+    },
+    {
+      "name": "Dalio",
+      "s12": -2,
+      "s24": -4,
+      "s36": -3,
+      "conviction": 5.0,
+      "note": "Held: debt-supply thesis repeated ($2.1T net new marketable debt in 2026, yields rising despite buybacks); calls economy 'mid-cycle'. No new positioning until Q3 13F",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-14",
+        "summary": "Benzinga: warns of a US debt 'death spiral' as debt and AI equity issuance swamp demand",
+        "url": "https://www.benzinga.com/markets/bonds/26/10/62345537/ray-dalio-warns-us-debt-crisis-could-deepen-as-2-1t-in-new-treasury-supply-hits-market-credit-market-players-call-that-a-death-spiral"
+      }
+    },
+    {
+      "name": "Burry",
+      "s12": -4,
+      "s24": -4,
+      "s36": -3,
+      "conviction": 5.0,
+      "note": "Held: 'more like 2000 than any time since, but not 2000 yet'; expects a grinding, leader-led decline; says Washington has little fiscal room. No new disclosed positions (Q3 13F due mid-Nov)",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-23",
+        "summary": "Benzinga: Bear Market Ratio 55% at the 10-06 record (only Mar-2000 worse); 'unconscionable' debt build-up limits a bailout",
+        "url": "https://benzinga.com/markets/equities/26/10/62568034/michael-burry-warns-washington-has-little-room-left-to-fight-the-next-crisis"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "Final Monthly Treasury Statement, FY2026 (September 2026)",
+      "url": "https://fiscaldata.treasury.gov/static-data/published-reports/mts/MonthlyTreasuryStatement_202609.pdf",
+      "source": "US Treasury, Bureau of the Fiscal Service",
+      "date": "2026-10-16",
+      "primary": true,
+      "why": "Fiscal indicator: FY26 deficit $1.99T (~6.1% of GDP) with net interest above $1T - the input behind this week's fiscal score and Dalio's/Burry's debt theses"
+    },
+    {
+      "title": "Beige Book, October 2026",
+      "url": "https://www.federalreserve.gov/monetarypolicy/files/BeigeBook_20261014.pdf",
+      "source": "Federal Reserve Board",
+      "date": "2026-10-14",
+      "primary": true,
+      "why": "Fed / yield curve: slight-to-moderate growth, flat consumer spending, elevated prices with oil passing through - the backdrop for a December hike that keeps flattening 10y-2y (now +0.31)"
+    },
+    {
+      "title": "The Crisis Next Time",
+      "url": "https://paulkrugman.substack.com/p/the-crisis-next-time",
+      "source": "Paul Krugman (Substack)",
+      "date": "2026-10-25",
+      "primary": true,
+      "why": "Krugman: maps stagflation, an AI-bubble bust and a long-yield debt crisis as slump triggers - all three show up in HY spreads first"
+    },
+    {
+      "title": "Foundations: Performance in the Next Bear Market",
+      "url": "https://michaeljburry.substack.com/p/foundations-performance-in-the-next",
+      "source": "Michael Burry, Cassandra Unchained (Substack)",
+      "date": "2026-10-17",
+      "primary": true,
+      "why": "Burry / Shiller CAPE: uses Shiller real-return history to argue for 15-20 years of poor real returns from today's valuation (mostly paywalled)"
+    }
+  ]
 }
