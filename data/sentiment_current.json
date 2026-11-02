@@ -8,23 +8,23 @@
   ],
   "fed": {
     "name": "Fed / Warsh",
-    "stance": "held 3.75-4.00% on 2026-10-28, 10-2 vote with Cook and Hammack dissenting for a 25bp hike; statement says inflation 'remains elevated', no explicit path. December hike ~76% priced (CME FedWatch per Capp Notes 10-30); Musalem and Logan calling for more hikes",
+    "stance": "held 3.75-4.00% on 2026-10-28, 10-2 vote with Cook and Hammack dissenting for a 25bp hike; Warsh: inflation 'elevated', 'there's no soft inflation target', no forward guidance on December, financial conditions 'unwilling and unable to call them tight'. December hike ~76% priced (CME per Capp Notes 10-30). Q3 GDP 3.4% annualized, Q3 core PCE 2.5% (BEA 10-29)",
     "read": "policy headwind, still tightening bias - hawkish hold, no pivot",
     "as_of": "2026-10-30"
   },
   "roster": [
     {
       "name": "Yardeni",
-      "s12": 1,
+      "s12": 2,
       "s24": 3,
       "s36": 4,
-      "conviction": 3.0,
+      "conviction": 3.5,
       "school": "strategist",
-      "note": "12m cut 2->1: after the 10-14 selloff says the AI trade is 'getting messy', risk-off should keep compressing multiples, still advises caution - but buying opportunities rising and 7,900 YE still reachable; 2027 EPS $425 held",
-      "last_statement": "2026-10-15",
+      "note": "12m back up 1->2: 7,900 year-end 2026 and 8,400 by mid-2027 on $425 2027 EPS; treat selloffs as buying opportunities, headwinds 'temporary' (secondary summary, no direct quote)",
+      "last_statement": "2026-10-26",
       "changed_this_week": true,
-      "statement_summary": "Yardeni Research note (via Wallstreetcn): 'our concern is not earnings but valuations'; expects risk aversion to persist and squeeze multiples; 7,900 year-end still reachable",
-      "statement_url": "https://wallstreetcn.com/articles/3783719",
+      "statement_summary": "Gokhshtein summary: S&P 8,400 by mid-2027, pullbacks are buys; risks are geopolitics, Fed hikes, midterms, AI overvaluation",
+      "statement_url": "https://gokhshtein.com/news/2026-10-26-yardeni-targets-sp-500-at-8400-views-pullbacks-as-buys",
       "gap": false
     },
     {
@@ -34,11 +34,11 @@
       "s36": 5,
       "conviction": 5.0,
       "school": "strategist",
-      "note": "Held: 'people are afraid means we are not in a bubble... still in the parking lot'; ARK added CoreWeave and Cerebras into the selloff - trades match talk",
-      "last_statement": "2026-10-16",
+      "note": "Held, but watch positioning: ARK kept selling AMD and TSMC while buying Robinhood (largest buy in 6 months, 10-29), Archer, Joby and Tempus - rotating out of AI chips into fintech/eVTOL rather than adding to AI hardware",
+      "last_statement": "2026-10-29",
       "changed_this_week": true,
-      "statement_summary": "Seoul remarks (Bloomberg via Briefs): AI not a bubble; ARK bought CoreWeave and Cerebras during the selloff week",
-      "statement_url": "https://www.briefs.co/news/cathie-wood-backs-coreweave-as-ai-jitters-hit-bonds-and-stoc/",
+      "statement_summary": "CoinDesk: ARK bought ~$9.1M of HOOD after a 23% slump, reversing its early-October selling; Benzinga: more AMD/TSM sales the same week",
+      "statement_url": "https://www.coindesk.com/markets/2026/10/29/cathie-wood-s-ark-buys-the-dip-on-robinhood-in-its-largest-purchase-in-6-months-after-23-slump",
       "gap": false
     },
     {
@@ -48,11 +48,11 @@
       "s36": 3,
       "conviction": 5.0,
       "school": "strategist",
-      "note": "Held: calls the tech/AI selloff a 'healthy correction' near its end, AI credit fears 'bottoming'; buy the dip; no new index target",
-      "last_statement": "2026-10-22",
+      "note": "Held: on the 10-30 tech slide said 'today looks like someone's getting liquidated' - reads it as forced selling, not a top; still calls the AI selloff near its end",
+      "last_statement": "2026-10-30",
       "changed_this_week": true,
-      "statement_summary": "CNBC (via Benzinga 10-23): buy the tech dip, 'coiled-strength spring', compares now to Cisco in 1997",
-      "statement_url": "https://www.benzinga.com/markets/market-summary/26/10/62556338/tom-lee-urges-buying-the-tech-dip-calls-sell-off-a-healthy-correction-points-to-30-trillion-infrastructure-boom-ahead",
+      "statement_summary": "CNBC Power Lunch: 'Today looks like someone's getting liquidated' as the Nasdaq slid",
+      "statement_url": "https://money.whatfinger.com/2026/10/30/fundstrats-tom-lee-today-looks-like-someones-getting-liquidated/",
       "gap": false
     },
     {
@@ -174,11 +174,11 @@
       "s36": 0,
       "conviction": 3.0,
       "school": "credit",
-      "note": "No new memo inside the fortnight, but his private-credit memo is the live thesis: the US private-credit default rate hit a record 6.0% in April (Fitch) and the Proskauer index ran 2.73% in Q1 against 1.84% two quarters earlier - while loan spreads were still tightening. Exactly the 'not being paid for the risk' setup he described",
-      "last_statement": "2026-09-22",
-      "changed_this_week": false,
-      "statement_summary": "Oaktree memo 'Shall We Repeal the Laws of Economics - Part III': buybacks are an ice pack on a fever; long rates stay elevated",
-      "statement_url": "https://www.oaktreecapital.com/insights/memo/shall-we-repeal-the-laws-of-economics---part-iii",
+      "note": "Held: calls AI 'the least predictable thing I've ever witnessed in my career', can't assess the boom's economic viability - agnostic rather than a new call",
+      "last_statement": "2026-10-30",
+      "changed_this_week": true,
+      "statement_summary": "CNBC The Exchange: AI is the 'least predictable thing I've ever witnessed'",
+      "statement_url": "https://money.whatfinger.com/2026/10/30/howard-marks-ai-is-the-least-predictable-thing-ive-ever-witnessed-in-my-career",
       "gap": false
     },
     {
