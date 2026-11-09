@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-09",
   "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
   "excluded_by_request": [
     "Ackman",
@@ -8,9 +8,9 @@
   ],
   "fed": {
     "name": "Fed / Warsh",
-    "stance": "held 3.75-4.00% on 2026-10-28, 10-2 vote with Cook and Hammack dissenting for a 25bp hike; Warsh: inflation 'elevated', 'there's no soft inflation target', no forward guidance on December, financial conditions 'unwilling and unable to call them tight'. December hike ~76% priced (CME per Capp Notes 10-30). Q3 GDP 3.4% annualized, Q3 core PCE 2.5% (BEA 10-29)",
-    "read": "policy headwind, still tightening bias - hawkish hold, no pivot",
-    "as_of": "2026-10-30"
+    "stance": "held 3.75-4.00% on 2026-10-28 (10-2, Cook and Hammack dissenting for a hike); after the 11-06 jobs print markets raised December 25bp hike odds to ~78% (Capp Notes 11-06). October CPI due 11-10",
+    "read": "policy headwind, tightening bias - hawkish hold, no pivot",
+    "as_of": "2026-11-06"
   },
   "roster": [
     {
