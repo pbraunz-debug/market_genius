@@ -41,10 +41,150 @@
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
   "fed": {
-    "stance": "held 3.75-4.00% on 2026-10-28 (10-2, Cook and Hammack dissenting for a hike); after the 11-06 jobs print markets raised December 25bp hike odds to ~78% (Capp Notes 11-06). October CPI due 11-10",
+    "stance": "held 3.75-4.00% on 2026-10-28 (10-2, Cook and Hammack dissenting for a hike); statement: inflation 'remains elevated', 'The Committee will deliver price stability'. Barkin and Hammack (11-05) backed gradual increases; Williams (11-06) inflation 'too high for too long'. December hike ~78% priced. October CPI 11-10 is the swing factor",
     "read": "policy headwind, tightening bias - hawkish hold, no pivot",
     "as_of": "2026-11-06"
   },
-  "sentiment_updates": [],
-  "reading_list": []
+  "sentiment_updates": [
+    {
+      "name": "Buffett-Berkshire",
+      "s12": 1,
+      "s24": 1,
+      "s36": 1,
+      "conviction": 4.0,
+      "note": "Held: Q3 10-Q shows cash+T-bills at a record $377.4B, a small net seller of stocks in Q3 (~$2.4B bought vs ~$2.8B sold) after being a net buyer in Q2, and record buybacks of $9.6B. Cautious on the broad market but buying its own shares",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-07",
+        "summary": "Q3 2026 10-Q: $377.4B cash+T-bills, $9.6B Q3 buybacks, Q3 roughly $0.4B net equity sale",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001067983/000119312526452412/brka-20260930.htm"
+      }
+    },
+    {
+      "name": "Burry",
+      "s12": -4,
+      "s24": -4,
+      "s36": -3,
+      "conviction": 5.0,
+      "note": "Held: took profits on 25% of his SMH puts the day SMH fell 11%; remaining June-2027 puts reportedly still large - profit-taking, not a thesis change",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-05",
+        "summary": "Substack 'Trading Post' (reported secondhand): sold 25% of SMH puts, kept the rest, still very bearish",
+        "url": "https://247wallst.com/investing/2026/11/06/michael-burry-sold-25-of-his-chip-puts-and-says-hes-still-very-bearish/"
+      }
+    },
+    {
+      "name": "Wood",
+      "s12": 4,
+      "s24": 4,
+      "s36": 5,
+      "conviction": 5.0,
+      "note": "Held: bought the dip (added NVDA and SpaceX, sold ~$120M AVGO) and says the bull market is not ending - trades match the talk",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-06",
+        "summary": "CNBC: 'The more the market worries, the more optimistic I get'; bull ending? 'I don't think so'",
+        "url": "https://finance.biggo.com/news/dd0eeafa-83a5-4290-9be9-e3798cabd501"
+      }
+    },
+    {
+      "name": "Lee",
+      "s12": 4,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 5.0,
+      "note": "Held: still buy-the-dip; says institutions were waiting until after the 11-03 midterms; his September call for a ~7% Oct/early-Nov pullback before year-end >8,200 is roughly playing out",
+      "gap": false,
+      "statement": {
+        "date": "2026-10-30",
+        "summary": "CNBC: 'people are going to plan to buy the dip... marking their calendar until November 3rd'",
+        "url": "https://247wallst.com/investing/2026/11/02/marking-their-calendar-until-november-3rd-tom-lee-says-investors-waiting-to-buy-the-dip-after-the-nasdaq-100s-worst-month-since-march-2025/"
+      }
+    },
+    {
+      "name": "Yardeni",
+      "s12": 2,
+      "s24": 3,
+      "s36": 4,
+      "conviction": 3.5,
+      "note": "Held: last week's 2.7% drop is a 'speed bump, not a roadblock', sector weights unchanged; concedes 'air coming out of AI bubble'",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-08",
+        "summary": "QuickTakes 'Air Coming Out Of AI Bubble': AI backlash a speed bump, not a roadblock",
+        "url": "https://yardeni.com/"
+      }
+    },
+    {
+      "name": "Siegel",
+      "s12": 2,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 3.5,
+      "note": "Held: 'constructive'; Nasdaq drop 'a pullback, not even a correction', favours value rotation; sees the Fed waiting to December",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-02",
+        "summary": "WisdomTree weekly: 'My overall assessment remains constructive, although I expect continued volatility in the AI sector'",
+        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/"
+      }
+    },
+    {
+      "name": "Sonders",
+      "s12": 1,
+      "s24": 1,
+      "s36": 0,
+      "conviction": 3.0,
+      "note": "Held: mildly constructive; expects rotation and better breadth rather than a broad rally",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-04",
+        "summary": "CNBC: 'The setup is pretty good, but I expect to see the market continue its rotational flavor'",
+        "url": "https://247wallst.com/investing/2026/11/05/liz-ann-sonders-says-rotation-is-the-new-momentum-trade-heres-where-money-could-move-next/"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "Berkshire Hathaway Form 10-Q, Q3 2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001067983/000119312526452412/brka-20260930.htm",
+      "source": "SEC EDGAR",
+      "date": "2026-11-07",
+      "primary": true,
+      "why": "Buffett-Berkshire revealed preference: record $377.4B cash+T-bills, a small Q3 net equity sale, record $9.6B buybacks - consistent with Buffett Indicator caution"
+    },
+    {
+      "title": "Federal Reserve issues FOMC statement (October 28, 2026)",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "source": "Federal Reserve Board",
+      "date": "2026-10-28",
+      "primary": true,
+      "why": "Fed / yield curve: hold with two hawkish dissents sets the December-hike path driving the 10y (4.86%) and HY spreads"
+    },
+    {
+      "title": "Tech Weakness Fuels Bond Rally and Value Rotation",
+      "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
+      "source": "WisdomTree (Jeremy Siegel)",
+      "date": "2026-11-02",
+      "primary": true,
+      "why": "Siegel calls the Nasdaq drop 'a pullback, not even a correction' - a test of price-vs-trend and momentum after the 4th straight weekly loss"
+    },
+    {
+      "title": "Yardeni QuickTakes: 'Air Coming Out Of AI Bubble'",
+      "url": "https://yardeni.com/",
+      "source": "Yardeni Research",
+      "date": "2026-11-08",
+      "primary": true,
+      "why": "Yardeni: 'speed bump' while conceding AI-bubble deflation - relevant to CAPE and Excess CAPE Yield as valuations compress"
+    },
+    {
+      "title": "The market bloodbath just exposed Wall Street's true fears about U.S. debt, top economist warns",
+      "url": "https://fortune.com/2026/11/08/us-debt-ai-stock-market-selloff-bond-yields-treasury-risk-premium/",
+      "source": "Fortune (citing Robin Brooks, Brookings)",
+      "date": "2026-11-08",
+      "primary": false,
+      "why": "Fiscal: argues yields rose on a fiscal risk premium, not AI - why the 10y stays high as equities sell off"
+    }
+  ]
 }
