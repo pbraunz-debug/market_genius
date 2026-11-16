@@ -1,22 +1,22 @@
 {
-  "research_date": "2026-11-09",
+  "research_date": "2026-11-16",
   "spx_current": {
-    "level": 7376.86,
-    "date": "2026-11-06",
-    "source": "S&P 500 close 2026-11-06, +0.31% on the day but -2.68% on the week vs 7,580.07 in the 2026-11-02 report - worst week since April 2025, fourth straight weekly loss (Capp Notes closing look; 24/7 Wall St via Yahoo agrees)",
-    "url": "https://cappnotes.substack.com/p/closing-look-friday-november-6-2026"
+    "level": 7561.67,
+    "date": "2026-11-13",
+    "source": "S&P 500 close 2026-11-13, -0.40% on the day but +2.51% on the week vs 7,376.86 in the 2026-11-09 report - snapped a four-week losing streak (Capp Notes closing look)",
+    "url": "https://cappnotes.substack.com/p/closing-look-friday-november-13-2026"
   },
   "cape_web": {
-    "value": 38.91,
-    "source": "multpl.com 38.91 at 2026-11-06 (same source as last report's 40.13)",
+    "value": 39.95,
+    "source": "multpl.com 39.95 at 2026-11-13 (same source as last report's 38.91)",
     "url": "https://www.multpl.com/shiller-pe/table",
-    "as_of": "2026-11-06"
+    "as_of": "2026-11-13"
   },
   "buffett_indicator": {
-    "value": 228.8,
-    "source": "gurufocus total market cap / GDP 228.8% (Nov-2026 page header, read from search listing; page fetch blocked this run), same methodology family as last report's 234.5%. Higher-methodology sites (thetrading.tools ~288-290%) also exist; score is 5.0 either way",
+    "value": 229.3,
+    "source": "gurufocus total market cap / GDP 229.3% (Nov-2026 page header, read from search listing; page fetch blocked this run), same methodology family as last report's 228.8%. Higher-methodology sites (thetrading.tools ~283-288%) also exist; score is 5.0 either way",
     "url": "https://www.gurufocus.com/economic_indicators/4602/usa-ratio-of-total-market-cap-over-gdp",
-    "as_of": "2026-11-06"
+    "as_of": "2026-11-13"
   },
   "fiscal": {
     "deficit_pct_gdp": 6.1,
@@ -27,16 +27,16 @@
   },
   "cpi_fallback": {
     "annual_rate_pct": 3.7,
-    "source": "BLS September CPI (2026-10-14) 3.7% y/y; still the latest print (October CPI due 2026-11-10)",
-    "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
-    "as_of": "2026-10-14"
+    "source": "BLS October CPI (2026-11-10) printed +0.4% m/m but published NO year-over-year rate (October 2025 data was never collected in the 2025 shutdown), so September's 3.7% y/y (2026-10-14) remains the latest official annual rate. October PPI +6.5% y/y (2026-11-13) says pipeline inflation is still hot",
+    "url": "https://www.wichitaliberty.org/economics/october-2026-cpi-report-inflation/",
+    "as_of": "2026-11-10"
   },
   "fred_fallback": {
-    "DGS10": 4.86,
-    "T10Y2Y": 0.35,
-    "BAMLH0A0HYM2": 348,
-    "source": "FRED_API_KEY absent this run. DGS10 4.86% and 2y 4.51% at the 2026-11-06 close per Capp Notes -> T10Y2Y +0.35, slightly flatter than +0.38; HY OAS 3.48% = 348bps at 2026-11-05 (govspending.org FRED mirror; macroradar.io agrees) - a 22bp WIDENING vs 326 in the last report",
-    "as_of": "2026-11-06"
+    "DGS10": 5.15,
+    "T10Y2Y": 0.27,
+    "BAMLH0A0HYM2": 320,
+    "source": "FRED_API_KEY absent this run. DGS10 5.15% and 2y 4.88% at the 2026-11-13 close per Capp Notes (10y +~30bp on the week) -> T10Y2Y +0.27, flatter than +0.35; HY OAS 3.20% = 320bps at 2026-11-12 (govspending.org FRED mirror; Capp Notes agrees, 330->320) - a 28bp TIGHTENING vs 348 in the last report",
+    "as_of": "2026-11-13"
   },
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
@@ -45,146 +45,6 @@
     "read": "policy headwind, tightening bias - hawkish hold, no pivot",
     "as_of": "2026-11-06"
   },
-  "sentiment_updates": [
-    {
-      "name": "Buffett-Berkshire",
-      "s12": 1,
-      "s24": 1,
-      "s36": 1,
-      "conviction": 4.0,
-      "note": "Held: Q3 10-Q shows cash+T-bills at a record $377.4B, a small net seller of stocks in Q3 (~$2.4B bought vs ~$2.8B sold) after being a net buyer in Q2, and record buybacks of $9.6B. Cautious on the broad market but buying its own shares",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-07",
-        "summary": "Q3 2026 10-Q: $377.4B cash+T-bills, $9.6B Q3 buybacks, Q3 roughly $0.4B net equity sale",
-        "url": "https://www.sec.gov/Archives/edgar/data/0001067983/000119312526452412/brka-20260930.htm"
-      }
-    },
-    {
-      "name": "Burry",
-      "s12": -4,
-      "s24": -4,
-      "s36": -3,
-      "conviction": 5.0,
-      "note": "Held: took profits on 25% of his SMH puts the day SMH fell 11%; remaining June-2027 puts reportedly still large - profit-taking, not a thesis change",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-05",
-        "summary": "Substack 'Trading Post' (reported secondhand): sold 25% of SMH puts, kept the rest, still very bearish",
-        "url": "https://247wallst.com/investing/2026/11/06/michael-burry-sold-25-of-his-chip-puts-and-says-hes-still-very-bearish/"
-      }
-    },
-    {
-      "name": "Wood",
-      "s12": 4,
-      "s24": 4,
-      "s36": 5,
-      "conviction": 5.0,
-      "note": "Held: bought the dip (added NVDA and SpaceX, sold ~$120M AVGO) and says the bull market is not ending - trades match the talk",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-06",
-        "summary": "CNBC: 'The more the market worries, the more optimistic I get'; bull ending? 'I don't think so'",
-        "url": "https://finance.biggo.com/news/dd0eeafa-83a5-4290-9be9-e3798cabd501"
-      }
-    },
-    {
-      "name": "Lee",
-      "s12": 4,
-      "s24": 3,
-      "s36": 3,
-      "conviction": 5.0,
-      "note": "Held: still buy-the-dip; says institutions were waiting until after the 11-03 midterms; his September call for a ~7% Oct/early-Nov pullback before year-end >8,200 is roughly playing out",
-      "gap": false,
-      "statement": {
-        "date": "2026-10-30",
-        "summary": "CNBC: 'people are going to plan to buy the dip... marking their calendar until November 3rd'",
-        "url": "https://247wallst.com/investing/2026/11/02/marking-their-calendar-until-november-3rd-tom-lee-says-investors-waiting-to-buy-the-dip-after-the-nasdaq-100s-worst-month-since-march-2025/"
-      }
-    },
-    {
-      "name": "Yardeni",
-      "s12": 2,
-      "s24": 3,
-      "s36": 4,
-      "conviction": 3.5,
-      "note": "Held: last week's 2.7% drop is a 'speed bump, not a roadblock', sector weights unchanged; concedes 'air coming out of AI bubble'",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-08",
-        "summary": "QuickTakes 'Air Coming Out Of AI Bubble': AI backlash a speed bump, not a roadblock",
-        "url": "https://yardeni.com/"
-      }
-    },
-    {
-      "name": "Siegel",
-      "s12": 2,
-      "s24": 3,
-      "s36": 3,
-      "conviction": 3.5,
-      "note": "Held: 'constructive'; Nasdaq drop 'a pullback, not even a correction', favours value rotation; sees the Fed waiting to December",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-02",
-        "summary": "WisdomTree weekly: 'My overall assessment remains constructive, although I expect continued volatility in the AI sector'",
-        "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/"
-      }
-    },
-    {
-      "name": "Sonders",
-      "s12": 1,
-      "s24": 1,
-      "s36": 0,
-      "conviction": 3.0,
-      "note": "Held: mildly constructive; expects rotation and better breadth rather than a broad rally",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-04",
-        "summary": "CNBC: 'The setup is pretty good, but I expect to see the market continue its rotational flavor'",
-        "url": "https://247wallst.com/investing/2026/11/05/liz-ann-sonders-says-rotation-is-the-new-momentum-trade-heres-where-money-could-move-next/"
-      }
-    }
-  ],
-  "reading_list": [
-    {
-      "title": "Berkshire Hathaway Form 10-Q, Q3 2026",
-      "url": "https://www.sec.gov/Archives/edgar/data/0001067983/000119312526452412/brka-20260930.htm",
-      "source": "SEC EDGAR",
-      "date": "2026-11-07",
-      "primary": true,
-      "why": "Buffett-Berkshire revealed preference: record $377.4B cash+T-bills, a small Q3 net equity sale, record $9.6B buybacks - consistent with Buffett Indicator caution"
-    },
-    {
-      "title": "Federal Reserve issues FOMC statement (October 28, 2026)",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
-      "source": "Federal Reserve Board",
-      "date": "2026-10-28",
-      "primary": true,
-      "why": "Fed / yield curve: hold with two hawkish dissents sets the December-hike path driving the 10y (4.86%) and HY spreads"
-    },
-    {
-      "title": "Tech Weakness Fuels Bond Rally and Value Rotation",
-      "url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
-      "source": "WisdomTree (Jeremy Siegel)",
-      "date": "2026-11-02",
-      "primary": true,
-      "why": "Siegel calls the Nasdaq drop 'a pullback, not even a correction' - a test of price-vs-trend and momentum after the 4th straight weekly loss"
-    },
-    {
-      "title": "Yardeni QuickTakes: 'Air Coming Out Of AI Bubble'",
-      "url": "https://yardeni.com/",
-      "source": "Yardeni Research",
-      "date": "2026-11-08",
-      "primary": true,
-      "why": "Yardeni: 'speed bump' while conceding AI-bubble deflation - relevant to CAPE and Excess CAPE Yield as valuations compress"
-    },
-    {
-      "title": "The market bloodbath just exposed Wall Street's true fears about U.S. debt, top economist warns",
-      "url": "https://fortune.com/2026/11/08/us-debt-ai-stock-market-selloff-bond-yields-treasury-risk-premium/",
-      "source": "Fortune (citing Robin Brooks, Brookings)",
-      "date": "2026-11-08",
-      "primary": false,
-      "why": "Fiscal: argues yields rose on a fiscal risk premium, not AI - why the 10y stays high as equities sell off"
-    }
-  ]
+  "sentiment_updates": [],
+  "reading_list": []
 }
