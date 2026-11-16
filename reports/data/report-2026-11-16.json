@@ -69,8 +69,14 @@
       "source": "Treasury final FY2026 statement (2026-10-16; AAF 2026-10-18): deficit $1.99tn, ~6.1% of GDP - still the latest full-year figure. Gross debt/GDP 122.6% is the Q1-2026 GFDEGDQ188S print (stale)"
     }
   },
-  "sentiment_changes": [],
-  "new_statements": [],
+  "sentiment_changes": [
+    "Fed: held 3.75-4.00% on 2026-10-28 (10-2, Cook and Hammack dissenting for a hike); statement: inflation 'remains elevated', 'The Committee will deliver price stability'. Barkin and Hammack (11-05) backed gradual increases; Williams (11-06) inflation 'too high for too long'. December hike ~78% priced. October CPI 11-10 is the swing factor -> held 3.75-4.00% since 10-28 but bias now firmly to hike: October CPI +0.4% m/m (core +0.3% vs 0.2% est), October PPI +6.5% y/y. Waller backs a December hike and says 50bp should be considered; Logan wants at least two more 25bp hikes; Goolsbee called the data 'borderline disturbing'. CME FedWatch 11-10: 25bp in December ~91%, 50bp ~9%"
+  ],
+  "new_statements": [
+    "Burry",
+    "Dalio",
+    "Lee"
+  ],
   "top_signal": null,
   "sentiment_snapshot": {
     "as_of": "2026-11-16",
@@ -82,9 +88,9 @@
     ],
     "fed": {
       "name": "Fed / Warsh",
-      "stance": "held 3.75-4.00% on 2026-10-28 (10-2, Cook and Hammack dissenting for a hike); statement: inflation 'remains elevated', 'The Committee will deliver price stability'. Barkin and Hammack (11-05) backed gradual increases; Williams (11-06) inflation 'too high for too long'. December hike ~78% priced. October CPI 11-10 is the swing factor",
-      "read": "policy headwind, tightening bias - hawkish hold, no pivot",
-      "as_of": "2026-11-06"
+      "stance": "held 3.75-4.00% since 10-28 but bias now firmly to hike: October CPI +0.4% m/m (core +0.3% vs 0.2% est), October PPI +6.5% y/y. Waller backs a December hike and says 50bp should be considered; Logan wants at least two more 25bp hikes; Goolsbee called the data 'borderline disturbing'. CME FedWatch 11-10: 25bp in December ~91%, 50bp ~9%",
+      "read": "policy headwind, tightening - December hike essentially priced",
+      "as_of": "2026-11-15"
     },
     "roster": [
       {
@@ -122,11 +128,11 @@
         "s36": 3,
         "conviction": 5.0,
         "school": "strategist",
-        "note": "Held: still buy-the-dip; says institutions were waiting until after the 11-03 midterms; his September call for a ~7% Oct/early-Nov pullback before year-end >8,200 is roughly playing out",
-        "last_statement": "2026-10-30",
+        "note": "Held: 'Technology stocks have already bottomed and we are buying the dip'; a possible Jensen Huang exit from NVIDIA is 'a negative, but not a thesis changer'",
+        "last_statement": "2026-11-12",
         "changed_this_week": true,
-        "statement_summary": "CNBC: 'people are going to plan to buy the dip... marking their calendar until November 3rd'",
-        "statement_url": "https://247wallst.com/investing/2026/11/02/marking-their-calendar-until-november-3rd-tom-lee-says-investors-waiting-to-buy-the-dip-after-the-nasdaq-100s-worst-month-since-march-2025/",
+        "statement_summary": "Fundstrat First Word: tech has bottomed, buying the dip, citing forced hedge-fund liquidations in prime-brokerage data",
+        "statement_url": "https://fundstratdirect.com/macro-strategy/first-word/2026/11/12/potential-departure-of-jensen-from-nvidia-a-negative-but-not-a-thesis-chang/",
         "gap": false
       },
       {
@@ -301,11 +307,11 @@
         "s36": -3,
         "conviction": 5.0,
         "school": "debt-cycle",
-        "note": "Held: debt-supply thesis repeated ($2.1T net new marketable debt in 2026, yields rising despite buybacks); calls economy 'mid-cycle'. No new positioning until Q3 13F",
-        "last_statement": "2026-10-14",
+        "note": "Held: midterms solved nothing on debt; expects 'brutal' fights at the 12-11 funding deadline and ~March-2027 debt limit, pushing short-term yields up",
+        "last_statement": "2026-11-09",
         "changed_this_week": true,
-        "statement_summary": "Benzinga: warns of a US debt 'death spiral' as debt and AI equity issuance swamp demand",
-        "statement_url": "https://www.benzinga.com/markets/bonds/26/10/62345537/ray-dalio-warns-us-debt-crisis-could-deepen-as-2-1t-in-new-treasury-supply-hits-market-credit-market-players-call-that-a-death-spiral",
+        "statement_summary": "Substack essay on the midterm results: fiscal deadline fights will be 'brutal' and lift short-term Treasury yields (24/7 Wall St summary 11-12)",
+        "statement_url": "https://247wallst.com/investing/2026/11/12/ray-dalio-just-warned-the-coming-debt-fight-could-make-americas-40-trillion-problem-worse/",
         "gap": false
       },
       {
@@ -342,16 +348,49 @@
         "s36": -3,
         "conviction": 5.0,
         "school": "value",
-        "note": "Held: took profits on 25% of his SMH puts the day SMH fell 11%; remaining June-2027 puts reportedly still large - profit-taking, not a thesis change",
-        "last_statement": "2026-11-05",
+        "note": "Held: positioning matches the talk - doubled Nasdaq-100 puts (early-2027 strikes) on 11-12, calls the 10-06 Nasdaq high a March-2000-style 'bull-trap', tells NVIDIA bulls to 'Get out'",
+        "last_statement": "2026-11-12",
         "changed_this_week": true,
-        "statement_summary": "Substack 'Trading Post' (reported secondhand): sold 25% of SMH puts, kept the rest, still very bearish",
-        "statement_url": "https://247wallst.com/investing/2026/11/06/michael-burry-sold-25-of-his-chip-puts-and-says-hes-still-very-bearish/",
+        "statement_summary": "Substack 'Trading Post Nov 12: Enough is Enough' - doubled NDX puts into the bounce, adding shorts (24/7 Wall St 11-16)",
+        "statement_url": "https://247wallst.com/investing/2026/11/16/behold-the-bull-trap-michael-burry-doubles-his-nasdaq-100-puts-compares-october-high-to-march-2000/",
         "gap": false
       }
     ]
   },
-  "reading_list": [],
+  "reading_list": [
+    {
+      "title": "Trading Post November 12, 2026: Enough is Enough, NVIDIA, SMH vs SOXX, Earnings Quality",
+      "url": "https://michaeljburry.substack.com/p/trading-post-november-12-2026-enough",
+      "source": "Michael Burry (Substack)",
+      "date": "2026-11-12",
+      "primary": true,
+      "why": "Burry doubling NDX puts into the bounce - the bear bet against the momentum rebound"
+    },
+    {
+      "title": "Potential departure of Jensen from NVIDIA a negative but not a thesis changer; tech has bottomed, buying the dip",
+      "url": "https://fundstratdirect.com/macro-strategy/first-word/2026/11/12/potential-departure-of-jensen-from-nvidia-a-negative-but-not-a-thesis-chang/",
+      "source": "Fundstrat (Tom Lee)",
+      "date": "2026-11-12",
+      "primary": true,
+      "why": "Lee calls the tech bottom - the bull counterpoint on 12-month momentum"
+    },
+    {
+      "title": "Ray Dalio Just Warned the Coming Debt Fight Could Make America's $40 Trillion Problem Worse",
+      "url": "https://247wallst.com/investing/2026/11/12/ray-dalio-just-warned-the-coming-debt-fight-could-make-americas-40-trillion-problem-worse/",
+      "source": "24/7 Wall St (on Dalio's 11-09 Substack)",
+      "date": "2026-11-12",
+      "primary": false,
+      "why": "Dalio: 12-11 funding and March-2027 debt-limit deadlines - fiscal indicator and short-end yields"
+    },
+    {
+      "title": "Wholesale prices rose 0.3% in October, putting annual rate at 6.5%, the highest in nearly four years",
+      "url": "https://www.cnbc.com/2026/11/13/ppi-inflation-report-october-2026.html",
+      "source": "CNBC",
+      "date": "2026-11-13",
+      "primary": false,
+      "why": "Hot PPI cements a December hike; 10y at 5.15% squeezes the excess CAPE yield"
+    }
+  ],
   "gaps": [
     "FRED_API_KEY not set: FRED series served from cache or routine fallbacks.",
     "CPI extrapolated from 2023-09-01 to 2026-09-01 at the routine-supplied 3.7%/yr run-rate; real values are approximate."
