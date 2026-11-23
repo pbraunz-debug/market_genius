@@ -1,126 +1,50 @@
 {
-  "research_date": "2026-11-16",
+  "research_date": "2026-11-23",
   "spx_current": {
-    "level": 7561.67,
-    "date": "2026-11-13",
-    "source": "S&P 500 close 2026-11-13, -0.40% on the day but +2.51% on the week vs 7,376.86 in the 2026-11-09 report - snapped a four-week losing streak (Capp Notes closing look)",
-    "url": "https://cappnotes.substack.com/p/closing-look-friday-november-13-2026"
+    "level": 6910.39,
+    "date": "2026-11-20",
+    "source": "S&P 500 close 2026-11-20, -3.70% on the day, seventh straight loss, -8.6% on the week vs 7,561.67 in the 2026-11-16 report (worst week since April 2025); index and Dow now in correction (Capp Notes closing look; multpl CAPE fell ~8.8% w/w, consistent)",
+    "url": "https://cappnotes.substack.com/p/closing-look-friday-november-20-2026"
   },
   "cape_web": {
-    "value": 39.95,
-    "source": "multpl.com 39.95 at 2026-11-13 (same source as last report's 38.91)",
+    "value": 36.44,
+    "source": "multpl.com 36.44 at 2026-11-20 (same source as last report's 39.95)",
     "url": "https://www.multpl.com/shiller-pe/table",
-    "as_of": "2026-11-13"
+    "as_of": "2026-11-20"
   },
   "buffett_indicator": {
-    "value": 229.3,
-    "source": "gurufocus total market cap / GDP 229.3% (Nov-2026 page header, read from search listing; page fetch blocked this run), same methodology family as last report's 228.8%. Higher-methodology sites (thetrading.tools ~283-288%) also exist; score is 5.0 either way",
+    "value": 221.7,
+    "source": "gurufocus total market cap / GDP 221.7% (Nov-2026 page header, read from search listing), same methodology family as last report's 229.3%. thetrading.tools shows ~275% estimate / 288% official; score is 5.0 either way",
     "url": "https://www.gurufocus.com/economic_indicators/4602/usa-ratio-of-total-market-cap-over-gdp",
-    "as_of": "2026-11-13"
+    "as_of": "2026-11-20"
   },
   "fiscal": {
     "deficit_pct_gdp": 6.1,
     "debt_to_gdp": 122.6,
-    "source": "Treasury final FY2026 statement (2026-10-16; AAF 2026-10-18): deficit $1.99tn, ~6.1% of GDP - still the latest full-year figure. Gross debt/GDP 122.6% is the Q1-2026 GFDEGDQ188S print (stale)",
+    "source": "Treasury final FY2026 statement (2026-10-16; AAF 2026-10-18): deficit $1.99tn, ~6.1% of GDP - still the latest full-year figure, no newer annual print. Gross debt/GDP 122.6% is the Q1-2026 GFDEGDQ188S print (stale)",
     "url": "https://www.americanactionforum.org/insight/u-s-treasury-fy-2026-deficit-totaled-2-trillion/",
     "as_of": "2026-10-16"
   },
   "cpi_fallback": {
     "annual_rate_pct": 3.7,
-    "source": "BLS October CPI (2026-11-10) printed +0.4% m/m but published NO year-over-year rate (October 2025 data was never collected in the 2025 shutdown), so September's 3.7% y/y (2026-10-14) remains the latest official annual rate. October PPI +6.5% y/y (2026-11-13) says pipeline inflation is still hot",
+    "source": "No new CPI print since 11-10 (October CPI +0.4% m/m, no y/y published because October 2025 was never collected); September's 3.7% y/y remains the latest official annual rate. November CPI due mid-December",
     "url": "https://www.wichitaliberty.org/economics/october-2026-cpi-report-inflation/",
     "as_of": "2026-11-10"
   },
   "fred_fallback": {
-    "DGS10": 5.15,
-    "T10Y2Y": 0.27,
-    "BAMLH0A0HYM2": 320,
-    "source": "FRED_API_KEY absent this run. DGS10 5.15% and 2y 4.88% at the 2026-11-13 close per Capp Notes (10y +~30bp on the week) -> T10Y2Y +0.27, flatter than +0.35; HY OAS 3.20% = 320bps at 2026-11-12 (govspending.org FRED mirror; Capp Notes agrees, 330->320) - a 28bp TIGHTENING vs 348 in the last report",
-    "as_of": "2026-11-13"
+    "DGS10": 4.92,
+    "T10Y2Y": 0.29,
+    "BAMLH0A0HYM2": 352,
+    "source": "FRED_API_KEY absent this run. DGS10 4.92% and 2y 4.63% at the 2026-11-20 close per Capp Notes (10y -12bp Friday in a flight to quality; -23bp vs 5.15% last report) -> T10Y2Y +0.29 vs +0.27; HY OAS 3.52% = 352bps at 2026-11-19 (equibles and govspending.org FRED mirrors agree; 52-week high) - a 32bp WIDENING vs 320 in the last report, alongside an ~8.6% equity drawdown on the week",
+    "as_of": "2026-11-20"
   },
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
   "fed": {
-    "stance": "held 3.75-4.00% since 10-28 but bias now firmly to hike: October CPI +0.4% m/m (core +0.3% vs 0.2% est), October PPI +6.5% y/y. Waller backs a December hike and says 50bp should be considered; Logan wants at least two more 25bp hikes; Goolsbee called the data 'borderline disturbing'. CME FedWatch 11-10: 25bp in December ~91%, 50bp ~9%",
-    "read": "policy headwind, tightening - December hike essentially priced",
-    "as_of": "2026-11-15"
+    "stance": "held 3.75-4.00% since 10-28, bias to hike into the 12-09 FOMC: Kalshi ~90% on a 25bp December hike as of 11-20 even as equities fell into correction; Philadelphia Fed's Paulson open to back-to-back hikes. Waller (50bp should be considered) and Logan (two more hikes) from last week stand",
+    "read": "policy headwind, tightening into an equity correction",
+    "as_of": "2026-11-20"
   },
-  "sentiment_updates": [
-    {
-      "name": "Burry",
-      "s12": -4,
-      "s24": -4,
-      "s36": -3,
-      "conviction": 5,
-      "note": "Held: positioning matches the talk - doubled Nasdaq-100 puts (early-2027 strikes) on 11-12, calls the 10-06 Nasdaq high a March-2000-style 'bull-trap', tells NVIDIA bulls to 'Get out'",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-12",
-        "summary": "Substack 'Trading Post Nov 12: Enough is Enough' - doubled NDX puts into the bounce, adding shorts (24/7 Wall St 11-16)",
-        "url": "https://247wallst.com/investing/2026/11/16/behold-the-bull-trap-michael-burry-doubles-his-nasdaq-100-puts-compares-october-high-to-march-2000/"
-      }
-    },
-    {
-      "name": "Dalio",
-      "s12": -2,
-      "s24": -4,
-      "s36": -3,
-      "conviction": 5,
-      "note": "Held: midterms solved nothing on debt; expects 'brutal' fights at the 12-11 funding deadline and ~March-2027 debt limit, pushing short-term yields up",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-09",
-        "summary": "Substack essay on the midterm results: fiscal deadline fights will be 'brutal' and lift short-term Treasury yields (24/7 Wall St summary 11-12)",
-        "url": "https://247wallst.com/investing/2026/11/12/ray-dalio-just-warned-the-coming-debt-fight-could-make-americas-40-trillion-problem-worse/"
-      }
-    },
-    {
-      "name": "Lee",
-      "s12": 4,
-      "s24": 3,
-      "s36": 3,
-      "conviction": 5,
-      "note": "Held: 'Technology stocks have already bottomed and we are buying the dip'; a possible Jensen Huang exit from NVIDIA is 'a negative, but not a thesis changer'",
-      "gap": false,
-      "statement": {
-        "date": "2026-11-12",
-        "summary": "Fundstrat First Word: tech has bottomed, buying the dip, citing forced hedge-fund liquidations in prime-brokerage data",
-        "url": "https://fundstratdirect.com/macro-strategy/first-word/2026/11/12/potential-departure-of-jensen-from-nvidia-a-negative-but-not-a-thesis-chang/"
-      }
-    }
-  ],
-  "reading_list": [
-    {
-      "title": "Trading Post November 12, 2026: Enough is Enough, NVIDIA, SMH vs SOXX, Earnings Quality",
-      "url": "https://michaeljburry.substack.com/p/trading-post-november-12-2026-enough",
-      "source": "Michael Burry (Substack)",
-      "date": "2026-11-12",
-      "primary": true,
-      "why": "Burry doubling NDX puts into the bounce - the bear bet against the momentum rebound"
-    },
-    {
-      "title": "Potential departure of Jensen from NVIDIA a negative but not a thesis changer; tech has bottomed, buying the dip",
-      "url": "https://fundstratdirect.com/macro-strategy/first-word/2026/11/12/potential-departure-of-jensen-from-nvidia-a-negative-but-not-a-thesis-chang/",
-      "source": "Fundstrat (Tom Lee)",
-      "date": "2026-11-12",
-      "primary": true,
-      "why": "Lee calls the tech bottom - the bull counterpoint on 12-month momentum"
-    },
-    {
-      "title": "Ray Dalio Just Warned the Coming Debt Fight Could Make America's $40 Trillion Problem Worse",
-      "url": "https://247wallst.com/investing/2026/11/12/ray-dalio-just-warned-the-coming-debt-fight-could-make-americas-40-trillion-problem-worse/",
-      "source": "24/7 Wall St (on Dalio's 11-09 Substack)",
-      "date": "2026-11-12",
-      "primary": false,
-      "why": "Dalio: 12-11 funding and March-2027 debt-limit deadlines - fiscal indicator and short-end yields"
-    },
-    {
-      "title": "Wholesale prices rose 0.3% in October, putting annual rate at 6.5%, the highest in nearly four years",
-      "url": "https://www.cnbc.com/2026/11/13/ppi-inflation-report-october-2026.html",
-      "source": "CNBC",
-      "date": "2026-11-13",
-      "primary": false,
-      "why": "Hot PPI cements a December hike; 10y at 5.15% squeezes the excess CAPE yield"
-    }
-  ]
+  "sentiment_updates": [],
+  "reading_list": []
 }

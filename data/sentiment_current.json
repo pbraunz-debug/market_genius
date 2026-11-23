@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-16",
+  "as_of": "2026-11-23",
   "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
   "excluded_by_request": [
     "Ackman",
@@ -8,9 +8,9 @@
   ],
   "fed": {
     "name": "Fed / Warsh",
-    "stance": "held 3.75-4.00% since 10-28 but bias now firmly to hike: October CPI +0.4% m/m (core +0.3% vs 0.2% est), October PPI +6.5% y/y. Waller backs a December hike and says 50bp should be considered; Logan wants at least two more 25bp hikes; Goolsbee called the data 'borderline disturbing'. CME FedWatch 11-10: 25bp in December ~91%, 50bp ~9%",
-    "read": "policy headwind, tightening - December hike essentially priced",
-    "as_of": "2026-11-15"
+    "stance": "held 3.75-4.00% since 10-28, bias to hike into the 12-09 FOMC: Kalshi ~90% on a 25bp December hike as of 11-20 even as equities fell into correction; Philadelphia Fed's Paulson open to back-to-back hikes. Waller (50bp should be considered) and Logan (two more hikes) from last week stand",
+    "read": "policy headwind, tightening into an equity correction",
+    "as_of": "2026-11-20"
   },
   "roster": [
     {

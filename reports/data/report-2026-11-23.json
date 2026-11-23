@@ -1,0 +1,366 @@
+{
+  "date": "2026-11-23",
+  "composite": 4.074174593633416,
+  "band": "frothy / hold dry powder",
+  "weight_covered": 1.0,
+  "indicators": {
+    "cape": {
+      "value": 36.44,
+      "score": 4.849229011993147,
+      "display": "36.4",
+      "as_of": "2026-11-20",
+      "stale_weeks": null,
+      "source": "multpl.com 36.44 at 2026-11-20 (same source as last report's 39.95)"
+    },
+    "buffett": {
+      "value": 221.7,
+      "score": 5.0,
+      "display": "222% of GDP",
+      "as_of": "2026-11-20",
+      "stale_weeks": 0,
+      "source": "gurufocus total market cap / GDP 221.7% (Nov-2026 page header, read from search listing), same methodology family as last report's 229.3%. thetrading.tools shows ~275% estimate / 288% official; score is 5.0 either way"
+    },
+    "ecy": {
+      "value": 0.013363469801808688,
+      "score": 3.6636530198191313,
+      "display": "+1.34%",
+      "as_of": "2026-11-20",
+      "stale_weeks": null,
+      "source": "derived: FRED DGS10 + Shiller CPI"
+    },
+    "trend": {
+      "value": 1.4046348546473386,
+      "score": 4.222158766419189,
+      "display": "1.40x",
+      "as_of": "2026-11-20",
+      "stale_weeks": null,
+      "source": "Shiller CSV"
+    },
+    "momentum": {
+      "value": -0.007668889705806148,
+      "score": 2.5080731969860066,
+      "display": "-0.8%",
+      "as_of": "2026-11-20",
+      "stale_weeks": null,
+      "source": "Shiller CSV"
+    },
+    "hy_spread": {
+      "value": 352.0,
+      "score": 3.7925764192139737,
+      "display": "352bps",
+      "as_of": "2026-11-20",
+      "stale_weeks": 0,
+      "source": "FRED BAMLH0A0HYM2"
+    },
+    "curve": {
+      "value": 0.29,
+      "score": 3.0,
+      "display": "+0.29 pts",
+      "as_of": "2026-11-20",
+      "stale_weeks": 0,
+      "source": "FRED T10Y2Y"
+    },
+    "fiscal": {
+      "value": 6.1,
+      "score": 4.525,
+      "display": "6.1% of GDP deficit",
+      "as_of": "2026-10-16",
+      "stale_weeks": 0,
+      "source": "Treasury final FY2026 statement (2026-10-16; AAF 2026-10-18): deficit $1.99tn, ~6.1% of GDP - still the latest full-year figure, no newer annual print. Gross debt/GDP 122.6% is the Q1-2026 GFDEGDQ188S print (stale)"
+    }
+  },
+  "sentiment_changes": [
+    "Fed: held 3.75-4.00% since 10-28 but bias now firmly to hike: October CPI +0.4% m/m (core +0.3% vs 0.2% est), October PPI +6.5% y/y. Waller backs a December hike and says 50bp should be considered; Logan wants at least two more 25bp hikes; Goolsbee called the data 'borderline disturbing'. CME FedWatch 11-10: 25bp in December ~91%, 50bp ~9% -> held 3.75-4.00% since 10-28, bias to hike into the 12-09 FOMC: Kalshi ~90% on a 25bp December hike as of 11-20 even as equities fell into correction; Philadelphia Fed's Paulson open to back-to-back hikes. Waller (50bp should be considered) and Logan (two more hikes) from last week stand"
+  ],
+  "new_statements": [],
+  "top_signal": "TOP-SIGNAL WATCH: 12-month momentum is turning DOWN (score 3.39 -> 2.51, now -0.8%) while valuation stays red (CAPE, Buffett and price-vs-trend average 4.69). FRAMEWORK 1.5 calls that combination the classic top signal. Credit is confirming: HY OAS 320 -> 352bps over the same span. This is the pattern to watch, not the composite, which can sit still while its parts rotate.",
+  "sentiment_snapshot": {
+    "as_of": "2026-11-23",
+    "note": "Baseline roster as developed in conversation. Week 1 diffs against this file. scripts/build_report.py copies it to data/sentiment_current.json on first run and updates that file thereafter; this baseline is never overwritten.",
+    "excluded_by_request": [
+      "Ackman",
+      "Icahn",
+      "activist investors generally"
+    ],
+    "fed": {
+      "name": "Fed / Warsh",
+      "stance": "held 3.75-4.00% since 10-28, bias to hike into the 12-09 FOMC: Kalshi ~90% on a 25bp December hike as of 11-20 even as equities fell into correction; Philadelphia Fed's Paulson open to back-to-back hikes. Waller (50bp should be considered) and Logan (two more hikes) from last week stand",
+      "read": "policy headwind, tightening into an equity correction",
+      "as_of": "2026-11-20"
+    },
+    "roster": [
+      {
+        "name": "Yardeni",
+        "s12": 2,
+        "s24": 3,
+        "s36": 4,
+        "conviction": 3.5,
+        "school": "strategist",
+        "note": "Held: last week's 2.7% drop is a 'speed bump, not a roadblock', sector weights unchanged; concedes 'air coming out of AI bubble'",
+        "last_statement": "2026-11-08",
+        "changed_this_week": true,
+        "statement_summary": "QuickTakes 'Air Coming Out Of AI Bubble': AI backlash a speed bump, not a roadblock",
+        "statement_url": "https://yardeni.com/",
+        "gap": false
+      },
+      {
+        "name": "Wood",
+        "s12": 4,
+        "s24": 4,
+        "s36": 5,
+        "conviction": 5.0,
+        "school": "strategist",
+        "note": "Held: bought the dip (added NVDA and SpaceX, sold ~$120M AVGO) and says the bull market is not ending - trades match the talk",
+        "last_statement": "2026-11-06",
+        "changed_this_week": true,
+        "statement_summary": "CNBC: 'The more the market worries, the more optimistic I get'; bull ending? 'I don't think so'",
+        "statement_url": "https://finance.biggo.com/news/dd0eeafa-83a5-4290-9be9-e3798cabd501",
+        "gap": false
+      },
+      {
+        "name": "Lee",
+        "s12": 4,
+        "s24": 3,
+        "s36": 3,
+        "conviction": 5.0,
+        "school": "strategist",
+        "note": "Held: 'Technology stocks have already bottomed and we are buying the dip'; a possible Jensen Huang exit from NVIDIA is 'a negative, but not a thesis changer'",
+        "last_statement": "2026-11-12",
+        "changed_this_week": true,
+        "statement_summary": "Fundstrat First Word: tech has bottomed, buying the dip, citing forced hedge-fund liquidations in prime-brokerage data",
+        "statement_url": "https://fundstratdirect.com/macro-strategy/first-word/2026/11/12/potential-departure-of-jensen-from-nvidia-a-negative-but-not-a-thesis-chang/",
+        "gap": false
+      },
+      {
+        "name": "Siegel",
+        "s12": 2,
+        "s24": 3,
+        "s36": 3,
+        "conviction": 3.5,
+        "school": "strategist",
+        "note": "Held: 'constructive'; Nasdaq drop 'a pullback, not even a correction', favours value rotation; sees the Fed waiting to December",
+        "last_statement": "2026-11-02",
+        "changed_this_week": true,
+        "statement_summary": "WisdomTree weekly: 'My overall assessment remains constructive, although I expect continued volatility in the AI sector'",
+        "statement_url": "https://resources.wisdomtree.com/weekly-siegel-commentary/",
+        "gap": false
+      },
+      {
+        "name": "Sonders",
+        "s12": 1,
+        "s24": 1,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "strategist",
+        "note": "Held: mildly constructive; expects rotation and better breadth rather than a broad rally",
+        "last_statement": "2026-11-04",
+        "changed_this_week": true,
+        "statement_summary": "CNBC: 'The setup is pretty good, but I expect to see the market continue its rotational flavor'",
+        "statement_url": "https://247wallst.com/investing/2026/11/05/liz-ann-sonders-says-rotation-is-the-new-momentum-trade-heres-where-money-could-move-next/",
+        "gap": false
+      },
+      {
+        "name": "Druckenmiller",
+        "s12": 1,
+        "s24": 1,
+        "s36": 0,
+        "conviction": 4.0,
+        "school": "macro-trader",
+        "note": "CUT and GAP CLOSED: reportedly cut AI holdings to ~20% of their level six months earlier (FT, via secondary source), calls AI a likely 'profit bubble' and rates too low",
+        "last_statement": "2026-09-10",
+        "changed_this_week": true,
+        "gap": false,
+        "statement_summary": "Piper Sandler closed-door meeting (FT): Fed members calling policy restrictive are 'just ridiculous'; 'We are likely in a profit bubble because this AI construction boom will eventually end'",
+        "statement_url": "https://allweatherfinance.com/warsh-mentor-and-legendary-trader-druckenmiller-held-a-closed-door-meeting-us-interest-rates-are-too-low-dovish-stance-is-absurd-and-ai-may-have-a-profit-bubble/"
+      },
+      {
+        "name": "Roubini",
+        "s12": 2,
+        "s24": 2,
+        "s36": 2,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "Held: benign baseline, tail risks judged less likely; nothing US-equity specific in the visible text",
+        "last_statement": "2026-10-02",
+        "changed_this_week": true,
+        "statement_summary": "Project Syndicate 'Why Is the Global Economy So Resilient?': markets and economy held up despite tariffs and the energy shock; growth improves in 2027",
+        "statement_url": "https://www.project-syndicate.org/commentary/global-economy-positive-outlook-barring-these-tail-risks-by-nouriel-roubini-2026-10",
+        "gap": false
+      },
+      {
+        "name": "Slok",
+        "s12": 0,
+        "s24": -1,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "Held: hot PPI plus softer spending is 'the definition of stagflation' and expects data-center build-out to slow, but still no recession",
+        "last_statement": "2026-10-15",
+        "changed_this_week": true,
+        "statement_summary": "CNBC (via Stocktwits): 'This is a definition of stagflation'; housing/autos weakening; 'we will not get a recession, but... some more dampening of the data center build-out'",
+        "statement_url": "https://stocktwits.com/news-articles/markets/equity/ppi-surge-complicates-fed-s-inflation-fight-says-apollo-chief-economist-this-is-the-definition-of-stagflation/cZxWDy4RBAz",
+        "gap": false
+      },
+      {
+        "name": "El-Erian",
+        "s12": -1,
+        "s24": -2,
+        "s36": 1,
+        "conviction": 4.0,
+        "school": "policy",
+        "note": "Held: markets pricing too many hikes; non-tech economy vulnerable to the tech side; AI trade 'has started to realize it's tougher'",
+        "last_statement": "2026-10-16",
+        "changed_this_week": true,
+        "statement_summary": "CNBC (via Stocktwits): 'I don't think we're going to get three hikes'; low October / high December hike odds about right",
+        "statement_url": "https://stocktwits.com/news-articles/markets/equity/el-erian-warns-markets-pricing-too-many-fed-rate-hikes/cZxNWUIRBtF",
+        "gap": false
+      },
+      {
+        "name": "Gross",
+        "s12": -1,
+        "s24": -1,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "macro",
+        "note": "MOVED CAUTIOUS from neutral: own nothing but 1-year T-bills, be cautious on stocks at record levels because higher yields will compress margins",
+        "last_statement": "2026-09-30",
+        "changed_this_week": true,
+        "statement_summary": "Investment Outlook / FT op-ed 'Don't own bonds and be cautious with stocks': 'be cautious with stocks at record levels as higher yields over time will contract profit margins'",
+        "statement_url": "https://williamhgross.com/dont-own-bonds-and-be-cautious-with-stocks/",
+        "gap": false
+      },
+      {
+        "name": "Buffett-Berkshire",
+        "s12": 1,
+        "s24": 1,
+        "s36": 1,
+        "conviction": 4.0,
+        "school": "value",
+        "note": "Held: Q3 10-Q shows cash+T-bills at a record $377.4B, a small net seller of stocks in Q3 (~$2.4B bought vs ~$2.8B sold) after being a net buyer in Q2, and record buybacks of $9.6B. Cautious on the broad market but buying its own shares",
+        "gap": false,
+        "last_statement": "2026-11-07",
+        "changed_this_week": true,
+        "statement_summary": "Q3 2026 10-Q: $377.4B cash+T-bills, $9.6B Q3 buybacks, Q3 roughly $0.4B net equity sale",
+        "statement_url": "https://www.sec.gov/Archives/edgar/data/0001067983/000119312526452412/brka-20260930.htm"
+      },
+      {
+        "name": "Marks",
+        "s12": -1,
+        "s24": -1,
+        "s36": 0,
+        "conviction": 3.0,
+        "school": "credit",
+        "note": "Held: calls AI 'the least predictable thing I've ever witnessed in my career', can't assess the boom's economic viability - agnostic rather than a new call",
+        "last_statement": "2026-10-30",
+        "changed_this_week": true,
+        "statement_summary": "CNBC The Exchange: AI is the 'least predictable thing I've ever witnessed'",
+        "statement_url": "https://money.whatfinger.com/2026/10/30/howard-marks-ai-is-the-least-predictable-thing-ive-ever-witnessed-in-my-career",
+        "gap": false
+      },
+      {
+        "name": "Dimon",
+        "s12": -3,
+        "s24": -2,
+        "s36": -1,
+        "conviction": 3.5,
+        "school": "credit",
+        "note": "Held: Q3 call repeats deficits/sticky inflation/high asset prices/rising rates as risks; JPM cut buybacks and is tightening standards on loose leveraged-finance covenants - action now matches rhetoric",
+        "gap": false,
+        "last_statement": "2026-10-13",
+        "changed_this_week": true,
+        "statement_summary": "JPMorgan Q3 2026 call: 'high asset prices and fairly low credit losses' may not last; tightening lending standards; 'more uncertainty than normal' on 2027 NII",
+        "statement_url": "https://www.benzinga.com/node/62321579"
+      },
+      {
+        "name": "Summers",
+        "s12": -2,
+        "s24": -2,
+        "s36": -1,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "",
+        "last_statement": "2026-08-21 (baseline)",
+        "changed_this_week": false
+      },
+      {
+        "name": "Krugman",
+        "s12": -2,
+        "s24": -2,
+        "s36": -1,
+        "conviction": 3.0,
+        "school": "policy",
+        "note": "Held: lists triggers for the next slump (stagflation forcing big hikes, AI-bubble bust, debt crisis via long yields) rather than a dated call",
+        "last_statement": "2026-10-25",
+        "changed_this_week": true,
+        "statement_summary": "Substack 'The Crisis Next Time': a severe slump will eventually come; worried about a liquidity trap if AI capex collapses",
+        "statement_url": "https://paulkrugman.substack.com/p/the-crisis-next-time",
+        "gap": false
+      },
+      {
+        "name": "Dalio",
+        "s12": -2,
+        "s24": -4,
+        "s36": -3,
+        "conviction": 5.0,
+        "school": "debt-cycle",
+        "note": "Held: midterms solved nothing on debt; expects 'brutal' fights at the 12-11 funding deadline and ~March-2027 debt limit, pushing short-term yields up",
+        "last_statement": "2026-11-09",
+        "changed_this_week": true,
+        "statement_summary": "Substack essay on the midterm results: fiscal deadline fights will be 'brutal' and lift short-term Treasury yields (24/7 Wall St summary 11-12)",
+        "statement_url": "https://247wallst.com/investing/2026/11/12/ray-dalio-just-warned-the-coming-debt-fight-could-make-americas-40-trillion-problem-worse/",
+        "gap": false
+      },
+      {
+        "name": "Rosenberg",
+        "s12": -3,
+        "s24": -3,
+        "s36": -2,
+        "conviction": 4.5,
+        "school": "bear",
+        "note": "12m cut -2->-3: calls the US market the 'most stretched' of his 40-year career on valuation, leverage and positioning; shifting to Treasuries and international equities (talk and stated positioning agree)",
+        "last_statement": "2026-10-13",
+        "changed_this_week": true,
+        "statement_summary": "Bloomberg (via Roic News): 'most stretched' market in four decades, more AI-dependent than tech was pre-dotcom; average S&P stock ~20% below its 52-week high",
+        "statement_url": "https://www.roic.ai/news/rosenberg-warns-us-stock-market-is-the-most-stretched-in-40-years-10-13-2026",
+        "gap": false
+      },
+      {
+        "name": "Grantham",
+        "s12": -3,
+        "s24": -4,
+        "s36": -3,
+        "conviction": 4.0,
+        "school": "value",
+        "note": "latest sourced statement is June 2026 - inside the 6-month window but not fresh this fortnight",
+        "last_statement": "2026-06-26",
+        "changed_this_week": true,
+        "statement_summary": "Calls this 'the most expensive market in American history'; a reversion to trend would be closer to a wipeout than a correction, and the odds an AI bubble does not bust are 'slim to none'",
+        "statement_url": "https://247wallst.com/investing/2026/06/26/jeremy-grantham-warns-u-s-stocks-could-plunge-70-in-the-most-expensive-market-in-history/"
+      },
+      {
+        "name": "Burry",
+        "s12": -4,
+        "s24": -4,
+        "s36": -3,
+        "conviction": 5.0,
+        "school": "value",
+        "note": "Held: positioning matches the talk - doubled Nasdaq-100 puts (early-2027 strikes) on 11-12, calls the 10-06 Nasdaq high a March-2000-style 'bull-trap', tells NVIDIA bulls to 'Get out'",
+        "last_statement": "2026-11-12",
+        "changed_this_week": true,
+        "statement_summary": "Substack 'Trading Post Nov 12: Enough is Enough' - doubled NDX puts into the bounce, adding shorts (24/7 Wall St 11-16)",
+        "statement_url": "https://247wallst.com/investing/2026/11/16/behold-the-bull-trap-michael-burry-doubles-his-nasdaq-100-puts-compares-october-high-to-march-2000/",
+        "gap": false
+      }
+    ]
+  },
+  "reading_list": [],
+  "gaps": [
+    "FRED_API_KEY not set: FRED series served from cache or routine fallbacks.",
+    "CPI extrapolated from 2023-09-01 to 2026-09-01 at the routine-supplied 3.7%/yr run-rate; real values are approximate."
+  ],
+  "meta": {
+    "inverted_recently": true,
+    "price_date": "2026-11-20",
+    "earnings_vintage": "2023-06-01"
+  }
+}
