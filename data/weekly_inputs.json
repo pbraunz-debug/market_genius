@@ -41,10 +41,262 @@
   "curve_post_inversion": true,
   "_curve_note": "2s10s un-inverted 2024-09-05, inside the trailing 36 months until Sept 2027, so the FRAMEWORK 1.7 post-inversion asterisk applies.",
   "fed": {
-    "stance": "held 3.75-4.00% since 10-28, bias to hike into the 12-09 FOMC: Kalshi ~90% on a 25bp December hike as of 11-20 even as equities fell into correction; Philadelphia Fed's Paulson open to back-to-back hikes. Waller (50bp should be considered) and Logan (two more hikes) from last week stand",
-    "read": "policy headwind, tightening into an equity correction",
-    "as_of": "2026-11-20"
+    "stance": "held 3.75-4.00% since 10-28; October minutes (11-18) show nearly all officials expect a 25bp December hike, two floated 50bp; Waller (11-18) says the Fed may need to 'shock people' with 50bp, Williams pushes back; Paulson open to back-to-back hikes. CME/Kalshi ~90-95% on 25bp at the 12-09 FOMC even as equities fell into correction",
+    "read": "policy headwind, tightening into a correction - no Fed put in sight",
+    "as_of": "2026-11-23"
   },
-  "sentiment_updates": [],
-  "reading_list": []
+  "sentiment_updates": [
+    {
+      "name": "Yardeni",
+      "s12": 2,
+      "s24": 3,
+      "s36": 4,
+      "conviction": 3.5,
+      "note": "Held: cut 2026 year-end target to 7,500 from 7,900 (second cut in ~2 months) but still ~+8.5% from 6,910; keeps 2027 8,500-9,000, no recession - a correction, not a bear market",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-22",
+        "summary": "Cut 2026 S&P target to 7,500, calls the slide a bull-market correction with no recession",
+        "url": "https://journalarta.com/en/2026/11/22/sp-500-yardeni-cuts-year-end-target-correction/"
+      }
+    },
+    {
+      "name": "Wood",
+      "s12": 4,
+      "s24": 4,
+      "s36": 5,
+      "conviction": 5,
+      "note": "Held: ARK bought NVDA 11-09 then sold ~$85M NVDA 11-17 into SpaceX, XYZ, CRCL, COIN - rotation within innovation, not into cash; mild caution on NVDA specifically",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-17",
+        "summary": "ARK sold ~$84.8M Nvidia ahead of earnings, bought SpaceX, Block, Circle, Coinbase",
+        "url": "https://www.theblock.co/news/business/2026-11-17-ark-invest-buys-crypto-stocks-sells-nvidia-442080"
+      }
+    },
+    {
+      "name": "Lee",
+      "s12": 4,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 5,
+      "note": "Held: 'buy the dip in NVDA' after the executive resignation; tech-bottom call stands, though his 8,200-8,400 year-end target (11-04) now needs a ~20% rally from 6,910",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-12",
+        "summary": "Told investors to buy the NVDA dip; Nvidia still the world's most important company",
+        "url": "https://seekingalpha.com/news/4671643-buy-the-dip-in-nvda-fundstrats-tom-lee-states"
+      }
+    },
+    {
+      "name": "Siegel",
+      "s12": 2,
+      "s24": 3,
+      "s36": 3,
+      "conviction": 3.5,
+      "note": "Held: 11-10 'don't sweat the tech selloff' predates most of the 8.6% weekly drop; nothing since the correction deepened",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-10",
+        "summary": "Called the tech selloff healthy, citing job gains and possible oil/tariff relief",
+        "url": "https://thinkadvisor.com/2026/11/10/siegel-calls-tech-selloff-healthy/"
+      }
+    },
+    {
+      "name": "Sonders",
+      "s12": 1,
+      "s24": 1,
+      "s36": 0,
+      "conviction": 3,
+      "note": "Held: index calm masked broad losses underneath; market shifting back to rotation; Schwab flags December and early-2027 hikes as possible",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-20",
+        "summary": "CNBC: 'a shift back to a rotational market'; calm had hidden widespread losses",
+        "url": "https://www.cnbc.com/video/2026/11/20/we-are-seeing-a-shift-back-to-a-rotational-market-says-schwabs-liz-ann-sonders.html"
+      }
+    },
+    {
+      "name": "Druckenmiller",
+      "s12": 0,
+      "s24": 0,
+      "s36": 0,
+      "conviction": 4,
+      "note": "CUT 12m/24m 1->0: flat equities ('taking a break'), short copper, warns of a weak 2H-2027; Q3 13F (11-16) cut US longs $5.21B->$4.47B, TSM -94.5%, exited GOOGL/AMD, closed ~$341M of index calls, added gold miners - positioning matches the talk",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-17",
+        "summary": "TomorrowX Summit: neither long nor short stocks, short copper, preserving capital",
+        "url": "https://www.coindesk.com/business/2026/11/17/druckenmiller-says-he-is-short-copper-warns-of-economic-weakness-in-2027"
+      }
+    },
+    {
+      "name": "Roubini",
+      "s12": 2,
+      "s24": 2,
+      "s36": 2,
+      "conviction": 3,
+      "note": "Held: constructive on US AI, calls Nvidia's crisis a 'boon'; no market or Fed call",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-16",
+        "summary": "Bloomberg TV: Nvidia CEO crisis an opportunity for US AI; Mag 7 erred on data centers",
+        "url": "https://www.marketscreener.com/news/nouriel-roubini-sees-nvidia-crisis-as-a-boon-for-us-ai-ce785edfdd8fff26"
+      }
+    },
+    {
+      "name": "Slok",
+      "s12": -1,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3,
+      "note": "CUT 12m 0->-1: IG yields ~6% vs S&P forward earnings yield ~4.5%, a gap last seen in the early 2000s - 'the case for equity risk is weaker' (Apollo is a credit house, partly talking its book)",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-20",
+        "summary": "Daily Spark 'Higher for Longer Makes High-Quality Credit More Attractive'",
+        "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/higher-for-longer-makes-high-quality-credit-more-attractive"
+      }
+    },
+    {
+      "name": "El-Erian",
+      "s12": -1,
+      "s24": -2,
+      "s36": 1,
+      "conviction": 4,
+      "note": "Held: selloff technically driven (forced selling, IPO supply, tech debt issuance, hawkish Fed) but could spill into capex, confidence and profits; Treasuries gave little protection (secondary paraphrase)",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-23",
+        "summary": "Warns Wall Street turmoil could go beyond a normal correction and hit the real economy",
+        "url": "https://see.news/mohamed-el-erian-warns-wall-street-turmoil-could-spill-over-into-us-economy"
+      }
+    },
+    {
+      "name": "Buffett-Berkshire",
+      "s12": 1,
+      "s24": 1,
+      "s36": 1,
+      "conviction": 4,
+      "note": "Held, GAP: Q3 13F (11-16, as of 9-30) a small net seller (~$2.4B bought vs ~$2.8B sold; BAC -5.7%, COF -61.7%; Lennar and DAL added) on ~$373-377B cash; Thanksgiving letter says confidence in Berkshire 'as strong as ever' but makes no market call - revealed preference still cautious",
+      "gap": true,
+      "statement": {
+        "date": "2026-11-16",
+        "summary": "Q3 13F filed: net seller, no full exits; Thanksgiving letter gives $5.4B to foundations",
+        "url": "https://www.crowdfundedwealth.com/articles/berkshire-hathaway-13f-q3-2026-holdings-bought-sold"
+      }
+    },
+    {
+      "name": "Marks",
+      "s12": -1,
+      "s24": -1,
+      "s36": 0,
+      "conviction": 3,
+      "note": "Held: AI 'isn't an illusion' but its value is 'largely a matter of faith'; flags ~$600B of AI debt issuance and S&P concentration, urges lenders to be 'exceptionally vigilant' - no valuation call",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-11",
+        "summary": "Memo 'A Layman Thinks About AI': AI credit risks and circular financing",
+        "url": "https://www.brookfield.com/views-news/insights/layman-thinks-about-ai"
+      }
+    },
+    {
+      "name": "Krugman",
+      "s12": -3,
+      "s24": -2,
+      "s36": -1,
+      "conviction": 3.5,
+      "note": "CUT 12m -2->-3: AI bubble deflating in dotcom-style stages ('first drop, pause, bigger plunge'); cites the Buffett indicator above its dotcom peak (rhetoric only, no positions)",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-23",
+        "summary": "'Pop! Goes the Bubble': AI leaders could be 'future WorldComs'",
+        "url": "https://paulkrugman.substack.com/p/pop-goes-the-bubble"
+      }
+    },
+    {
+      "name": "Dalio",
+      "s12": -2,
+      "s24": -4,
+      "s36": -3,
+      "conviction": 5,
+      "note": "Held: Bridgewater Q3 13F cut SPY ~1.9M sh, IVV ~1.5M, NVDA ~1.2M (lagged, as of 9-30) - action matches the bearish debt-cycle talk",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-16",
+        "summary": "Bridgewater Q3 13F: large cuts to SPY, IVV and NVDA; S&P funds now ~16.5% of a $23B US book",
+        "url": "https://247wallst.com/investing/2026/11/22/billionaire-ray-dalios-bridgewater-keeps-16-of-its-23-billion-stock-portfolio-in-sp-500-index-funds-even-after-cutting-them/"
+      }
+    },
+    {
+      "name": "Rosenberg",
+      "s12": -3,
+      "s24": -3,
+      "s36": -2,
+      "conviction": 4.5,
+      "note": "Held: several regions and sectors already in bear markets; transports and copper flash economic weakness; Fed tightening will damage growth",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-20",
+        "summary": "'Already in a Bear Market??' - seven-day global equity losing streak, transports and copper warning",
+        "url": "https://www.earlymorningwithdave.com/p/anthropic-already-in-a-bear-market"
+      }
+    },
+    {
+      "name": "Burry",
+      "s12": -4,
+      "s24": -4,
+      "s36": -3,
+      "conviction": 4.5,
+      "note": "Held scores, conviction 5->4.5: took profits on half his NVDA and SMH puts 11-20 and added to MELI, but kept all the Apr-2027 NDX puts - tactical de-risking, core short intact (mild softening, not a full gap)",
+      "gap": false,
+      "statement": {
+        "date": "2026-11-20",
+        "summary": "Trading Post 'Turn! Turn! Turn!': half of NVDA/SMH puts closed for gains, NDX puts kept",
+        "url": "https://www.tradingview.com/news/invezz:5c90f3f10094b:0-michael-burry-takes-profits-on-nvidia-puts-as-chip-stocks-extend-sell-off/"
+      }
+    }
+  ],
+  "reading_list": [
+    {
+      "title": "Minutes of the FOMC, October 27-28, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+      "source": "Federal Reserve Board",
+      "date": "2026-11-18",
+      "primary": true,
+      "why": "Fed block: nearly all participants expect a December hike and some want 50bp - the policy headwind arriving into an equity correction"
+    },
+    {
+      "title": "A Memo From Howard Marks: A Layman Thinks About AI",
+      "url": "https://www.brookfield.com/views-news/insights/layman-thinks-about-ai",
+      "source": "Oaktree / Brookfield",
+      "date": "2026-11-11",
+      "primary": true,
+      "why": "Marks on ~$600B of AI debt and hyperscaler credit risk - the channel through which HY spreads (352bps, widening) could keep moving"
+    },
+    {
+      "title": "Duquesne Family Office Q3 2026 13F",
+      "url": "https://13f.info/manager/0001536411-duquesne-family-office-llc",
+      "source": "SEC 13F via 13f.info",
+      "date": "2026-11-16",
+      "primary": true,
+      "why": "Druckenmiller: index calls closed, TSM cut, gold miners added - the revealed preference behind his cut to 0/0/0"
+    },
+    {
+      "title": "Higher for Longer Makes High-Quality Credit More Attractive",
+      "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/higher-for-longer-makes-high-quality-credit-more-attractive",
+      "source": "Apollo Daily Spark (Slok)",
+      "date": "2026-11-20",
+      "primary": true,
+      "why": "Slok: IG at ~6% vs a ~4.5% S&P earnings yield - the same thin equity premium the Excess CAPE Yield tile measures"
+    },
+    {
+      "title": "Pop! Goes the Bubble",
+      "url": "https://paulkrugman.substack.com/p/pop-goes-the-bubble",
+      "source": "Paul Krugman Substack",
+      "date": "2026-11-23",
+      "primary": true,
+      "why": "Krugman: staged dotcom-style unwind argument built on the Buffett indicator - basis for his 12m cut"
+    }
+  ]
 }
